@@ -1,12 +1,12 @@
 import React, { useEffect}from 'react'
 import { Grid, Card, CardActions, CardContent, CardMedia, Button, Typography, ButtonBase, CircularProgress } from '@material-ui/core/';
-import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt'
 import useWindowPosition from '../../hook/useWindowPosition';
 import useStyles from './Component/kalijcss'
-import { useNavigate} from 'react-router-dom';
+import useStyle from './Component/onlyKalij'
+import { useNavigate, Link} from 'react-router-dom';
 import {useSelector} from 'react-redux'
 import {useDispatch} from 'react-redux'
-import { getKalijs, likeKalij } from '../../actions/kalijs';
+import { getKalijs } from '../../actions/kalijs';
 const Kalij = ({handleAddProduct}) => {
   const checked = useWindowPosition('header');
   const {Kalijs, isLoading} = useSelector((state) => state.Kalijs); 
@@ -18,12 +18,16 @@ const Kalij = ({handleAddProduct}) => {
     const navigate = useNavigate()
     const openPost = () => {}
     const classes = useStyles();
+    const classed = useStyle();
     return (
-      isLoading ? <CircularProgress /> : ( <Grid className={classes.container} container alignItems="stretch" spacing={3}>
+      isLoading ? <CircularProgress /> : ( 
+      <>
+          <h2 className={classes.Food}>About <span className={classes.spanFood}>Food</span></h2>
+      <Grid className={classes.container} container alignItems="stretch" spacing={3}>
       {Kalijs.slice(0, 8).map((kalij) => (
 
       <Grid key={kalij._id} checked={checked} item xs={12} sm={6} md={3} lg={3}>
-        <Card className={classes.card} raised elevation={6}>
+        <Card className={classed.cards} raised elevation={6}>
       <ButtonBase component="span"
       name="test"
       className={classes.cardAction} onClick={() => {if(user?.result?.name) {navigate(`/kalijs/${kalij._id}`)}else {alert('Login to Open the Post')}}} >
@@ -36,11 +40,10 @@ const Kalij = ({handleAddProduct}) => {
         </CardContent>
         </ButtonBase>
       <CardActions className={classes.cardActions}>
-        <Button size="small" className={classes.btn} onClick={() => {handleAddProduct(kalij); 
-          alert('Thank for order Go to Card to Procced')}} disabled={!user?.result}>
-        Add to Cart 
+        <Button size="small" className={classed.btn} onClick={() => {if(user?.result?.name) {handleAddProduct(kalij)}else {alert('Login To Add Cart'); navigate('/auth')}}}>
+        Add Cart
         </Button>
-        <Button size="small" className={classes.btn}>
+        <Button size="small" className={classed.btn}>
           Rs. {kalij.price}
         </Button>
       </CardActions>
@@ -48,6 +51,17 @@ const Kalij = ({handleAddProduct}) => {
     </Grid>
     ))}
     </Grid>
+    <br />
+    <br />
+        <center><Button variant="contained" color="secondary"><Link
+        to='/gallery'
+        className={classes.link}
+        onClick={() => {
+          alert("Moving to Food Gallery")}}
+      >
+       View More
+      </Link></Button></center>
+      </>
     ))
 }
 

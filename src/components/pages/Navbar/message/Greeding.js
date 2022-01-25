@@ -6,10 +6,10 @@ const clientKalij = () => {
         <> 
         {user?.result.role ? (
          <> Welcome <br />
-          Admin<span style={{color: "#5AFF3D"}}> Sir</span></>
+          Admin<span style={{color: "gray"}}> Sir</span></>
         ) : (
             <> Rhino Spot Resort And  <br />
-            <span style={{color: "#5AFF3D"}}>The Game Farm- Kalij Farm.</span></>
+            <span style={{color: "coral"}}>The Game Farm- Kalij Farm.</span></>
         )}
             
           

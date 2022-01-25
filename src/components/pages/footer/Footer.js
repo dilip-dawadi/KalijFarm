@@ -7,7 +7,9 @@ import {
   FooterLink,
   Heading,
 } from "./FooterStyles";
-
+// import { IconButton } from '@material-ui/core';
+// import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+// import { Link as Scroll } from 'react-scroll';
 const Footer = () => {
   return (
     <Box>
@@ -16,6 +18,12 @@ const Footer = () => {
                    marginTop: "-10px" }}>
         Rk: Rhino Sport And Kalij Farm
       </h1>
+      
+          {/* <Scroll>
+          <center><IconButton to="place-to-visit" smooth={true} >
+              <ExpandLessIcon style={{ color: "green", padding: "5px", backgroundColor: "white", borderRadius: "10px" }}/>
+            </IconButton></center>
+          </Scroll> */}
       <Container>
         <Row>
           <Column>

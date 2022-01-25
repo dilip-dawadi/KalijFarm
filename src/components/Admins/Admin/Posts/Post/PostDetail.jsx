@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react'
+import React, { useEffect, useLayoutEffect} from 'react'
 import { useDispatch, useSelector} from 'react-redux'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Paper, Typography, CircularProgress, Divider } from '@material-ui/core/';
@@ -6,6 +6,14 @@ import { getKalij } from '../../../../../actions/kalijs'
 import useStyles from './Pdetail'
 import moment from 'moment'
 const KalijDetail = () => {
+
+  useLayoutEffect(() => {
+    window.scrollTo({
+        left: 0,
+        top: 0,
+        behavior: 'instant',
+    });
+}, []);
     const classes = useStyles()
     const {kalij, isLoading} = useSelector((state) => state.Kalijs)
     const dispatch = useDispatch()

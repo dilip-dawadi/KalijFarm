@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme)=> ({
     },
   },
   goDown: {
-    color: '#5AFF3D',
+    color: 'coral',
     fontSize: '3rem',
     [theme.breakpoints.down('sm')]: {
       fontSize: '2rem',

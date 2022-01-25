@@ -2,7 +2,6 @@ import React, { useEffect}from 'react';
 import styled from 'styled-components';
 import PText from './Component/PText';
 import {NavLink} from 'react-router-dom'
-import Imag from '../Images/bg.jpg'
 import {useDispatch, useSelector} from 'react-redux'
 import { getAbouts } from '../../actions/About';
 import {CardMedia} from '@material-ui/core'
@@ -20,7 +19,7 @@ const AboutSectionStyles = styled.div`
   .about__heading {
     font-size: 1.4rem;
     color: gray;
-    font-weight: 800;
+    font-weight: 900;
     margin-left: 2rem;
   }
   .about__heading span{
@@ -41,15 +40,18 @@ const AboutSectionStyles = styled.div`
   }
   .aboutSection__buttons{
     margin-top: 2rem;
-    text-align: center;
+    margin-left: 4rem;
   }
     .link {  
     text-decoration:none;
-    background-color: orange;
+    background-color: coral;
     padding: 0.4rem 1rem;
     color: white;
     border-radius:10px;
   }
+  image{
+    max-width: 50px;
+    }
   @media only screen and (max-width: 950px) {
     .aboutSection__left {
       flex: 4;
@@ -79,7 +81,9 @@ const AboutSectionStyles = styled.div`
     }
     .aboutSection__buttons {
       flex-direction: column;
-        padding:1rem 0 0 1rem;
+      text-align: center;
+      margin-left: 0rem;
+      padding:1rem 0 0 1rem;
       gap: 0rem;
       .button-wrapper,
       a {

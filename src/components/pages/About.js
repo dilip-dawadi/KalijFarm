@@ -24,13 +24,16 @@ margin-top: 5rem;
 }
 
 .about__heading {
-  font-size: 1.2rem;
+  font-weight: 800;
+  font-size: 1.3rem;
   margin: 20px 10px 30px 50px;
+  color: gray;
 }
 .about__heading span{
   background-color: coral;
-  padding: 0.5rem;
-  border-radius: 8px;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
 }
 .about__info {
   max-width: 500px;
@@ -42,7 +45,6 @@ margin-top: 5rem;
     max-width: 100%;
   }
 }
-
 @media only screen and (max-width: 1000px) {
   .right {
     img {
@@ -104,7 +106,7 @@ export default function About() {
               <div className="about__info">
                 <PText>
                 {A.Amessage}
-                  <br /> <br />
+                  
                 </PText>
               </div>
             </div>

@@ -28,17 +28,8 @@ export default function ({handleAddProduct}) {
     <>
     <Header />
     <About />
-    <div className={classes.root} >
-    <h2 className={classes.Food}>About <span className={classes.spanFood}>Food</span></h2>
+    <div className={classes.root}>
       <Post handleAddProduct={handleAddProduct}/>
-    <center><Button variant="contained" color="primary" className= {classes.button} ><Link
-        to='/gallery'
-        className={classes.link}
-        onClick={() => {
-          alert("Moving to Food Gallery"); }}
-      >
-       View More
-      </Link></Button></center>
     </div>
 
     </>

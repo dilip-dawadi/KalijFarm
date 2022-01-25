@@ -9,9 +9,8 @@ import {
   Typography,
 } from "@material-ui/core";
 import useStyles from "../../kalijFile/Component/kalijcss";
+import useStyle from './style';
 import CheckOut from './checkout'
-
-
 const Cart = ({ cartItems, handleAddProduct, handleRemove, handleClearAll }) => {
     useLayoutEffect(() => {
         window.scrollTo({
@@ -22,6 +21,7 @@ const Cart = ({ cartItems, handleAddProduct, handleRemove, handleClearAll }) => 
     }, []);
     const user = JSON.parse(localStorage.getItem('profile'))
   const classes = useStyles();
+  const classed = useStyle();
   const totalPrice = cartItems.reduce((price, item) => price + item.quantity * item.price, 0);
   return (
     <div className={classes.marg}>
@@ -55,14 +55,14 @@ const Cart = ({ cartItems, handleAddProduct, handleRemove, handleClearAll }) => 
           <Typography variant="body2" color="textSecondary" component="p">Your Order: {item.title}</Typography>
         </CardContent>
           <CardActions className={classes.cardActions}>
-            <Button size="small" className={classes.btn}>
+            <Button size="small" className={classed.button}>
             {item.quantity} * Rs. {item.quantity * item.price}
             </Button>
             <div className={classes.plus}>
-            <Button size="small"  onClick={() => handleAddProduct(item)} className={classes.add} color="primary">
+            <Button size="small"  onClick={() => handleAddProduct(item)} className={classed.add} color="primary">
             <span>+</span>
             </Button>
-            <Button size="small"  onClick={() => handleRemove(item)} color='secondary' className={classes.minus}>
+            <Button size="small"  onClick={() => handleRemove(item)} color='secondary' className={classed.minus}>
             <span>-</span>
             </Button>
             </div>
@@ -72,13 +72,13 @@ const Cart = ({ cartItems, handleAddProduct, handleRemove, handleClearAll }) => 
       ))}
 </Grid>
 {cartItems.length !== 0 && (
-      <div className={classes.clear}>
-      <div><Button className={classes.total}>Total Price: {totalPrice}</Button></div>
+      <div className={classed.clear}>
+      <div><Button className={classed.total}>Total Price: {totalPrice}</Button></div>
     <div>
-        <Button className={classes.total} onClick={handleClearAll}>Clear Cart</Button>
+        <Button className={classed.total} onClick={handleClearAll}>Clear Cart</Button>
     </div>
     <div>
-        <Button className={classes.total}><CheckOut cartItems={cartItems} /></Button>
+        <Button className={classed.total}><CheckOut cartItems={cartItems} /></Button>
     </div>
     </div>
     )}

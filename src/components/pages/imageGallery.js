@@ -1,11 +1,11 @@
 import React, { useEffect, useLayoutEffect } from 'react';
-import {Grid, CardMedia, Typography} from '@material-ui/core'
+import {Grid, CardMedia, Typography, CircularProgress} from '@material-ui/core'
 import {useSelector} from 'react-redux'
 import {useDispatch} from 'react-redux'
 import { getKalijs } from '../../actions/kalijs';
 import useStyles from '../kalijFile/Component/kalijcss'
 const Image = () => {
-    const {Kalijs} = useSelector((state) => state.Kalijs);
+  const {Kalijs, isLoading} = useSelector((state) => state.Kalijs); 
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getKalijs());
@@ -19,9 +19,10 @@ const Image = () => {
         });
     }, []);
   return (
-            <div className={classes.gallery} >
+    isLoading ? <CircularProgress  className={classes.gallery}/> : (
+            <div className={classes.gallery}>
             <Typography variant="h4" align="center" className={classes.galleryH}>Food <span className={classes.spanFood}>Gallery</span></Typography>
-            <Grid className={classes.container} container alignItems="stretch" spacing={3} >
+            <Grid className={classes.container} container alignItems="stretch" spacing={3}>
                  {Kalijs.map((kalij) => (
           
           <Grid key={kalij._id} item xs={12} sm={6} md={3} lg={4}>
@@ -30,6 +31,6 @@ const Image = () => {
       ))}
       </Grid>
       </div>
-  );
+  ));
 }
 export default Image;

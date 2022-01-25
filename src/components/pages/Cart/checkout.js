@@ -1,9 +1,7 @@
 import React, { useRef } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-import qrCode from '../../Images/qrCode.jpg'
 import emailjs from 'emailjs-com';
-
 function getModalStyle() {
   const top = 50;
   const left = 50;
@@ -25,18 +23,18 @@ const useStyles = makeStyles(theme => ({
   },[theme.breakpoints.down('xs')]: {
     paper: {
         width: 240,
-        fontSize: '11px'
+        fontSize: '11px',
+        
     }},
     btn: {
         padding: '5px 10px',
+        fontWeight: 'bold',
+        fontSize: '14px',
         backgroundColor: '#ED9F64',
         border: '#ED9F64',
-        // borderRadius: '10px',
-        // padding: '10px 10px',
         color: 'white',
         '&:hover': {
             backgroundColor: "#FE540B",
-            color: 'white',
          },
     },
     btnG: {
@@ -57,12 +55,11 @@ function between(min, max) {
       Math.random() * (max - min) + min
     )
   } 
-const messageU = () => {
-    alert('Check your mail')
-}
 //   const user = JSON.parse(localStorage.getItem('profile'))
 export default function App({cartItems}) {
-    const cart = JSON.parse(localStorage.getItem('cart'))
+  const messageU = () => {
+    alert('Check your mail')
+}
     const form = useRef();
       const user = JSON.parse(localStorage.getItem('profile'))
     const sendEmail = (e) => {
@@ -102,10 +99,11 @@ export default function App({cartItems}) {
       <input name="subject" type="hidden"  defaultValue={user?.result.number || between(1000, 2000000)} />
       <input type="email" type="hidden" name="email" defaultValue={user?.result.email || 'Fake'} />
       {cartItems.map((c) => (  
-          <input name="message" type="hidden" defaultValue={` ${c.title} and ${c.quantity} `} />
+          <input name="message" type="hidden" defaultValue={`Item ${c.title} order ${c.quantity} `} />
       ))}
+      <input name="article" type="hidden" defaultValue={`  Rs.${totalPrice}`} />
       <br />
-      <input type="submit" className={classes.btnG} value="Esewa Pay" onClick={messageU} />
+      <input type="submit" className={classes.btnG} value="Esewa Pay" onClick={messageU}/>
       <br /><br />
     </form>
     <p> Click Esewa Pay To Procced Your Order</p>

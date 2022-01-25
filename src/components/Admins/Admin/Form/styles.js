@@ -52,10 +52,10 @@ export default makeStyles((theme) => ({
   },
   // About message photo
   madia: {
-    height: 0,
-    paddingTop: '56.25%',
+    paddingTop: '70.25%',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     borderRadius: '20px',
+    backgroundBlendMode: 'darken',
   },
   // About Amedia in display to user
   Amedia: {

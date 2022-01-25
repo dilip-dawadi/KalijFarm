@@ -4,31 +4,11 @@ export default makeStyles((theme) => ({
   // pagenotfound
   PageNotFound: {
     marginTop: '240px',
-    marginBottom: '100px'
   },
   // cart
   marg: {
-    marginTop: '210px',
+    marginTop: '150px',
   },
-  add: {
-    backgroundColor: '#B3B1B1',
-    borderRadius: '15px',
-    margin: '0 1px',
-    color: 'white',
-    fontWeight: 'bold',
-  '&:hover': {
-    background: "#0D76FE",
-    color: 'white',
- },},
- minus: {
-  backgroundColor: '#B3B1B1',
-  borderRadius: '15px',
-  color: 'white',
-  fontWeight: 'bold',
-'&:hover': {
-  background: "#FE0D56",
-  color: 'white',
-},},
   // gallery
   Food: {
     color: 'gray',
@@ -45,7 +25,7 @@ export default makeStyles((theme) => ({
     marginTop: '150px',
   },
   galleryH: {
-    margin: '0 0 50px 0 ',
+    margin: '0 0 50px 0',
     color: 'Gray',
     fontWeight: '700',
   },
@@ -58,6 +38,7 @@ export default makeStyles((theme) => ({
   },
   madia: {
     height: 0,
+    marginTop: '20px',
     paddingTop: '56.25%',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     borderRadius: '30px'
@@ -72,9 +53,12 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    borderRadius: '15px',
     height: '100%',
+    borderRadius: '20px',
     position: 'relative',
+    '&:hover': {
+      padding: '0.5x 0.5px'
+    },
   },
   overlay: {
     position: 'absolute',
@@ -100,7 +84,7 @@ export default makeStyles((theme) => ({
     padding: '5px 16px',
   },
   cartTitle: {
-    padding: '8px 20px',
+    padding: '8x 20px',
     fontWeight: '780',
     fontSize: '15px',
     backgroundColor: '#E6DDDD',
@@ -114,46 +98,10 @@ export default makeStyles((theme) => ({
     textAlign: 'center'
     
   },
-  clear: {
-    display: 'flex',
-    margin: '30px 130px',
-    justifyContent: 'space-between',
-  },[theme.breakpoints.down('sm')]: {
-    clear: {
-      margin: '40px 0px',
-      display: 'block',
-      textAlign: 'center'
-    }},
-
-  total: {
-    padding: '7px 10px',
-    backgroundColor: '#ED9F64',
-    borderRadius: '15px',
-    margin: '10px 0px',
-    fontWeight: '600',
-    color: 'white',
-  '&:hover': {
-    background: "#FE540B",
-    color: 'white',
- }},
   cardAction: {
     display: 'block',
     textAlign: 'initial',
   },
-  button: {
-    marginTop: '30px',
-  },
-  btn: {
-    padding: '5px 10px',
-    backgroundColor: '#ED9F64',
-    borderRadius: '15px',
-    color: 'white',
-    fontWeight: 'bold',
-  '&:hover': {
-    background: "#FE540B",
-    color: 'white',
- },
-},
   link: {
     textDecoration: 'none',
     color: 'white',

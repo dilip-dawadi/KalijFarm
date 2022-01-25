@@ -98,7 +98,7 @@ const NavStyles = styled.nav`
   @media only screen and (max-width: 768px) {
     padding: 0;
     .hide-item {
-      transform: translateY(calc(-100% - var(--top)));
+      transform: translateY(calc(-110% - var(--top)));
     }
     .mobile-menu-icon {
       display: block;
@@ -113,7 +113,7 @@ const NavStyles = styled.nav`
       transition: 0.3s ease transform;
       background-color: #DCDCDC;
       padding: 2rem;
-      width: 90%;
+      width: 100%;
       max-width: 350px;
       border-radius: 12px;
       position: absolute;
@@ -167,8 +167,9 @@ export default function NavMenu({cartItems}) {
 
   const [showNav, setShowNav] = useState(false);
   const cart = () => { 
-    alert("Moving to Cart Page")}
-
+    alert("Moving to Cart Page")
+  }
+  
   return (
     <NavStyles>
       <div
@@ -214,17 +215,7 @@ export default function NavMenu({cartItems}) {
             About
           </NavLink>
         </li>
-        {/* <li>
-          <NavLink
-            to="/cart"
-            onClick={() => setShowNav(!showNav)}
-            role="button"
-            onKeyDown={() => setShowNav(!showNav)}
-            tabIndex={0}
-          >
-            <FaShoppingCart style={{color: 'coral', fontSize:'15px' }} /> <span className='num'> {cartItems.length=== 0 ? 0: cartItems.length}</span>
-          </NavLink>
-        </li> */}
+
         <li>
         {user?.result ? (
           <Login />
@@ -235,7 +226,7 @@ export default function NavMenu({cartItems}) {
 
       </ul>
       
-        <NavLink to="/cart" className='cart' onClick={cart}><FaShoppingCart /> <span className='num'> {cartItems.length=== 0 ? 0: cartItems.length}</span></NavLink>
+        <NavLink to="/cart" className='cart'><FaShoppingCart /> <span className='num'> {cartItems.length=== 0 ? 0: cartItems.length}</span></NavLink>
     </NavStyles>
   );
 }
