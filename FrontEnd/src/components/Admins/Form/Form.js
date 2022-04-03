@@ -27,11 +27,13 @@ const Form = ({ currentId, setCurrentId }) => {
     };
   }, [kalijU]);
   useEffect(() => {
-    setError(errorKalij);
     setcreateMessage(createMsg);
     setupdateMessage(updateMsg);
-  }, [errorKalij, createMsg, updateMsg]);
+  }, [createMsg, updateMsg]);
 
+  useEffect(() => {
+    setError(errorKalij);
+  }, [errorKalij]);
   const user = JSON.parse(localStorage.getItem('profile'))
 
   const clear = () => {
@@ -118,10 +120,10 @@ const Form = ({ currentId, setCurrentId }) => {
           <div><input style={{ padding: '20px 0' }} type="file" id='selectedFile' name='selectedFile' onChange={(e) => setimage({ ...image, selectedFile: e.target.files[0] })} />
             <Button variant="contained" color="primary" size="large" onClick={upload} >Upload</Button></div>}
         {/* error or createMessage or updateMessage display*/}
+        <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" disabled={!user?.result} fullWidth>Submit</Button>
         {Error && <Typography variant="contained" color="secondary" className={classes.Error} fullWidth>{Error}</Typography>}
         {createMessage && <Typography variant="contained" color="secondary" className={classes.Success} fullWidth>{createMessage}</Typography>}
         {updateMessage && <Typography variant="contained" color="secondary" className={classes.Success} fullWidth>{updateMessage}</Typography>}
-        <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" disabled={!user?.result} fullWidth>Submit</Button>
         <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
       </form>
     </Paper>
