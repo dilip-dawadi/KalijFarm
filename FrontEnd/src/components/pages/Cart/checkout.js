@@ -118,7 +118,7 @@ export default function App({ cartItems }) {
     <div>
       {!btnDisable ? <button type="button" className={classes.btn} onClick={handleOpen}>
         BUY NOW
-      </button> : <button type="button" className={classes.btn}>
+      </button> : <button disabled className={classes.btn}>
         Check Gmail
       </button>}
       <Modal open={open} onClose={handleClose}>

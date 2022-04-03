@@ -63,6 +63,7 @@ const Contact = () => {
   const form = useRef();
   const initial = { email: "", subject: "", message: "" };
   const [cont, setCont] = useState(initial);
+  const [btnDisable, setbtnDisable] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs
@@ -74,6 +75,7 @@ const Contact = () => {
       ).then(
         (result) => {
           console.log(result.text);
+          setbtnDisable(true);
         },
         (error) => {
           console.log(error);
@@ -114,9 +116,11 @@ const Contact = () => {
                 value={cont.message}
                 onChange={(e) => setCont({ ...cont, message: e.target.value })}
               ></textarea>
-              <button type="submit" style={{ background: "coral" }}>
+              {!btnDisable ? <button type="submit" style={{ background: "coral" }}>
                 Submit
-              </button>
+              </button> : <button disabled style={{ background: "#28a745" }}>
+                Thank You
+              </button>}
             </form>
           </Paper>
         </div>

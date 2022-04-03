@@ -29,10 +29,17 @@ const Form = ({ currentId, setCurrentId }) => {
   useEffect(() => {
     setcreateMessage(createMsg);
     setupdateMessage(updateMsg);
+    setTimeout(() => {
+      setcreateMessage(null);
+      setupdateMessage(null);
+    }, 10000);
   }, [createMsg, updateMsg]);
 
   useEffect(() => {
     setError(errorKalij);
+    setTimeout(() => {
+      setError(null);
+    }, 10000);
   }, [errorKalij]);
   const user = JSON.parse(localStorage.getItem('profile'))
 
@@ -76,15 +83,10 @@ const Form = ({ currentId, setCurrentId }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(null);
-    setcreateMessage(null);
-    setupdateMessage(null);
     if (currentId) {
       dispatch(updateKalij(currentId, { ...postData, selectedFile: imageUrl, name: user?.result?.name }));
-      clear();
     } else {
       dispatch(createKalijing({ ...postData, selectedFile: imageUrl, name: user?.result?.name }));
-      // clear();
     }
   };
   const handleAddChip = (tag) => {
@@ -117,14 +119,11 @@ const Form = ({ currentId, setCurrentId }) => {
           <div style={{ padding: '7px 0', width: '98%', textAlign: 'center' }}>
             <Typography variant="body1">{progress}</Typography>
           </div> :
-          <div><input style={{ padding: '20px 0' }} type="file" id='selectedFile' name='selectedFile' onChange={(e) => setimage({ ...image, selectedFile: e.target.files[0] })} />
-            <Button variant="contained" color="primary" size="large" onClick={upload} >Upload</Button></div>}
+          <div style={{ textAlign: "center" }} ><input style={{ padding: '20px 0px', marginLeft: "50px" }} type="file" id='selectedFile' name='selectedFile' onChange={(e) => setimage({ ...image, selectedFile: e.target.files[0] })} />
+            <Button variant="contained" color="primary" size="large" onClick={upload}>Upload</Button></div>}
         {/* error or createMessage or updateMessage display*/}
         <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" disabled={!user?.result} fullWidth>Submit</Button>
-        {Error && <Typography variant="contained" color="secondary" className={classes.Error} fullWidth>{Error}</Typography>}
-        {createMessage && <Typography variant="contained" color="secondary" className={classes.Success} fullWidth>{createMessage}</Typography>}
-        {updateMessage && <Typography variant="contained" color="secondary" className={classes.Success} fullWidth>{updateMessage}</Typography>}
-        <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
+        {(Error || createMessage || updateMessage) ? <Typography variant="contained" color="secondary" className={Error ? classes.Error : classes.Success} fullWidth>{Error || createMessage || updateMessage}</Typography> : <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>}
       </form>
     </Paper>
   );

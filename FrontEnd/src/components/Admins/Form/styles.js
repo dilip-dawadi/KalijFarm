@@ -25,16 +25,13 @@ export default makeStyles((theme) => ({
     width: '97%',
     margin: '10px 0',
   },
-  buttonSubmit: {
-    marginBottom: 10,
-  },
   Error: {
     color: 'white',
     fontSize: '12px',
     fontStyle: 'bold',
     letterSpacing: '1px',
     padding: '15px 20px',
-    margin: '10px 0',
+    margin: '2px 0',
     backgroundColor: '#f21818',
   },
   Success: {
@@ -43,11 +40,11 @@ export default makeStyles((theme) => ({
     fontStyle: 'bold',
     letterSpacing: '1px',
     padding: '15px 20px',
-    margin: '10px 0',
+    margin: '2px 0',
     backgroundColor: '#28a745',
   },
   buttonSubmit: {
-    margin: '10px 0',
+    margin: '10px 0 5px 0',
   },
   // about table
   App: {

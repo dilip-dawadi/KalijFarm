@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     fontWeight: 'bold',
     '&:hover': {
-      background: "#FE540B",
+      background: "#28a745",
       color: 'white',
     },
   },
@@ -107,7 +107,7 @@ export default function ModalMessage({ openM, setOpenM }) {
         <span> </span>
         {!btnDisable ? <button type="submit" className={classes.btnG}>
           <Notify />
-        </button> : <button type="submit" className={classes.mail}>
+        </button> : <button disabled className={classes.mail}>
           Check Gmail
         </button>}
         <br /><br />
