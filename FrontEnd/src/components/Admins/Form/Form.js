@@ -123,7 +123,7 @@ const Form = ({ currentId, setCurrentId }) => {
             <Button variant="contained" color="primary" size="large" onClick={upload}>Upload</Button></div>}
         {/* error or createMessage or updateMessage display*/}
         <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" disabled={!user?.result} fullWidth>Submit</Button>
-        {(Error || createMessage || updateMessage) ? <Typography variant="contained" color="secondary" className={Error ? classes.Error : classes.Success} fullWidth>{Error || createMessage || updateMessage}</Typography> : <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>}
+        {(Error || createMessage || updateMessage) ? <Typography variant="contained" color="secondary" className={Error ? classes.Error : classes.Success} fullWidth>{(Error || createMessage || updateMessage)}</Typography> : <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>}
       </form>
     </Paper>
   );

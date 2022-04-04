@@ -24,11 +24,24 @@ const SignUp = () => {
   // using isSignup usesatate hook i can save the data in payload
   const [Error, setError] = useState(null);
   const [ErrorSignIn, setErrorSignIn] = useState(null);
-  const { errorAuth, errorAuthSignIn } = useSelector((state) => state.Auth);
+  const [success, setsuccess] = useState(null);
+  const { errorAuthSignUp, errorAuthSignIn, authData } = useSelector((state) => state.Auth);
   useEffect(() => {
-    setError(errorAuth);
+    setError(errorAuthSignUp);
     setErrorSignIn(errorAuthSignIn);
-  }, [errorAuth, errorAuthSignIn]);
+    setTimeout(() => {
+      setError(null);
+      setErrorSignIn(null);
+    }, 10000);
+  }, [errorAuthSignUp, errorAuthSignIn]);
+  useEffect(() => {
+    setsuccess(authData?.message);
+    setTimeout(() => {
+      setsuccess(null);
+    }, 10000);
+  }, [authData]);
+
+  console.log(authData, 'authData', errorAuthSignUp, 'errorAuthSignUp', errorAuthSignIn, 'errorAuthSignIn');
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const classes = useStyles();
@@ -40,6 +53,8 @@ const SignUp = () => {
 
   const switchMode = () => {
     setError(null);
+    setErrorSignIn(null);
+    setsuccess(null);
     setIsSignup((prevIsSignup) => !prevIsSignup);
     setShowPassword(false);
   };
@@ -47,7 +62,7 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isSignup) {
-      dispatch(signup(formData, navigate));
+      dispatch(signup(formData));
     } else {
       // dispatching meaning giving different thinks
       dispatch(signin(formData, navigate));
@@ -77,11 +92,9 @@ const SignUp = () => {
               <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
               {isSignup && <Input name="confirmPassword" label="Repeat Password" type={showCPassword ? 'text' : 'password'} handleShowCPassword={handleShowCPassword} handleChange={handleChange} />}
             </Grid>
-            {ErrorSignIn && <Typography className={classes.Error} fullWidth>{ErrorSignIn}</Typography>}
-            {Error && <Typography className={classes.Error} fullWidth>{Error}</Typography>}
-            <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
+            {(ErrorSignIn || Error || success) ? <Typography className={(success ? classes.success : classes.Error)} fullWidth>{(success || ErrorSignIn || Error)}</Typography> : <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
               {isSignup ? 'Sign Up' : 'Sign In'}
-            </Button>
+            </Button>}
 
             <Grid container justifyContent="flex-end">
               <Grid item>

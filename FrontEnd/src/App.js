@@ -13,6 +13,7 @@ import Cart from './components/pages/Cart/Cart'
 import Contact from './components/pages/Navbar/contact/contact'
 import PageNotFound from './components/pages/PageNotFound'
 import Preload from './components/pages/PreLoad/Preload'
+import Verify from './components/Auth/getVerify';
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]');
 const App = () => {
@@ -75,6 +76,7 @@ const App = () => {
                 <Route path="/kalijs/:id" exact element={<PostDetail handleAddProduct={handleAddProduct} />} />
                 <Route path="/about" exact element={<About />} />
                 <Route path="/auth" exact element={<Auth />} />
+                <Route path="/users/:id/verify/:token" exact element={<Verify />} />
                 <Route path="/kalijs/all" exact element={<Image />} />
                 <Route path="/kalijs/all/search" exact element={<Image />} />
                 <Route path="*" element={<PageNotFound />} />
