@@ -21,11 +21,12 @@ const NavStyles = styled.nav`
 }
   ul{
     max-width: 800px;
-    margin: 9px auto;
+    margin: 10px auto;
     text-align: center;
     li {
       display: inline-block;
       border-radius: 12px;
+      margin: 0px 4px;
       transition: 0.6s ease background-color;
       &:hover {
         background-color: #ebebeb;
@@ -76,7 +77,7 @@ const NavStyles = styled.nav`
     text-decoration: none;
     position: fixed;
     right: 5.5rem;
-    top: 0.7rem;
+    top: 1rem;
     padding: 4px 8px;
     cursor: pointer;
     color: #C0C0C0;
@@ -97,8 +98,8 @@ const NavStyles = styled.nav`
   }
   @media only screen and (max-width: 1070px) {
     .cart {
-      top: 1rem;
-      left: 3.2rem;
+      top: 1.2rem;
+      left: 3rem;
       width: 3rem;
     }
   }

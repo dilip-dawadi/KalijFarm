@@ -4,8 +4,23 @@ export default makeStyles((theme) => ({
   container: {
     padding: '5rem 1rem',
   },
+  container1: {
+    padding: '6rem 2rem',
+  },
   paper: {
     marginTop: theme.spacing(2),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: theme.spacing(2),
+  },
+  root: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+    },
+  },
+  paper1: {
+    margin: theme.spacing(2),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',

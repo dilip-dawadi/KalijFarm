@@ -34,7 +34,6 @@ export const updateAbout = (id, About) => async (dispatch) => {
     try {
         const { data } = await api.updateAbout(id, About);
         dispatch({ type: 'UPDATE_ABOUT', payload: data })
-        console.log(data);
     } catch (error) {
         console.log(error);
     }

@@ -42,7 +42,6 @@ const SignUp = () => {
     }, 10000);
   }, [authData]);
 
-  console.log(authData, 'authData', errorAuthSignUp, 'errorAuthSignUp', errorAuthSignIn, 'errorAuthSignIn');
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const classes = useStyles();
@@ -78,8 +77,8 @@ const SignUp = () => {
 
   return (
     <Zoom>
-      <Container component="main" maxWidth="xs" className={classes.container} >
-        <Paper className={classes.paper} elevation={6}>
+      <Container component="main" maxWidth="xs" className={isSignup ? classes.container : classes.container1} >
+        <Paper className={isSignup ? classes.paper : classes.paper1} elevation={6}>
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>

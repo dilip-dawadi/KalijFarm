@@ -48,7 +48,6 @@ export const createKalijing = (formData) => async (dispatch) => {
     try {
         dispatch({ type: 'START' })
         const { data: { data, message } } = await api.createKalijs(formData);
-        console.log(data, 'data');
         dispatch({ type: 'CREATE', payload: { data, message } });
         dispatch({ type: 'END' });
         // navigate(`/kalijs/${data._id}`);

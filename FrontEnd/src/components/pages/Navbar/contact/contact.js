@@ -4,7 +4,7 @@ import styled from "styled-components";
 import emailjs from "emailjs-com";
 import { Zoom, Fade, Flip, Rotate, Bounce, Roll } from 'react-reveal';
 const AboutPageStyles = styled.div`
-  padding: 100px 10px 0px 10px;
+  padding: 105px 10px 0px 10px;
   .form {
     display: grid;
   } 
@@ -32,8 +32,8 @@ const AboutPageStyles = styled.div`
 
   .form > label {
     padding-bottom: 10px;
-    color: gray;
-    font-weight: bold;
+    color: black;
+    font-size: 17px;
   }
 
   .form > button {
@@ -93,7 +93,7 @@ const Contact = () => {
             borderRadius: '1%',
             margin: '20px auto',
           }} >
-            <h2 style={{ color: "gray", textAlign: 'center' }}>CONTACT US 🙏</h2>
+            <h3 style={{ color: "black", textAlign: 'center' }}>CONTACT US</h3>
             <form autoComplete="off" ref={form} className="form" onSubmit={handleSubmit} >
               <label style={{ margin: '30px 20px 0px 20px' }}>Email</label>
               <input

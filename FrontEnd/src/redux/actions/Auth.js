@@ -12,7 +12,6 @@ export const signin = (formData, navigate) => async (dispatch) => {
     } catch (error) {
         if (error.response.status >= 400 && error.response.status <= 500) {
             dispatch({ type: 'ERROR-AUTH-SIGNIN', payload: { errorAuthSignIn: error.response.data.message } })
-            console.log(error.response.data.message, 'message');
         } else {
             console.log(error.message);
         }
