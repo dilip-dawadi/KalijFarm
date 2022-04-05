@@ -21,7 +21,7 @@ const NavStyles = styled.nav`
 }
   ul{
     max-width: 800px;
-    margin: 10px auto;
+    margin: 9.5px auto;
     text-align: center;
     li {
       display: inline-block;
