@@ -8,6 +8,7 @@ import { CardMedia, Paper } from '@material-ui/core'
 import useStyles from './../Admins/Form/styles'
 import { Fade } from 'react-reveal';
 import { useTheme } from '@mui/material/styles';
+import LoadingAbout from './../loading/loadingAbout';
 const AboutSectionStyles = styled.div`
   .container {
     margin: 6rem 1.25rem;
@@ -95,7 +96,7 @@ const AboutSectionStyles = styled.div`
 `;
 
 export default function AboutSection() {
-  const About = useSelector(((state) => state.About))
+  const { abouts, isLoading } = useSelector(((state) => state.About))
   const dispatch = useDispatch();
   const classes = useStyles();
   const theme = useTheme();
@@ -104,40 +105,41 @@ export default function AboutSection() {
     // by putting the name in [ ] in every update the currentid is change 
   }, [dispatch]);
   return (
-    <AboutSectionStyles>
-      {About.map((A) => (
-        <div className="container" id="place-to-visit" key={A._id}>
-          <Fade left>
-            <div className="aboutSection__left">
-              <Paper elevation={3}
-                style={{
-                  padding: '1rem 0.3rem',
-                  margin: '0 auto',
-                  maxwidth: '50%',
-                  borderRadius: '12px',
-                  [theme.breakpoints.down('sm')]: {
-                    padding: '10rem',
-                  }
-                }}
-              >
-                <h2 className="about__heading">About <span>{A.Atitle}</span></h2>
-                <PText>
-                  {A.Amessage.split(' ').splice(0, 60).join(' ')}...
-                </PText>
-                <div className="aboutSection__buttons">
-                  <NavLink className="link" to="/about">Read More</NavLink>
-                </div>
-              </Paper>
-            </div>
-          </Fade>
-          <Fade right>
-            <div className="aboutSection__right">
-              <CardMedia className={classes.madia} image={A.AselectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} title={A.Atitle} />
-            </div>
-          </Fade>
-        </div>
+    isLoading ? <LoadingAbout /> :
+      <AboutSectionStyles>
+        {abouts.map((A) => (
+          <div className="container" id="place-to-visit" key={A._id}>
+            <Fade left>
+              <div className="aboutSection__left">
+                <Paper elevation={3}
+                  style={{
+                    padding: '1rem 0.3rem',
+                    margin: '0 auto',
+                    maxwidth: '50%',
+                    borderRadius: '12px',
+                    [theme.breakpoints.down('sm')]: {
+                      padding: '10rem',
+                    }
+                  }}
+                >
+                  <h2 className="about__heading">About <span>{A.Atitle}</span></h2>
+                  <PText>
+                    {A.Amessage.split(' ').splice(0, 60).join(' ')}...
+                  </PText>
+                  <div className="aboutSection__buttons">
+                    <NavLink className="link" to="/about">Read More</NavLink>
+                  </div>
+                </Paper>
+              </div>
+            </Fade>
+            <Fade right>
+              <div className="aboutSection__right">
+                <CardMedia className={classes.madia} image={A.AselectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} title={A.Atitle} />
+              </div>
+            </Fade>
+          </div>
 
-      ))}
-    </AboutSectionStyles>
+        ))}
+      </AboutSectionStyles>
   );
 }

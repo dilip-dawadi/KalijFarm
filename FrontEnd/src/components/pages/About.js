@@ -66,7 +66,7 @@ padding: 4rem 2rem 2rem 2rem;
 `;
 
 export default function About() {
-  const About = useSelector(((state) => state.About))
+  const { abouts } = useSelector(((state) => state.About))
   const classes = useStyles();
   const dispatch = useDispatch();
   useEffect(() => {
@@ -85,7 +85,7 @@ export default function About() {
     <>
       <Zoom >
         <AboutPageStyles >
-          {About.map((A) => (
+          {abouts.map((A) => (
             <div className="container" key={A._id}>
               <Paper elevation={3} style={{
                 padding: '1rem 0rem', margin: '2rem 0.5rem',
