@@ -12,7 +12,7 @@ const authReducer = (state = { authData: null }, action) => {
     case actionType.VERIFY:
       return { ...state, Verify: action.payload };
     case 'ERROR-AUTH-SIGNUP':
-      return { ...state, errorAuthSignUp: action.payload.errorAuth };
+      return { ...state, errorAuthSignUp: action.payload.errorAuthSignUp };
     case 'ERROR-AUTH-SIGNIN':
       return { ...state, errorAuthSignIn: action.payload.errorAuthSignIn };
     default:

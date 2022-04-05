@@ -76,15 +76,14 @@ const All = () => {
                 >
                   {kalij.title.split(" ").splice(0, 2).join(" ")}
                 </Typography>
-                <CardContent>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    {kalij.message.split(" ").splice(0, 4).join(" ")}...
-                  </Typography>
-                </CardContent>
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  component="p"
+                  className={classes.message}
+                >
+                  {kalij.message.split(" ").splice(0, 4).join(" ")}...
+                </Typography>
                 <CardActions className={classed.cardActionsI}>
                   {!user?.result?.name ? (
                     <>

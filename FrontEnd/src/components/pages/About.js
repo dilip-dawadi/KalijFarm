@@ -9,7 +9,7 @@ import { getAbouts } from '../../redux/actions/About';
 import { Zoom, Fade, Flip, Rotate, Bounce, Roll } from 'react-reveal';
 
 const AboutPageStyles = styled.div`
-padding: 4rem 2rem 2rem 2rem;
+padding: 6.5rem 2rem 0rem 2rem;
 .top-section {
   display: flex;
   text-align: justify;
@@ -49,7 +49,7 @@ padding: 4rem 2rem 2rem 2rem;
 }
 
 @media only screen and (max-width: 960px) {
-  padding: 2rem 0;
+  padding: 3.2rem 0;
   .top-section {
     flex-direction: column;
     gap: 3rem;

@@ -25,6 +25,7 @@ const SignUp = () => {
   const [Error, setError] = useState(null);
   const [ErrorSignIn, setErrorSignIn] = useState(null);
   const [success, setsuccess] = useState(null);
+  const [wait, setwait] = useState(false);
   const { errorAuthSignUp, errorAuthSignIn, authData } = useSelector((state) => state.Auth);
   useEffect(() => {
     setError(errorAuthSignUp);
@@ -32,7 +33,7 @@ const SignUp = () => {
     setTimeout(() => {
       setError(null);
       setErrorSignIn(null);
-    }, 10000);
+    }, 7000);
   }, [errorAuthSignUp, errorAuthSignIn]);
   useEffect(() => {
     setsuccess(authData?.message);
@@ -61,6 +62,10 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setwait(true);
+    setTimeout(() => {
+      setwait(false);
+    }, 4000);
     if (isSignup) {
       dispatch(signup(formData));
     } else {
@@ -92,7 +97,7 @@ const SignUp = () => {
               <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
               {isSignup && <Input name="confirmPassword" label="Repeat Password" type={showCPassword ? 'text' : 'password'} handleShowCPassword={handleShowCPassword} handleChange={handleChange} />}
             </Grid>
-            {(ErrorSignIn || Error || success) ? <Typography className={(success ? classes.success : classes.Error)} fullWidth>{(success || ErrorSignIn || Error)}</Typography> : <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
+            {(ErrorSignIn || Error || success) ? <Typography className={(success ? classes.success : classes.Error)} fullWidth>{(ErrorSignIn || Error || success)}</Typography> : <Button type="submit" fullWidth variant="contained" disabled={wait} color="primary" className={classes.submit}>
               {isSignup ? 'Sign Up' : 'Sign In'}
             </Button>}
 

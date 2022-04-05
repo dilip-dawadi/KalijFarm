@@ -14,23 +14,21 @@ const NavStyles = styled.nav`
   left: 0;
   right: 0;
   width: 97.5%;
-  background-color: #f5f5f5;
+  background-color: #fcfcfc;
   margin: 0px auto;
-  border-radius: 10px 10px 10px 10px;
-  opacity: 0.98;
+  border-radius: 0px 0px 10px 10px;
+  opacity: 0.99;
 }
   ul{
     max-width: 800px;
-    margin: 6px auto;
-    width: 90%;
+    margin: 12px auto;
     text-align: center;
     li {
       display: inline-block;
-      margin: 0px;
-      border-radius: 16px;
-      transition: 0.3s ease background-color;
+      border-radius: 12px;
+      transition: 0.6s ease background-color;
       &:hover {
-        background-color: white;
+        background-color: #ebebeb;
 
       }
     }
@@ -38,17 +36,17 @@ const NavStyles = styled.nav`
       display: inline-block;
       font-family: 'RobotoMono Regular';
       padding: 0.8rem 3rem;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       text-decoration: none;
-      color: lightgrey;
-      border-radius: 16px;
+      color: black;
+      border-radius: 12px;
       outline: none;
     }
     .active {
-      background-color: white;
+      transition: 2s ease font-weight;
+      background-color: #ebebeb;
       color: black;
       opacity: 1;
-      font-weight: 900;
     }
   }
   .Signin{
@@ -223,7 +221,7 @@ export default function NavMenu({ cartItems }) {
           </div>
           <li>
             <Link
-              style={{ color: 'grey' }}
+              style={{ color: 'black', fontWeight: 'bold' }}
               to="/kalijs?adminPage=1"
               onClick={() => setShowNav(!showNav)}
               role="button"

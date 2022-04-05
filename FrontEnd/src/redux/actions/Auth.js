@@ -7,14 +7,12 @@ export const signin = (formData, navigate) => async (dispatch) => {
     try {
         const { data } = await api.signIn(formData);
         // once we get data fro api or backend we will dispatching
-        dispatch({ type: AUTH, data })
-
-        navigate('/')
+        dispatch({ type: AUTH, data });
+        navigate('/');
     } catch (error) {
         if (error.response.status >= 400 && error.response.status <= 500) {
-            dispatch({ type: 'START' })
             dispatch({ type: 'ERROR-AUTH-SIGNIN', payload: { errorAuthSignIn: error.response.data.message } })
-            dispatch({ type: 'END' })
+            console.log(error.response.data.message, 'message');
         } else {
             console.log(error.message);
         }

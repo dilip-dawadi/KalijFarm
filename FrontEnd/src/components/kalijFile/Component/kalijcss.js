@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
-  container:{
+  container: {
     padding: '1rem 0rem',
   },
   // pagenotfound
@@ -18,22 +18,16 @@ export default makeStyles((theme) => ({
     fontWeight: '800',
     textAlign: 'center',
   },
- spanFood: {
-  backgroundColor: 'coral',
-  padding: '0.2rem 1rem',
-  color: 'white',
-  borderRadius: '8px'
+  spanFood: {
+    backgroundColor: 'coral',
+    padding: '0.2rem 1rem',
+    color: 'white',
+    borderRadius: '8px'
   },
   media: {
-    width:'100%', 
-    height:'200px',
-      ObjectFit: 'cover',
-    [theme.breakpoints.down('sm')]: {
-        height: '150px',
-    },
-    [theme.breakpoints.down('xs')]: {
-      height: '200px',
-  },
+    width: '100%',
+    height: '220px',
+    ObjectFit: 'cover',
   },
 
   border: {
@@ -72,6 +66,9 @@ export default makeStyles((theme) => ({
   },
   title: {
     padding: '0px 16px',
+  },
+  message: {
+    padding: '4px 20px',
   },
   cartTitle: {
     margin: '0x 20px',
