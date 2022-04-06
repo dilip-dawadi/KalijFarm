@@ -39,81 +39,105 @@ const All = () => {
     />
   ) : (
     <>
-      <Grid
-        className={classes.container}
-        container
-        alignItems="stretch"
-        spacing={3}
-      >
-        {Kal?.map((kalij) => (
-          <Grid key={kalij?._id} item xs={12} sm={6} md={6} lg={4} >
-            <Fade left>
-              <Card className={classed.cards} raised elevation={6}>
-                <ButtonBase
-                  component="span"
-                  name="test"
-                  className={classes.cardAction}
-                  onClick={() => {
-                    user?.result?.name && navigate(`/kalijs/${kalij._id}`);
-                  }}
-                >
-                  <CardMedia className={classes.media} style={{ backgroundImage: `url(${kalij.selectedFile})` || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png' }} title={kalij.title} />
-                </ButtonBase>
-                <div className={classes.details}>
+      {Kal?.length ?
+        <Grid
+          className={classes.container}
+          container
+          alignItems="stretch"
+          spacing={3}
+        >
+          {Kal?.map((kalij) => (
+            <Grid key={kalij?._id} item xs={12} sm={6} md={6} lg={4} >
+              <Fade left>
+                <Card className={classed.cards} raised elevation={6}>
+                  <ButtonBase
+                    component="span"
+                    name="test"
+                    className={classes.cardAction}
+                    onClick={() => {
+                      user?.result?.name && navigate(`/kalijs/${kalij._id}`);
+                    }}
+                  >
+                    <CardMedia className={classes.media} style={{ backgroundImage: `url(${kalij.selectedFile})` || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png' }} title={kalij.title} />
+                  </ButtonBase>
+                  <div className={classes.details}>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="h2"
+                    >
+                      {kalij?.tags?.map((tag) => `#${tag} `)}
+                    </Typography>
+                  </div>
+                  <Typography
+                    className={classes.title}
+                    gutterBottom
+                    variant="h5"
+                    component="h2"
+                  >
+                    {kalij.title.split(" ").splice(0, 2).join(" ")}
+                  </Typography>
                   <Typography
                     variant="body2"
                     color="textSecondary"
-                    component="h2"
+                    component="p"
+                    className={classes.message}
                   >
-                    {kalij?.tags?.map((tag) => `#${tag} `)}
+                    {kalij.message.split(" ").splice(0, 4).join(" ")}...
                   </Typography>
-                </div>
-                <Typography
-                  className={classes.title}
-                  gutterBottom
-                  variant="h5"
-                  component="h2"
-                >
-                  {kalij.title.split(" ").splice(0, 2).join(" ")}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="textSecondary"
-                  component="p"
-                  className={classes.message}
-                >
-                  {kalij.message.split(" ").splice(0, 4).join(" ")}...
-                </Typography>
-                <CardActions className={classed.cardActionsI}>
-                  {!user?.result?.name ? (
-                    <>
+                  <CardActions className={classed.cardActionsI}>
+                    {!user?.result?.name ? (
+                      <>
+                        <Button
+                          size="small"
+                          className={classed.btn}
+                          onClick={handleOpenM}
+                          type="button"
+                        >
+                          Learn More
+                        </Button>
+                        <Model openM={openM} setOpenM={setOpenM} />
+                      </>
+                    ) : (
                       <Button
                         size="small"
                         className={classed.btn}
-                        onClick={handleOpenM}
-                        type="button"
+                        onClick={() => {
+                          navigate(`/kalijs/${kalij._id}`);
+                        }}
                       >
                         Learn More
                       </Button>
-                      <Model openM={openM} setOpenM={setOpenM} />
-                    </>
-                  ) : (
-                    <Button
-                      size="small"
-                      className={classed.btn}
-                      onClick={() => {
-                        navigate(`/kalijs/${kalij._id}`);
-                      }}
-                    >
-                      Learn More
-                    </Button>
-                  )}
-                </CardActions>
-              </Card>
-            </Fade>
-          </Grid>
-        ))}
-      </Grid>
+                    )}
+                  </CardActions>
+                </Card>
+              </Fade>
+            </Grid>
+          ))}
+        </Grid> :
+        <Grid item lg={12} >
+          <Fade left>
+            <Card className={classed.cardsearch} raised elevation={4}>
+              <CardContent>
+                <Typography
+                  gutterBottom
+                  variant="h5"
+                  component="h2"
+                  style={{ textAlign: "center", color: 'gray', fontWeight: 'bold', margin: '10px auto' }}
+                >
+                  No Post Found 🧐
+                </Typography>
+                <Button
+                  size="large"
+                  style={{ width: '100%', margin: '10px 0px', padding: "10px", backgroundColor: '#f50057', color: 'white', borderRadius: '10px' }}
+                  onClick={() => {
+                    navigate("/kalijs/all?page=1");
+                  }}
+                >Search All</Button>
+              </CardContent>
+            </Card>
+          </Fade>
+        </Grid>}
     </>
   );
 };

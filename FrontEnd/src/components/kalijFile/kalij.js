@@ -77,7 +77,7 @@ const Kalij = ({ handleAddProduct }) => {
         </Grid>
         <br />
         <br />
-        <center><Button variant="contained" style={{ backgroundColor: 'coral' }}><Link
+        <center><Button variant="contained" style={{ backgroundColor: '#ED9F64', padding: '10px 20px' }}><Link
           to='/kalijs/all?page=1'
           className={classes.link}>
           View More

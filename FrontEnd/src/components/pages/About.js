@@ -9,7 +9,7 @@ import { getAbouts } from '../../redux/actions/About';
 import { Zoom, Fade, Flip, Rotate, Bounce, Roll } from 'react-reveal';
 
 const AboutPageStyles = styled.div`
-padding: 6.5rem 2rem 0rem 2rem;
+padding: 5.5rem 1rem 0rem 1rem;
 .top-section {
   display: flex;
   text-align: justify;
@@ -88,7 +88,7 @@ export default function About() {
           {abouts.map((A) => (
             <div className="container" key={A._id}>
               <Paper elevation={3} style={{
-                padding: '1rem 0rem', margin: '2rem 0.5rem',
+                padding: '1rem 0rem', margin: '2rem 1rem',
               }} >
                 <div className="top-section">
                   <Fade left>

@@ -62,13 +62,11 @@ const Image = () => {
       <Grow in>
         <Container maxWidth="xl">
           <Grid container justifyContent="space-between" alignItems="stretch" spacing={3} className={classes.gridContainer}>
-            {Kal?.length ?
-              <Grid item xs={12} sm={9} md={8}>
-                <All />
-              </Grid> : <Grid item xs={12} sm={9} md={8}>
-                <Typography variant="h5" align="center" className={classes.galleryH} >No Post Found 🧐</Typography>
-              </Grid>
-            }
+
+            <Grid item xs={12} sm={9} md={8}>
+              <All />
+            </Grid>
+
             <Grid item xs={12} sm={3} md={4}>
               <div className={classes.mainSearch} >
                 <AppBar className={classes.appBarSearch} position="static" color="inherit">

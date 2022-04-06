@@ -204,8 +204,9 @@ function Slider() {
               fontSize: '0.7rem',
               fontWeight: 'bold',
               color: '#fff',
-              backgroundColor: 'coral',
               textTransform: 'uppercase',
+              backgroundColor: '#ED9F64',
+              padding: '10px 20px',
               [theme.breakpoints.down('md')]: {
                 fontSize: '0.6rem',
               },
