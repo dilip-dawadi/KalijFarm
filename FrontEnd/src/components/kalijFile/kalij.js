@@ -37,7 +37,7 @@ const Kalij = ({ handleAddProduct }) => {
           {Kalijs.slice(0, 4).map((kalij) => (
             <Grid key={kalij._id} checked={checked} item xs={12} sm={6} md={4} lg={3}>
               <Fade top>
-                <Card className={classed.cards} raised elevation={6}>
+                <Card className={classed.cards} raised elevation={3}>
                   <ButtonBase component="span"
                     name="test"
                     className={classes.cardAction} onClick={() => { (user?.result?.name) && navigate(`/kalijs/${kalij._id}`) }} >
@@ -77,7 +77,7 @@ const Kalij = ({ handleAddProduct }) => {
         </Grid>
         <br />
         <br />
-        <center><Button variant="contained" style={{ backgroundColor: '#ED9F64', padding: '10px 20px' }}><Link
+        <center><Button variant="contained" style={{ backgroundColor: 'coral', padding: '10px 20px', letterSpacing: '2px', fontWeight: '600', borderRadius: '7px', color: 'white' }}><Link
           to='/kalijs/all?page=1'
           className={classes.link}>
           View More

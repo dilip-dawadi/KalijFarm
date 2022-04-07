@@ -7,60 +7,56 @@ import {
   FooterLink,
   Heading,
 } from "./FooterStyles";
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 const Footer = () => {
   const navigation = useNavigate();
   return (
     <Box>
-      <h1 style={{ color: "white", 
-                   textAlign: "center", 
-                   padding:'20px 10px',
-                   margin:'10px 0px', }}>
+      <h1 style={{
+        color: "white",
+        textAlign: "center",
+        padding: '20px 10px',
+        margin: '10px 0px',
+        letterSpacing: '3px',
+
+      }}>
         Rk: Rhino Sport And Kalij Farm
       </h1>
-      <Container style={{marginTop:"20px"}} >
+      <Container style={{ marginTop: "20px" }} >
         <Row>
           <Column>
-            <Heading>About Us</Heading>
+            <Heading style={{ cursor: 'pointer', letterSpacing: '2px' }} >About Us</Heading>
             <FooterLink href="#">Aim</FooterLink>
             <FooterLink href="#">Vision</FooterLink>
             <FooterLink href="#">Testimonials</FooterLink>
           </Column>
           <Column>
-            <Heading>Contact Us</Heading>
+            <Heading style={{ cursor: 'pointer', letterSpacing: '2px' }}>Contact Us</Heading>
             <FooterLink href="#">Chitwan</FooterLink>
             <FooterLink href="#">Tadi</FooterLink>
             <FooterLink href="#">Nawalparasi</FooterLink>
           </Column>
           <Column>
-            <Heading>Social Media</Heading>
-            <FooterLink href="#">
-              <i className="fab fa-facebook-f">
-                <span style={{ marginLeft: "10px" }}>
-                  Facebook
-                </span>
-              </i>
+            <Heading style={{ cursor: 'pointer', letterSpacing: '2px' }}>Social Media</Heading>
+            <FooterLink href="https://m.facebook.com/RhinoSpotResort/?tsid=0.20294373473678684&source=result">
+              <span>
+                Facebook
+              </span>
             </FooterLink>
             <FooterLink href="#">
-              <i className="fab fa-instagram">
-                <span style={{ marginLeft: "10px" }}>
-                  Instagram
-                </span>
-              </i>
+              <span>
+                Instagram
+              </span>
             </FooterLink>
             <FooterLink href="#">
-              <i className="fab fa-twitter">
-                <span style={{ marginLeft: "10px" }}>
-                  Twitter
-                </span>
-              </i>
+              <span>
+                Twitter
+              </span>
             </FooterLink>
             <FooterLink href="#">
-              <i className="fab fa-youtube">
-                <span style={{ marginLeft: "10px" }}>
-                  Youtube
-                </span>
-              </i>
+              <span>
+                Youtube
+              </span>
             </FooterLink>
           </Column>
         </Row>

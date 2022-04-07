@@ -14,7 +14,7 @@ const Loading = () => {
     <Grid className={classes.container} container alignItems="stretch" spacing={2}>
       {Array.from(Array(Math.ceil(6)).keys()).map((kalij) => (
         <Grid key={kalij._id} item xs={12} sm={12} md={6} lg={4}>
-          <Card className={classed.cards} raised elevation={6}>
+          <Card className={classed.cards} raised elevation={4}>
             {isLoading ? <LoadingPlaceHolder extraStyles={{
               height: 0,
               paddingTop: '68%', objectFit: 'cover',

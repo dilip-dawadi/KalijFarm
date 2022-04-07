@@ -5,21 +5,22 @@ import MuiAlert from '@material-ui/lab/Alert';
 import { makeStyles } from '@material-ui/core/styles';
 
 function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
+  return <MuiAlert elevation={4} variant="filled" {...props} />;
 }
 
 const useStyles = makeStyles((theme) => ({
   btn: {
     backgroundColor: '#ED9F64',
-    border : '0px solid white',
+    border: '0px solid white',
     borderRadius: '12px',
     color: 'white',
     fontWeight: 'bold',
-  '&:hover': {
-    background: "#FE540B",
-    color: 'white',
- },
-},
+    letterSpacing: '1px',
+    '&:hover': {
+      background: "#FE540B",
+      color: 'white',
+    },
+  },
 }));
 
 export default function CustomizedSnackbars() {
@@ -40,12 +41,12 @@ export default function CustomizedSnackbars() {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClick}className={classes.btn}>
-          Add Cart
+      <Button variant="outlined" onClick={handleClick} className={classes.btn}>
+        Add Cart
       </Button>
       <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
         <Alert severity="success" onClose={handleClose}>
-            Product Added
+          Product Added
         </Alert>
       </Snackbar>
     </div>

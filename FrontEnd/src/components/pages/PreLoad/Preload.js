@@ -2,6 +2,7 @@ import React from "react";
 import { Zoom, Fade, Flip, Rotate, Bounce, Roll } from "react-reveal";
 import { CircularProgress, Paper, Avatar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { useTheme } from '@mui/material/styles';
 // import Image from '../Images/10.jpg'
 const useStyles = makeStyles((theme) => ({
   large: {
@@ -11,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 export default function CircularUnderLoad() {
   const classes = useStyles();
+  const theme = useTheme();
 
   return (
     <>
@@ -44,9 +46,12 @@ export default function CircularUnderLoad() {
               style={{
                 backgroundColor: "coral",
                 color: "white",
-                padding: "10px 30px",
+                padding: "12px 30px",
                 margin: "15px 20px",
                 borderRadius: "10px",
+                letterSpacing: "2px",
+                fontWeight: "600",
+                textAlign: "center",
               }}
             >
               Rhino Spot Resort & Kalij Farm

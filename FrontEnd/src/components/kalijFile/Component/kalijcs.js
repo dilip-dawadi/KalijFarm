@@ -14,11 +14,13 @@ export default makeStyles((theme) => ({
   },
   // gallery
   Food: {
+    letterSpacing: '2px',
     color: 'gray',
     fontWeight: '800',
     textAlign: 'center',
   },
   spanFood: {
+    letterSpacing: '2px',
     backgroundColor: 'coral',
     padding: '0.2rem 1rem',
     color: 'white',

@@ -18,7 +18,7 @@ const Loading = () => {
         {Array.from(Array(Math.ceil(4)).keys()).map((kalij) => (
           <Grid key={kalij._id} item xs={12} sm={6} md={4} lg={3}>
             <Fade left>
-              <Card className={classed.cards} raised elevation={6}>
+              <Card className={classed.cards} raised elevation={4}>
                 {isLoading ? <LoadingPlaceHolder extraStyles={{
                   height: 0,
                   paddingTop: '70%', objectFit: 'cover',
@@ -60,7 +60,7 @@ const Loading = () => {
       </Grid>
       <br />
       <br />
-      <center><Button variant="contained" style={{ backgroundColor: '#ED9F64', padding: '10px 20px' }}>
+      <center><Button variant="contained" style={{ backgroundColor: 'coral', padding: '10px 20px', letterSpacing: '2px', fontWeight: '600', borderRadius: '7px', color: 'white' }}>
         View More
       </Button></center>
     </div>

@@ -14,6 +14,7 @@ export default makeStyles((theme) => ({
     paddingTop: '120px',
   },
   galleryH: {
+    letterSpacing: '2px',
     color: 'Gray',
     fontWeight: '700',
     [theme.breakpoints.down('xs')]: {

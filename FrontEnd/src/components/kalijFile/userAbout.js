@@ -18,6 +18,8 @@ const AboutSectionStyles = styled.div`
     gap: 1rem;
   }
   .about__heading {
+    letter-spacing: 2px;
+    text-transform: uppercase;
     font-size: 1.4rem;
     color: gray;
     font-weight: 900;
@@ -30,7 +32,6 @@ const AboutSectionStyles = styled.div`
     border-radius: 8px;
   }
   .aboutSection__left {
-    padding: 0px 0px 0px 20px;
     flex: 1;
     margin: auto;
   }
@@ -42,6 +43,7 @@ const AboutSectionStyles = styled.div`
     text-align: justify;
   }
   .aboutSection__buttons{
+    letter-spacing: 2px;
     margin: 20px 0px;
   }
     .link {  

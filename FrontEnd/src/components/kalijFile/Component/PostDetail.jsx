@@ -69,7 +69,7 @@ const KalijDetail = ({ handleAddProduct }) => {
       return (
         <div style={{ padding: "80px 10px 0px 10px " }}>
           <Paper
-            elevation={6}
+            elevation={3}
             style={{
               display: "flex",
               justifyContent: "center",
@@ -87,7 +87,7 @@ const KalijDetail = ({ handleAddProduct }) => {
     const recommented = Kal?.filter(({ _id }) => _id !== kalij._id);
     return (
       <div style={{ borderRadius: "15px", padding: "80px 15px 20px 15px" }}>
-        <Paper elevation={6} style={{ borderRadius: "12px" }}>
+        <Paper elevation={3} style={{ borderRadius: "12px" }}>
           <div className={classes.card}>
             <div className={classes.section}>
               <div className={classes.section1}>
@@ -167,7 +167,7 @@ const KalijDetail = ({ handleAddProduct }) => {
                   {recommented.map(
                     ({ title, tags, message, selectedFile, _id }) => (
                       <Paper
-                        elevation={6}
+                        elevation={3}
                         style={{
                           padding: "10px",
                           margin: "10px auto",

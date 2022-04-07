@@ -39,7 +39,7 @@ const Cart = ({ cartItems, handleAddProduct, handleRemove, handleClearAll }) => 
         <Grid container alignItems="stretch" spacing={3}>
           {cartItems.map((item) => (
             <Grid key={item._id} item xs={12} sm={6} md={4} lg={3}>
-              <Card className={classed.card} raised elevation={6}>
+              <Card className={classed.card} raised elevation={4}>
                 <CardMedia className={classed.madia} style={{ backgroundImage: `url(${item.selectedFile})` || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png' }} title={item.title} />
 
                 <Typography

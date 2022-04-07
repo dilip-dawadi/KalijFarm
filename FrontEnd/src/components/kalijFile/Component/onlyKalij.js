@@ -6,6 +6,7 @@ export default makeStyles((theme) => ({
     padding: '6.2px 12px',
     backgroundColor: '#ED9F64',
     borderRadius: '12px',
+    letterSpacing: '1px',
     fontSize: '14px',
     color: 'white',
     fontWeight: 'bold',

@@ -79,13 +79,15 @@ const Image = () => {
                     label="Search Tags"
                     variant="outlined"
                   />
-                  <Button onClick={searchPost} className={classes.searchButton} variant="contained" color="primary">Search</Button>
+                  <Button onClick={searchPost} style={{
+                    letterSpacing: '2.5px',
+                  }} variant="contained" color="primary">Search</Button>
                   {(searchKals || tags.length > 0) ? <Button onClick={allPost} style={{
-                    marginTop: '3px',
+                    marginTop: '3px', letterSpacing: '3px',
                   }} variant="contained" color="secondary">See All</Button> : null}
                 </AppBar>
                 {(!searchKals && !tags.length) && (
-                  <Paper className={classes.pagination} elevation={6}>
+                  <Paper className={classes.pagination} elevation={4}>
                     <Pagination page={page} />
                   </Paper>
                 )}

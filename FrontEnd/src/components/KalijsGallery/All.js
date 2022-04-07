@@ -49,7 +49,7 @@ const All = () => {
           {Kal?.map((kalij) => (
             <Grid key={kalij?._id} item xs={12} sm={6} md={6} lg={4} >
               <Fade left>
-                <Card className={classed.cards} raised elevation={6}>
+                <Card className={classed.cards} raised elevation={4}>
                   <ButtonBase
                     component="span"
                     name="test"
@@ -123,13 +123,13 @@ const All = () => {
                   gutterBottom
                   variant="h5"
                   component="h2"
-                  style={{ textAlign: "center", color: 'gray', fontWeight: 'bold', margin: '10px auto' }}
+                  style={{ textAlign: "center", letterSpacing: '2px', color: 'gray', margin: '10px auto' }}
                 >
                   No Post Found 🧐
                 </Typography>
                 <Button
                   size="large"
-                  style={{ width: '100%', margin: '10px 0px', padding: "10px", backgroundColor: '#f50057', color: 'white', borderRadius: '10px' }}
+                  style={{ width: '100%', margin: '10px 0px', padding: "10px", backgroundColor: '#f50057', color: 'white', borderRadius: '5px', letterSpacing: '4px' }}
                   onClick={() => {
                     navigate("/kalijs/all?page=1");
                   }}

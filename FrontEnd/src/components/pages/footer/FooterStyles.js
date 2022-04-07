@@ -44,7 +44,7 @@ export const FooterLink = styled.a`
   margin-bottom: 20px;
   font-size: 18px;
   text-decoration: none;
-   
+  font-weight: 300;
   &:hover {
       color: white;
       transition: 200ms ease-in;
@@ -52,10 +52,10 @@ export const FooterLink = styled.a`
 `;
 
 export const Heading = styled.p`
-  font-size: 24px;
+  font-size: 26px;
   color: lightgrey;
   margin-bottom: 40px;
-  font-weight: bold;  
+  font-weight: 300;  
   &:hover {
     color: white;
     transition: 200ms ease-in;

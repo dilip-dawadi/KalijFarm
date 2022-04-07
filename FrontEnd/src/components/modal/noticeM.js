@@ -6,17 +6,18 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   btn: {
     padding: '5px 10px',
-    lineHeight : '1.7',
+    lineHeight: '1.7',
     borderRadius: '12px',
     border: '0px solid white',
     backgroundColor: '#ED9F64',
     color: 'white',
     fontWeight: 'bold',
-  '&:hover': {
-    background: "#FE540B",
-    color: 'white',
- },
-},
+    letterSpacing: '1px',
+    '&:hover': {
+      background: "#FE540B",
+      color: 'white',
+    },
+  },
 }));
 export default function TransitionsModal() {
   const classes = useStyles();
@@ -29,7 +30,7 @@ export default function TransitionsModal() {
       <button type="button" className={classes.btn} onClick={handleOpenM}>
         Add Cart
       </button>
-       <Model openM={openM} setOpenM={setOpenM} />
+      <Model openM={openM} setOpenM={setOpenM} />
     </>
   );
 }

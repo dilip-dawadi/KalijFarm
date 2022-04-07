@@ -131,7 +131,7 @@ function Slider() {
         }} >
           <Paper
             square
-            elevation={6}
+            elevation={3}
             sx={{
               overflow: "hidden",
               borderRadius: '12px',
@@ -161,11 +161,13 @@ function Slider() {
               <Typography variant="body1" component="p" style={{
                 fontSize: '1.2rem',
                 padding: '0.2rem 1rem',
-                fontWeight: 'bold',
+                borderRadius: '12px',
+                fontWeight: '600',
                 color: 'coral',
                 textTransform: 'uppercase',
                 textAlign: 'center',
-                marginBottom: '0.5rem',
+                margin: '0.5rem',
+                letterSpacing: '1px',
                 [theme.breakpoints.down('md')]: {
                   marginTop: '0.5rem',
                   fontSize: '1rem',
@@ -188,6 +190,7 @@ function Slider() {
                   style={{
                     fontSize: '0.9rem',
                     color: '#454545',
+                    fontStyle: 'italic',
                     textTransform: 'capitalize',
                     textAlign: 'justify',
                     marginBottom: '1rem',
@@ -200,25 +203,27 @@ function Slider() {
                   }}
 
                 >{Kalijs[activeStep]?.message.split(' ').splice(0, 25).join(' ')}</Typography>}
-            <Button variant="contained" style={{
-              fontSize: '0.7rem',
-              fontWeight: 'bold',
-              color: '#fff',
-              textTransform: 'uppercase',
-              backgroundColor: '#ED9F64',
-              padding: '10px 20px',
-              [theme.breakpoints.down('md')]: {
-                fontSize: '0.6rem',
-              },
-              [theme.breakpoints.down('sm')]: {
-                fontSize: '0.7rem',
-              },
-            }}
-              disabled={!user?.result?.name}
-              onClick={() => { (user?.result?.name) && navigate(`/kalijs/${Kalijs[activeStep]?._id}`) }}
-            >
-              Learn More
-            </Button>
+            {user?.result?.name ?
+              <Button variant="contained" style={{
+                fontSize: '0.75rem',
+                fontWeight: 'bold',
+                letterSpacing: '2px',
+                color: '#fff',
+                textTransform: 'uppercase',
+                backgroundColor: 'coral',
+                padding: '10px 20px',
+                borderRadius: '12px',
+                [theme.breakpoints.down('md')]: {
+                  fontSize: '0.6rem',
+                },
+                [theme.breakpoints.down('sm')]: {
+                  fontSize: '0.7rem',
+                },
+              }}
+                onClick={() => { (user?.result?.name) && navigate(`/kalijs/${Kalijs[activeStep]?._id}`) }}
+              >
+                Learn More
+              </Button> : null}
           </Paper>
         </Grid>
       </Grid>

@@ -78,11 +78,11 @@ const SignUp = () => {
   return (
     <Zoom>
       <Container component="main" maxWidth="xs" className={isSignup ? classes.container : classes.container1} >
-        <Paper className={isSignup ? classes.paper : classes.paper1} elevation={6}>
+        <Paper className={isSignup ? classes.paper : classes.paper1} elevation={3}>
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5">{isSignup ? 'Sign up' : 'Sign in'}</Typography>
+          <Typography component="h1" variant="h5" style={{ letterSpacing: '2px', fontWeight: "300", textTransform: 'uppercase' }}>{isSignup ? 'Sign up' : 'Sign in'}</Typography>
           <GoogleAuth />
           <form className={classes.formData} onSubmit={handleSubmit}>
             <Grid container spacing={2}>

@@ -87,29 +87,29 @@ const Contact = () => {
     <Zoom>
       <AboutPageStyles>
         <div className="contact" >
-          <Paper elevation={6} style={{
+          <Paper elevation={4} style={{
             maxWidth: '350px',
             padding: '25px',
             borderRadius: '1%',
             margin: '20px auto',
           }} >
-            <h3 style={{ color: "black", textAlign: 'center' }}>CONTACT US</h3>
+            <h3 style={{ color: "black", textAlign: 'center', letterSpacing: '3px', color: 'gray' }}>CONTACT <span style={{ color: 'white', backgroundColor: 'coral', padding: '5px 10px', borderRadius: '10px' }} >US</span></h3>
             <form autoComplete="off" ref={form} className="form" onSubmit={handleSubmit} >
-              <label style={{ margin: '30px 20px 0px 20px' }}>Email</label>
+              <label style={{ margin: '20px 0px 1px 10px' }}>Email</label>
               <input
                 placeholder="Email"
                 name="email"
                 value={cont.email}
                 onChange={(e) => setCont({ ...cont, email: e.target.value })}
               />
-              <label style={{ margin: '0px 20px' }}>Subject</label>
+              <label style={{ margin: '0px 10px' }}>Subject</label>
               <input
                 placeholder="Subject"
                 name="subject"
                 value={cont.subject}
                 onChange={(e) => setCont({ ...cont, subject: e.target.value })}
               />
-              <label style={{ margin: '0px 20px' }}>Message</label>
+              <label style={{ margin: '0px 10px' }}>Message</label>
               <textarea
                 placeholder="Message"
                 name="message"

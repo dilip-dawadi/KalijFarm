@@ -26,10 +26,11 @@ padding: 5.5rem 1rem 0rem 1rem;
 }
 
 .about__heading {
-  font-weight: 800;
+  font-weight: bold;
   font-size: 1.3rem;
   margin: 30px 10px 30px 50px;
   color: gray;
+  letter-spacing: 2.5px;
 }
 .about__heading span{
   background-color: coral;
