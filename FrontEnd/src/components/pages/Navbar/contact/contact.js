@@ -4,7 +4,7 @@ import styled from "styled-components";
 import emailjs from "emailjs-com";
 import { Zoom, Fade, Flip, Rotate, Bounce, Roll } from 'react-reveal';
 const AboutPageStyles = styled.div`
-  padding: 105px 10px 0px 10px;
+  padding: 90px 10px 0px 10px;
   .form {
     display: grid;
   } 
@@ -35,7 +35,8 @@ const AboutPageStyles = styled.div`
   }
 
   .form > button {
-    padding: 18px;
+    padding: 16px;
+    letter-spacing: 2px;
     border: none;
     font-weight: 500;
     font-size: 20px;
