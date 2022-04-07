@@ -25,7 +25,7 @@ const AboutPageStyles = styled.div`
   }
 
   .form > textarea {
-    min-height: 50px;
+    min-height: 80px;
   }
 
   .form > label {
@@ -61,9 +61,14 @@ const Contact = () => {
   const form = useRef();
   const initial = { email: "", subject: "", message: "" };
   const [cont, setCont] = useState(initial);
+  const [error, setError] = useState(false);
   const [btnDisable, setbtnDisable] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
+    setTimeout(() => {
+      setError(false);
+    }, 3000);
+    if (cont.email === "" || cont.subject === "" || cont.message === "") return setError('Please fill all the fields');
     emailjs
       .send(
         "service_fm83fp4",
@@ -114,6 +119,7 @@ const Contact = () => {
                 value={cont.message}
                 onChange={(e) => setCont({ ...cont, message: e.target.value })}
               ></textarea>
+              {error && <label style={{ margin: '10px', color: 'red', textAlign: 'center' }}>{error}</label>}
               {!btnDisable ? <button type="submit" style={{ background: "coral" }}>
                 Submit
               </button> : <button disabled style={{ background: "#28a745" }}>
