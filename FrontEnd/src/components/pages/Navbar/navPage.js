@@ -45,9 +45,8 @@ const NavStyles = styled.nav`
       outline: none;
     }
     .active {
-      transition: 1s ease font-weight;
+      transition: 1s ease;
       background-color: #ebebeb;
-      font-weight: 600;
       color: black;
       opacity: 1;
     }

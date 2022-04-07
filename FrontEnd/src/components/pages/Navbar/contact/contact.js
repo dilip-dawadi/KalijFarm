@@ -17,7 +17,6 @@ const AboutPageStyles = styled.div`
     margin-bottom: 20px;
     border: 1px solid #f5f5f5;
     font-size: 16px;
-    max-width: 400px;
   }
 
   .form > input:focus,
@@ -26,7 +25,6 @@ const AboutPageStyles = styled.div`
   }
 
   .form > textarea {
-    max-width: 400px;
     min-height: 50px;
   }
 

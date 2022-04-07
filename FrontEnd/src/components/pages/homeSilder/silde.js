@@ -190,8 +190,7 @@ function Slider() {
                   style={{
                     fontSize: '0.9rem',
                     color: '#454545',
-                    fontStyle: 'italic',
-                    textTransform: 'capitalize',
+                    // textTransform: 'capitalize',
                     textAlign: 'justify',
                     marginBottom: '1rem',
                     [theme.breakpoints.down('md')]: {

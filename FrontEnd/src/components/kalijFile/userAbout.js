@@ -115,7 +115,7 @@ export default function AboutSection() {
               <div className="aboutSection__left">
                 <Paper elevation={3}
                   style={{
-                    padding: '1rem 0.3rem',
+                    padding: '2rem 0.3rem',
                     margin: '0 auto',
                     maxwidth: '50%',
                     borderRadius: '12px',
