@@ -71,7 +71,7 @@ const App = () => {
               <Routes>
                 <Route path="/contact" exact element={<Contact />} />
                 <Route path="/kalijs" exact element={<Home handleAddProduct={handleAddProduct} />} />
-                <Route path="/" exact element={<Navigate to="/kalijs?adminPage=1" />} />
+                <Route path="/" exact element={<Navigate to="/kalijs?userPage=1" />} />
                 <Route path="/cart" exact element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemove={handleRemove} handleClearAll={handleClearAll} />} />
                 <Route path="/kalijs/:id" exact element={<PostDetail handleAddProduct={handleAddProduct} />} />
                 <Route path="/about" exact element={<About />} />

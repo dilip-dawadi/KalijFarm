@@ -24,10 +24,10 @@ export const getKalBySearch = (searchKals) => async (dispatch) => {
         console.log(error);
     }
 }
-export const getKalijs = (adminPage) => async (dispatch) => {
+export const getKalijs = (userPage) => async (dispatch) => {
     try {
         dispatch({ type: 'START' })
-        const { data: { adminData: Kalijs, adminCurrentPage, adminNumberOfPages } } = await api.fetchKalijs(adminPage || 1);
+        const { data: { adminData: Kalijs, adminCurrentPage, adminNumberOfPages } } = await api.fetchKalijs(userPage || 1);
         dispatch({ type: 'FETCH_ALL', payload: { data: Kalijs, adminCurrentPage, adminNumberOfPages } })
         dispatch({ type: 'END' })
     } catch (error) {

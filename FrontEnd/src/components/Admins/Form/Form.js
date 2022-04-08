@@ -31,14 +31,14 @@ const Form = ({ currentId, setCurrentId }) => {
     setTimeout(() => {
       setcreateMessage(null);
       setupdateMessage(null);
-    }, 4000);
+    }, 3000);
   }, [createMsg, updateMsg]);
 
   useEffect(() => {
     setError(errorKalij);
     setTimeout(() => {
       setError(null);
-    }, 4000);
+    }, 3000);
   }, [errorKalij]);
   const user = JSON.parse(localStorage.getItem('profile'))
 
@@ -127,7 +127,7 @@ const Form = ({ currentId, setCurrentId }) => {
             {/* error or createMessage or updateMessage display*/}
             {(Error || createMessage || updateMessage) && <Button color="secondary"
               disabled
-              className={Error ? classes.Error : classes.Success} fullWidth>{(Error || createMessage || updateMessage)}</Button>}
+              className={Error ? classes.Error : classes.Success} fullWidth>{(Error?.slice(0, -2) || createMessage?.slice(0, -2) || updateMessage?.slice(0, -2))}</Button>}
             <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" disabled={!user?.result} fullWidth>Submit</Button>
             <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
           </form>

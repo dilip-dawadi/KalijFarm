@@ -12,7 +12,7 @@ API.interceptors.request.use((req) => {
 
   return req;
 });
-export const fetchKalijs = (adminPage) => API.get(`/kalijs?adminPage=${adminPage}`);
+export const fetchKalijs = (userPage) => API.get(`/kalijs?userPage=${userPage}`);
 export const fetchKal = (page) => API.get(`/kalijs/all?page=${page}`);
 export const fetchKalBySearch = (searchKals) => API.get(`/kalijs/all/search?searchKals=${searchKals.search || 'none'}&tags=${searchKals.tags}`);
 export const fetchKalij = (id) => API.get(`/kalijs/${id}`);

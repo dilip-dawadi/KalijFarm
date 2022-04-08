@@ -225,7 +225,7 @@ export default function NavMenu({ cartItems }) {
           <li>
             <Link
               style={{ color: 'black', fontWeight: 'bold' }}
-              to="/kalijs?adminPage=1"
+              to="/kalijs?userPage=1"
               onClick={() => setShowNav(!showNav)}
               role="button"
               onKeyDown={() => setShowNav(!showNav)}

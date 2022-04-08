@@ -14,7 +14,7 @@ const Admin = () => {
   const user = JSON.parse(localStorage.getItem('profile'))
   const [currentId, setCurrentId] = useState('');
   const adminQuery = useQuery();
-  const adminPage = adminQuery.get('adminPage' || 1);
+  const userPage = adminQuery.get('userPage' || 1);
   if (!user?.result.role) {
     return (
       <HomePage />
@@ -33,7 +33,7 @@ const Admin = () => {
               <Grid item xs={12} sm={12}>
                 <Posts setCurrentId={setCurrentId} />
                 <Paper elevation={3} style={{ padding: '20px', margin: '20px' }}>
-                  <Adminpagination adminPage={adminPage} />
+                  <Adminpagination userPage={userPage} />
                 </Paper>
               </Grid>
             </Grid>
