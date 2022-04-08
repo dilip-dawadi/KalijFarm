@@ -97,7 +97,7 @@ const Contact = () => {
             borderRadius: '1%',
             margin: '20px auto',
           }} >
-            <h3 style={{ color: "black", textAlign: 'center', letterSpacing: '3px', color: 'gray' }}>CONTACT <span style={{ color: 'white', backgroundColor: 'coral', padding: '5px 10px', borderRadius: '10px' }} >US</span></h3>
+            <h3 style={{ color: "black", textAlign: 'center', letterSpacing: '3px', color: 'gray', fontSize: '22px' }}>CONTACT <span style={{ color: 'white', backgroundColor: 'coral', padding: '5px 10px', borderRadius: '10px' }} >US</span></h3>
             <form autoComplete="off" ref={form} className="form" onSubmit={handleSubmit} >
               <label style={{ margin: '20px 0px 1px 10px' }}>Email</label>
               <input

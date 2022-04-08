@@ -33,13 +33,13 @@ const SignUp = () => {
     setTimeout(() => {
       setError(null);
       setErrorSignIn(null);
-    }, 7000);
+    }, 4000);
   }, [errorAuthSignUp, errorAuthSignIn]);
   useEffect(() => {
     setsuccess(authData?.message);
     setTimeout(() => {
       setsuccess(null);
-    }, 10000);
+    }, 4000);
   }, [authData]);
 
   const dispatch = useDispatch();
@@ -64,7 +64,7 @@ const SignUp = () => {
     setwait(true);
     setTimeout(() => {
       setwait(false);
-    }, 4000);
+    }, 5000);
     if (isSignup) {
       dispatch(signup(formData));
     } else {

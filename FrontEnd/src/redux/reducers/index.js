@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import Kalijs from './Kalijs'
 import Auth from './Auth';
 import About from './About';

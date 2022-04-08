@@ -28,7 +28,7 @@ const Cart = ({ cartItems, handleAddProduct, handleRemove, handleClearAll }) => 
       <Fade left>
         {cartItems.length === 0 && (
           <div className={classed.Food} style={{
-            height: '80vh', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'
+            height: '80vh', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', letterSpacing: '2px', fontWeight: '600',
           }} > No Cart Added <span className={classed.spanFood} > Login </span> To Add Cart </div>
         )}
       </Fade>

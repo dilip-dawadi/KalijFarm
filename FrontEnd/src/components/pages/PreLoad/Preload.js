@@ -1,8 +1,7 @@
 import React from "react";
-import { Zoom, Fade, Flip, Rotate, Bounce, Roll } from "react-reveal";
-import { CircularProgress, Paper, Avatar } from "@material-ui/core";
+import { Zoom, Flip, Roll } from "react-reveal";
+import { Avatar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { useTheme } from '@mui/material/styles';
 // import Image from '../Images/10.jpg'
 const useStyles = makeStyles((theme) => ({
   large: {
@@ -12,8 +11,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 export default function CircularUnderLoad() {
   const classes = useStyles();
-  const theme = useTheme();
-
   return (
     <>
       <Zoom>

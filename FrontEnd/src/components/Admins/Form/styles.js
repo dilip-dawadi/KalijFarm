@@ -33,6 +33,14 @@ export default makeStyles((theme) => ({
     padding: '15px 20px',
     margin: '2px 0',
     backgroundColor: '#f21818',
+    // hover
+    '&:hover': {
+      backgroundColor: '#f21818',
+    },
+    '&:disabled': {
+      backgroundColor: '#f21818',
+      color: '#fff',
+    },
   },
   Success: {
     color: 'white',
@@ -42,6 +50,14 @@ export default makeStyles((theme) => ({
     padding: '15px 20px',
     margin: '2px 0',
     backgroundColor: '#28a745',
+    // hover
+    '&:hover': {
+      backgroundColor: '#28a745',
+    },
+    '&:disabled': {
+      backgroundColor: '#f21818',
+      color: '#fff',
+    },
   },
   buttonSubmit: {
     margin: '10px 0 5px 0',
