@@ -44,14 +44,14 @@ function Slider() {
   return (
     <Box sx={{
       flexGrow: 1,
-      paddingTop: '66px'
+      paddingTop: '72px'
     }} id="header">
       <Grid container spacing={3}>
         <Grid item xs={12} sm={12} md={8} >
           {isLoading ? <LoadingPlaceHolder extraStyles={{
             height: 0,
             paddingTop: '66%', objectFit: 'cover',
-            width: '90%', margin: 'auto', borderRadius: '10px'
+            width: '95%', margin: 'auto', borderRadius: '10px'
           }} /> :
             <Zoom duration={2000}>
               <AutoPlaySwipeableViews
@@ -70,6 +70,7 @@ function Slider() {
                           paddingTop: '66%',
                           width: '95%',
                           objectFit: 'cover',
+                          borderRadius: '10px',
                         }}
                         title={step.title} />
                     ) : null}
@@ -211,7 +212,7 @@ function Slider() {
                 textTransform: 'uppercase',
                 backgroundColor: 'coral',
                 padding: '10px 20px',
-                borderRadius: '12px',
+                borderRadius: '8px',
                 [theme.breakpoints.down('md')]: {
                   fontSize: '0.6rem',
                 },

@@ -46,7 +46,7 @@ const Kalij = ({ handleAddProduct }) => {
                       <Typography variant="body2" color="textSecondary" component="h2">{kalij?.tags?.map((tag) => `#${tag} `)}</Typography>
                     </div>
                     <Typography className={classes.title} gutterBottom variant="h5" component="h2">{kalij.title.split(' ').splice(0, 2).join(' ')}</Typography>
-                    <CardContent>
+                    <CardContent className={classes.cartTitle} >
                       <Typography variant="body2" color="textSecondary" component="p">{kalij.message.split(' ').splice(0, 4).join(' ')}...</Typography>
                     </CardContent>
                   </ButtonBase>

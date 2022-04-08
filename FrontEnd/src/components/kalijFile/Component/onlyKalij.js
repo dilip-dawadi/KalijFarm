@@ -17,6 +17,7 @@ export default makeStyles((theme) => ({
   },
   cardActionsI: {
     display: 'grid',
+    backgroundColor: '#f0f0f0',
   },
   cards: {
     display: 'flex',

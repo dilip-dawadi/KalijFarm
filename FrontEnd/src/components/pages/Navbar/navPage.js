@@ -103,12 +103,22 @@ const NavStyles = styled.nav`
     }
   }
   @media only screen and (max-width: 890px) {
+    ul li{
+      margin: 0px 8px;
+    }
    ul li a{
-      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+    }
+    .cart {
+      top: 1rem;
+      padding: 4px 4px;
+      left: 0.5rem;
+      width: 3rem;
     }
   }
   @media only screen and (max-width: 768px) {
     .cart {
+      padding: 4px 8px;
       left: 2rem;
     }
     .hide-item {

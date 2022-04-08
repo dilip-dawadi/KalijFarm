@@ -82,13 +82,13 @@ export default makeStyles((theme) => ({
     margin: '0x 20px',
     fontWeight: '780',
     fontSize: '15px',
-    backgroundColor: '#E6DDDD',
+    backgroundColor: '#f5f5f5',
     color: '#A2816C'
   },
   cardActions: {
     display: 'flex',
     justifyContent: 'space-between',
-    backgroundColor: '#E6DDDD',
+    backgroundColor: '#f0f0f0',
     textAlign: 'center'
   },
   cardActionsI: {

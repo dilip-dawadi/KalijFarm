@@ -26,7 +26,7 @@ export default makeStyles((theme) => ({
   },
   media: {
     width: '100%',
-    height: '220px',
+    height: '200px',
     ObjectFit: 'cover',
   },
 
@@ -71,20 +71,10 @@ export default makeStyles((theme) => ({
     padding: '4px 20px',
   },
   cartTitle: {
-    margin: '0x 20px',
-    fontWeight: '780',
+    padding: '12px 18px',
     fontSize: '15px',
-    backgroundColor: '#E6DDDD',
+    backgroundColor: '#f5f5f5',
     color: '#A2816C'
-  },
-  cardActions: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    backgroundColor: '#E6DDDD',
-    textAlign: 'center'
-  },
-  cardActionsI: {
-    display: 'grid',
   },
   cardAction: {
     display: 'block',
