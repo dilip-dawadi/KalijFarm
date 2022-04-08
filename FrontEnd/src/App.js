@@ -22,7 +22,7 @@ const App = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 100000);
   }, []);
 
   const [cartItems, setCartItems] = useState(cartFromLocalStorage);
