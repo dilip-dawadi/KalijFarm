@@ -169,22 +169,34 @@ const KalijDetail = ({ handleAddProduct }) => {
                       <Paper
                         elevation={3}
                         style={{
-                          padding: "10px",
+                          padding: "12px",
                           margin: "10px auto",
                           cursor: "pointer",
                         }}
                         onClick={() => openPost(_id)}
                         key={_id}
                       >
-                        <Typography gutterBottom variant="h5">
+                        <Typography
+                          gutterBottom
+                          variant="h5"
+                          style={{ letterSpacing: "1px" }}
+                        >
                           {title}
                         </Typography>
 
-                        <Typography gutterBottom variant="subtitle2">
+                        <Typography
+                          gutterBottom
+                          variant="subtitle2"
+                          style={{ color: "gray", letterSpacing: "2px" }}
+                        >
                           {message.split(" ").splice(0, 5).join(" ")}...
                         </Typography>
-                        <Typography gutterBottom variant="subtitle2">
-                          #{tags.join(", #")}`
+                        <Typography
+                          gutterBottom
+                          variant="subtitle2"
+                          style={{ color: "gray", letterSpacing: "2px" }}
+                        >
+                          #{tags.join(", #")}
                         </Typography>
                         <img src={selectedFile} width="220px" />
                       </Paper>

@@ -169,7 +169,7 @@ const Form = ({ currentId, setCurrentId }) => {
               />
             </div>
             {progress ?
-              <div style={{ padding: '7px 0', width: '98%', textAlign: 'center' }}>
+              <div style={{ padding: '7px 0', width: '98%', margin: '20px auto', textAlign: 'center' }}>
                 <Typography variant="body1">{progress}</Typography>
               </div> :
               <div style={{ textAlign: "center" }} ><input style={{ padding: '20px 0px', marginLeft: "50px" }} type="file" id='selectedFile' name='selectedFile' onChange={(e) => setimage({ ...image, selectedFile: e.target.files[0] })} />
