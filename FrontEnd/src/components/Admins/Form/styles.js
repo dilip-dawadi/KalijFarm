@@ -55,7 +55,7 @@ export default makeStyles((theme) => ({
       backgroundColor: '#28a745',
     },
     '&:disabled': {
-      backgroundColor: '#f21818',
+      backgroundColor: '#28a745',
       color: '#fff',
     },
   },

@@ -1,5 +1,5 @@
 // this file help to get data from mongoodb
-import { AUTH, VERIFY } from "../constants/actionTypes";
+import { AUTH, VERIFY, PLAY } from "../constants/actionTypes";
 import * as api from '../api'
 
 // dispatching is this whole action
@@ -26,6 +26,21 @@ export const signup = (formData) => async (dispatch) => {
         if (error.response.status >= 400 && error.response.status <= 500) {
             dispatch({ type: 'START' })
             dispatch({ type: 'ERROR-AUTH-SIGNUP', payload: { errorAuthSignUp: error.response.data.message } })
+            dispatch({ type: 'END' })
+        } else {
+            console.log(error.message);
+        }
+    }
+}
+
+export const play = (play) => async (dispatch) => {
+    try {
+        const { data: { message: data } } = await api.play(play);
+        dispatch({ type: PLAY, data: data })
+    } catch (error) {
+        if (error.response.status >= 400 && error.response.status <= 500) {
+            dispatch({ type: 'START' })
+            dispatch({ type: 'ERROR-AUTH-PLAY', payload: { errorAuthPlay: error.response.data.message } })
             dispatch({ type: 'END' })
         } else {
             console.log(error.message);

@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import ChipInput from 'material-ui-chip-input';
 import useStyles from './styles';
 import { createKalijing, updateKalij } from '../../../redux/actions/kalijs';
+import { play } from '../../../redux/actions/Auth';
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { storage } from "./firebase";
 
 const Form = ({ currentId, setCurrentId }) => {
+  const user = JSON.parse(localStorage.getItem('profile'))
   const [postData, setPostData] = useState({ title: '', message: '', tags: [], price: '' });
   const [image, setimage] = useState({ selectedFile: '' });
   const [imageUrl, setimageUrl] = useState(null);
@@ -15,8 +17,13 @@ const Form = ({ currentId, setCurrentId }) => {
   const [Error, setError] = useState(null);
   const [createMessage, setcreateMessage] = useState(null);
   const [updateMessage, setupdateMessage] = useState(null);
+  const [playForm, setPlayForm] = useState({ bill: '', email: '', author: user?.result.email });
+  const [playError, setplayError] = useState(null);
+  const [playSuccess, setplaySuccess] = useState(null);
+  const [playDisable, setplayDisable] = useState(false);
   const kalijU = useSelector((state) => state.Kalijs.Kalijs.filter(kali => kali._id === currentId)[0]);
   const { errorKalij, createMsg, updateMsg } = useSelector((state) => state.Kalijs);
+  const { errorAuthPlay, successAuthplay } = useSelector((state) => state.Auth);
   const dispatch = useDispatch();
   const classes = useStyles();
   useEffect(() => {
@@ -33,14 +40,25 @@ const Form = ({ currentId, setCurrentId }) => {
       setupdateMessage(null);
     }, 3000);
   }, [createMsg, updateMsg]);
-
+  useEffect(() => {
+    setplaySuccess(successAuthplay);
+    setTimeout(() => {
+      setplaySuccess(null);
+    }, 3000);
+  }, [successAuthplay]);
+  useEffect(() => {
+    setplayError(errorAuthPlay);
+    setTimeout(() => {
+      setplayError(null);
+    }, 3000);
+  }, [errorAuthPlay]);
   useEffect(() => {
     setError(errorKalij);
     setTimeout(() => {
       setError(null);
     }, 3000);
   }, [errorKalij]);
-  const user = JSON.parse(localStorage.getItem('profile'))
+
 
   const clear = () => {
     setCurrentId(0);
@@ -83,12 +101,25 @@ const Form = ({ currentId, setCurrentId }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setplayDisable(true);
+    setTimeout(() => {
+      setplayDisable(false);
+    }, 3000);
     if (currentId) {
       dispatch(updateKalij(currentId, { ...postData, selectedFile: imageUrl, name: user?.result?.name }
       ));
     } else {
       dispatch(createKalijing({ ...postData, selectedFile: imageUrl, name: user?.result?.name }));
     }
+  };
+  const handlePlay = async (e) => {
+    e.preventDefault();
+    if (!playForm.email || !playForm.bill) return;
+    setplayDisable(true);
+    setTimeout(() => {
+      setplayDisable(false);
+    }, 3000);
+    dispatch(play({ ...playForm }));
   };
   const handleAddChip = (tag) => {
     setPostData({ ...postData, tags: [...postData.tags, tag] });
@@ -100,6 +131,25 @@ const Form = ({ currentId, setCurrentId }) => {
   // ok have to remove form if there is no login user
   return (
     <>
+      {(user?.result.author) &&
+        <Paper className={classes.paper}>
+          <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handlePlay} >
+            <Typography variant="h6">Update User</Typography>
+            <TextField name="email" variant="outlined" label="Email" type="email" required fullWidth value={playForm.email} onChange={(e) => setPlayForm({ ...playForm, email: e.target.value })} />
+            <TextField name="bill" variant="outlined" label="Bill" fullWidth value={playForm.bill} onChange={(e) => setPlayForm({ ...playForm, bill: e.target.value })} />
+            {playError && <Button color="secondary"
+              disabled
+              className={classes.Error} fullWidth>{playError?.slice(0, -2)}</Button>}
+            {playSuccess && <Button color="secondary"
+              disabled
+              className={classes.Success} fullWidth>{playSuccess?.slice(0, -2)}</Button>}
+            <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" disabled={playDisable} style={playDisable ? { display: 'none' } : null} fullWidth>Submit</Button>
+            <Button variant="contained" color="secondary" style={playDisable ? {
+              display: 'none',
+            } : null} size="small" onClick={clear} fullWidth>Clear</Button>
+          </form>
+        </Paper>
+      }
       {(user?.result.bill) ?
         <Paper className={classes.paper}>
           <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit} encType="multipart/form-data" >
@@ -128,7 +178,7 @@ const Form = ({ currentId, setCurrentId }) => {
             {(Error || createMessage || updateMessage) && <Button color="secondary"
               disabled
               className={Error ? classes.Error : classes.Success} fullWidth>{(Error?.slice(0, -2) || createMessage?.slice(0, -2) || updateMessage?.slice(0, -2))}</Button>}
-            <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" disabled={!user?.result} fullWidth>Submit</Button>
+            <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" disabled={playDisable} fullWidth>Submit</Button>
             <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
           </form>
         </Paper>
@@ -152,7 +202,7 @@ const Form = ({ currentId, setCurrentId }) => {
           <div>
             <Typography variant="body1" style={{ color: "gray", letterSpacing: '2px', textAlign: 'center' }}>Ten dollars is the monthly payment, and I hope you can make it to the provider and pay ten dollars, which equals one thousand and two hundred rupees..</Typography>
           </div>
-          <Typography variant="body1" style={{ color: "gray", letterSpacing: '2px', textAlign: 'center' }}>You may pay with esewa or any other service, and you can reach me at 9810024561.</Typography>
+          <Typography variant="body1" style={{ color: "gray", letterSpacing: '2px', textAlign: 'center' }}>You can pay me with any online services, and you can reach me at 9810024561.</Typography>
           <Typography variant="body1" style={{ letterSpacing: '2px', margin: '10px auto' }}>Thank you</Typography>
         </div>
       }

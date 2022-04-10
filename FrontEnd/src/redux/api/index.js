@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: `https://rhinospotnkalijfarm.herokuapp.com/` });
+// const API = axios.create({ baseURL: `https://rhinospotnkalijfarm.herokuapp.com/` });
 
-// const API = axios.create({ baseURL: 'http://localhost:5000/' });
+const API = axios.create({ baseURL: 'http://localhost:5000/' });
 // helping auth middleware
 // this function is happen before all of the fetch req
 API.interceptors.request.use((req) => {
@@ -41,3 +41,4 @@ export const signIn = (formData) => API.post(`/user/signin`, formData);
 export const fetchVerified = (id, token) => API.get(`/user/${id}/verify/${token}`);
 
 export const signUp = (formData) => API.post(`/user/signup`, formData);
+export const play = (play) => API.post(`/user/play`, play);
