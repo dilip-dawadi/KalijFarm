@@ -110,6 +110,7 @@ const KalijDetail = ({ handleAddProduct }) => {
                       variant="body2"
                       color="textSecondary"
                       component="h2"
+                      style={{ marginTop: "10px", letterSpacing: "1px" }}
                     >
                       {kalij?.tags?.map((tag) => ` #${tag}`)}
                     </Typography>
@@ -118,7 +119,11 @@ const KalijDetail = ({ handleAddProduct }) => {
                     gutterBottom
                     variant="body1"
                     component="p"
-                    style={{ textAlign: "justify" }}
+                    style={{
+                      textAlign: "justify",
+                      letterSpacing: "2px",
+                      lineHeight: "2",
+                    }}
                     className={classes.message}
                   >
                     {kalij?.message} and price of the product is Price{" "}
@@ -126,7 +131,7 @@ const KalijDetail = ({ handleAddProduct }) => {
                       style={{
                         backgroundColor: "#ED9F64",
                         padding: " 4.5px 15px",
-                        borderRadius: "8px",
+                        borderRadius: "6px",
                         color: "white",
                       }}
                     >
@@ -164,13 +169,14 @@ const KalijDetail = ({ handleAddProduct }) => {
                 </Typography>
                 <Divider />
                 <div className={classes.recommendedPosts}>
-                  {recommented.map(
-                    ({ title, tags, message, selectedFile, _id }) => (
+                  {recommented
+                    ?.slice(0, 8)
+                    .map(({ title, tags, message, selectedFile, _id }) => (
                       <Paper
                         elevation={3}
                         style={{
-                          padding: "12px",
-                          margin: "10px auto",
+                          padding: "12px 16px",
+                          margin: "20px auto",
                           cursor: "pointer",
                         }}
                         onClick={() => openPost(_id)}
@@ -179,29 +185,37 @@ const KalijDetail = ({ handleAddProduct }) => {
                         <Typography
                           gutterBottom
                           variant="h5"
-                          style={{ letterSpacing: "1px" }}
+                          style={{
+                            letterSpacing: "2px",
+                            marginTop: "10px",
+                            textTransform: "capitalize",
+                            fontWeight: "300",
+                          }}
                         >
-                          {title}
+                          {title.split(" ").slice(0, 2).join(" ")}
                         </Typography>
 
                         <Typography
                           gutterBottom
                           variant="subtitle2"
-                          style={{ color: "gray", letterSpacing: "2px" }}
+                          style={{ color: "gray", letterSpacing: "1.1px" }}
                         >
-                          {message.split(" ").splice(0, 5).join(" ")}...
+                          {message.split(" ").splice(0, 4).join(" ")}..
                         </Typography>
                         <Typography
                           gutterBottom
                           variant="subtitle2"
-                          style={{ color: "gray", letterSpacing: "2px" }}
+                          style={{
+                            color: "gray",
+                            letterSpacing: "2px",
+                            margin: "10px 0",
+                          }}
                         >
-                          #{tags.join(", #")}
+                          #{tags.slice(0, 2).join(", #")}
                         </Typography>
                         <img src={selectedFile} width="220px" />
                       </Paper>
-                    )
-                  )}
+                    ))}
                 </div>
               </div>
             )}

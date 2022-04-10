@@ -42,9 +42,10 @@ export default makeStyles((theme) => ({
     textTransform: 'uppercase',
     fontWeight: 'bold',
     display: 'inline-block',
-    borderRadius: '10px',
-    padding: ' 5px 10px',
+    borderRadius: '7px',
+    padding: ' 5px 12px',
     backgroundColor: '#ED9F64',
+    letterSpacing: '1.3px',
     color: 'white',
     marginTop: '10px',
   },
@@ -84,10 +85,17 @@ export default makeStyles((theme) => ({
     margin: 'auto',
   },
   recommendedPosts: {
-    display: 'flex',
-    flexDirection: 'row',
+    display: 'grid',
+    gridTemplateColumns: 'repeat(4, 1fr)',
+    gridGap: '1rem',
+    [theme.breakpoints.down('md')]: {
+      gridTemplateColumns: 'repeat(3, 1fr)',
+    },
+    [theme.breakpoints.down('sm')]: {
+      gridTemplateColumns: 'repeat(2, 1fr)',
+    },
     [theme.breakpoints.down('xs')]: {
-      flexDirection: 'column',
+      gridTemplateColumns: 'repeat(1, 1fr)',
     },
   },
 }));
