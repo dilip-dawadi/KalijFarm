@@ -5,6 +5,7 @@ import Home from './components/kalijFile/UserIndex'
 import { Zoom } from 'react-reveal';
 import Foo from './components/pages/footer/Footer';
 import Image from './components/KalijsGallery/imageGallery';
+import Gallery from './components/KalijsGallery/reakGalery';
 import Nav from './components/pages/Navbar/navPage';
 import Auth from './components/Auth/Auth'
 import About from './components/pages/About'
@@ -79,8 +80,9 @@ const App = () => {
                 <Route path="/about" exact element={<About />} />
                 <Route path="/auth" exact element={<Auth />} />
                 <Route path="/users/:id/verify/:token" exact element={<Verify />} />
-                <Route path="/kalijs/all" exact element={<Image />} />
-                <Route path="/kalijs/all/search" exact element={<Image />} />
+                <Route path="/foods" exact element={<Image />} />
+                <Route path="/foods/search" exact element={<Image />} />
+                <Route path="/gallery" exact element={<Gallery />} />
                 <Route path="*" element={<PageNotFound />} />
               </Routes>
               <Foo />

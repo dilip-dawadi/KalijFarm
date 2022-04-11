@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import ChipInput from 'material-ui-chip-input';
 import { getKal, getKalBySearch } from '../../redux/actions/kalijs';
 import All from './All'
-import Pagination from '../kalijFile/Component/pagination/pagination'
+import { Paginate } from '../kalijFile/Component/pagination/pagination'
 import useStyles from './styles';
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -21,19 +21,18 @@ const Image = () => {
 
   const [search, setSearch] = useState('');
   const [tags, setTags] = useState([]);
-  const { Kal } = useSelector((state) => state.Kalijs);
   const searchPost = () => {
     if (search.trim() || tags) {
       dispatch(getKalBySearch({ search, tags: tags.join(',') }));
 
-      navigate(`/kalijs/all/search?searchKals=${search || 'none'}&tags=${tags.join(',')}`);
+      navigate(`/foods/search?searchKals=${search || 'none'}&tags=${tags.join(',')}`);
     } else {
-      navigate('/kalijs/all');
+      navigate('/foods');
     }
   };
   const allPost = () => {
     dispatch(getKal(1));
-    navigate('/kalijs/all?page=1');
+    navigate('/foods?page=1');
   };
   const handleKeyPress = (e) => {
     if (e.keyCode === 13) {
@@ -80,7 +79,7 @@ const Image = () => {
                 </AppBar>
                 {(!searchKals && !tags.length) && (
                   <Paper className={classes.pagination} elevation={4}>
-                    <Pagination page={page} />
+                    <Paginate page={page} />
                   </Paper>
                 )}
               </div>

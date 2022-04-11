@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { getKal } from "../../../../redux/actions/kalijs";
 import useStyles from "./styles";
 
-const Paginate = ({ page }) => {
+export const Paginate = ({ page }) => {
   const { numberOfPages } = useSelector((state) => state.Kalijs);
   const dispatch = useDispatch();
 
@@ -36,4 +36,32 @@ const Paginate = ({ page }) => {
   );
 };
 
-export default Paginate;
+export const PaginateGallery = ({ page }) => {
+  console.log(page, "no");
+  const { numberOfPages } = useSelector((state) => state.Kalijs);
+  const dispatch = useDispatch();
+
+  const classes = useStyles();
+  console.log(page, "page");
+  useEffect(() => {
+    dispatch(getKal(page));
+  }, [dispatch, page]);
+
+  return (
+    <Pagination
+      classes={{ ul: classes.ul }}
+      className={classes.pagination}
+      count={numberOfPages}
+      page={Number(page)}
+      variant="outlined"
+      color="primary"
+      renderItem={(item) => (
+        <PaginationItem
+          {...item}
+          component={Link}
+          to={`/kalijs/all?page=${item.page}`}
+        />
+      )}
+    />
+  );
+};

@@ -48,12 +48,12 @@ function Slider() {
     }} id="header">
       <Grid container spacing={3}>
         <Grid item xs={12} sm={12} md={8} >
-          {isLoading ? <LoadingPlaceHolder extraStyles={{
+          {isLoading ? <Zoom duration={2000}> <LoadingPlaceHolder extraStyles={{
             height: 0,
             paddingTop: '66%', objectFit: 'cover',
             width: '95%', margin: 'auto', borderRadius: '10px'
-          }} /> :
-            <Zoom duration={2000}>
+          }} /> </Zoom> :
+            <Zoom duration={3000}>
               <AutoPlaySwipeableViews
                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                 interval={5000}

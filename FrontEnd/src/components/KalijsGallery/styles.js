@@ -62,4 +62,41 @@ export default makeStyles((theme) => ({
       flexDirection: 'column-reverse',
     },
   },
+  // style of realGallery
+  realBox: {
+    padding: '1rem 2.25rem',
+    [theme.breakpoints.down('sm')]: {
+      padding: '1rem',
+    },
+    [theme.breakpoints.down('xs')]: {
+      padding: '0.8rem',
+    },
+  },
+  media: {
+    width: '100%',
+    height: '320px',
+    ObjectFit: 'cover',
+    borderRadius: '10px',
+    ['@media (max-width:750px)']: {
+      height: '280px',
+    },
+    ['@media (max-width:600px)']: {
+      height: '320px',
+    },
+    ['@media (max-width:450px)']: {
+      height: '300px',
+    },
+    ['@media (max-width:380px)']: {
+      height: '240px',
+    },
+  },
+  Gpagination: {
+    borderRadius: 4,
+    margin: '1rem 3rem -4rem 3rem',
+    padding: theme.spacing(2.2),
+    ['@media (max-width: 730px)']: {
+      margin: '1rem 1rem 0rem 1rem',
+    },
+  },
+
 }));

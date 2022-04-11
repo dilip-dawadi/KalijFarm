@@ -36,7 +36,7 @@ const Kalij = ({ handleAddProduct }) => {
         <Grid className={classes.container} container alignItems="stretch" spacing={2}>
           {Kalijs.slice(0, 4).map((kalij) => (
             <Grid key={kalij._id} checked={checked} item xs={12} sm={6} md={4} lg={3}>
-              <Fade top>
+              <Fade top duration={2000}>
                 <Card className={classed.cards} raised elevation={3}>
                   <ButtonBase component="span"
                     name="test"
@@ -78,7 +78,7 @@ const Kalij = ({ handleAddProduct }) => {
         <br />
         <br />
         <center><Button variant="contained" style={{ backgroundColor: 'coral', padding: '10px 20px', letterSpacing: '2px', fontWeight: '600', borderRadius: '7px', color: 'white' }}><Link
-          to='/kalijs/all?page=1'
+          to='/foods?page=1'
           className={classes.link}>
           View More
         </Link></Button></center>

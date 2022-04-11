@@ -46,7 +46,8 @@ const NavStyles = styled.nav`
     }
     .active {
       transition: 1s ease;
-      background-color: #ebebeb;
+      // background-color: #ebebeb;
+      font-weight: 600;
       color: black;
       opacity: 1;
     }
@@ -233,8 +234,7 @@ export default function NavMenu({ cartItems }) {
             <MdClose />
           </div>
           <li>
-            <Link
-              style={{ color: 'black', fontWeight: 'bold' }}
+            <NavLink
               to="/kalijs?userPage=1"
               onClick={() => setShowNav(!showNav)}
               role="button"
@@ -242,28 +242,28 @@ export default function NavMenu({ cartItems }) {
               tabIndex={0}
             >
               Home
-            </Link>
-          </li>
-          <li>
-            <NavLink
-              to="/about"
-              onClick={() => setShowNav(!showNav)}
-              role="button"
-              onKeyDown={() => setShowNav(!showNav)}
-              tabIndex={0}
-            >
-              About
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/kalijs/all?page=1"
+              to="/foods?page=1"
               onClick={() => setShowNav(!showNav)}
               role="button"
               onKeyDown={() => setShowNav(!showNav)}
               tabIndex={0}
             >
               Foods
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/gallery?page=1"
+              onClick={() => setShowNav(!showNav)}
+              role="button"
+              onKeyDown={() => setShowNav(!showNav)}
+              tabIndex={0}
+            >
+              Gallery
             </NavLink>
           </li>
           <li>

@@ -40,7 +40,7 @@ const All = () => {
         >
           {Kal?.map((kalij) => (
             <Grid key={kalij?._id} item xs={12} sm={6} md={6} lg={4} >
-              <Fade left>
+              <Fade left duration={2000}>
                 <Card className={classed.cards} raised elevation={4}>
                   <ButtonBase
                     component="span"
@@ -118,7 +118,7 @@ const All = () => {
                   size="large"
                   style={{ width: '100%', margin: '10px 0px', padding: "10px", backgroundColor: '#f50057', color: 'white', borderRadius: '5px', letterSpacing: '4px' }}
                   onClick={() => {
-                    navigate("/kalijs/all?page=1");
+                    navigate("/foods?page=1");
                   }}
                 >Search All</Button>
               </CardContent>
