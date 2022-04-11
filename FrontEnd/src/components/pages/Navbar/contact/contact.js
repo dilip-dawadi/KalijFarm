@@ -1,4 +1,4 @@
-import React, { useRef, useState, useLayoutEffect } from "react";
+import React, { useRef, useState } from "react";
 import Paper from "@material-ui/core/Paper";
 import styled from "styled-components";
 import emailjs from "emailjs-com";
@@ -52,13 +52,6 @@ const AboutPageStyles = styled.div`
   }
 `;
 const Contact = () => {
-  useLayoutEffect(() => {
-    window.scrollTo({
-      left: 0,
-      top: 0,
-      behavior: 'instant',
-    });
-  }, []);
   const form = useRef();
   const initial = { email: "", subject: "", message: "" };
   const [cont, setCont] = useState(initial);

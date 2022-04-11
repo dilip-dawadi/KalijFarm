@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState } from 'react';
 import { Typography, Grid, Paper, AppBar, TextField, Button, Container, Grow } from '@material-ui/core'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
@@ -18,14 +18,6 @@ const Image = () => {
   const query = useQuery();
   const page = query.get('page' || 1);
   const searchKals = query.get('searchKals');
-  useLayoutEffect(() => {
-    window.scrollTo({
-      left: 0,
-      top: 0,
-      behavior: 'instant',
-    });
-  }, []);
-
 
   const [search, setSearch] = useState('');
   const [tags, setTags] = useState([]);

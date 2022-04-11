@@ -26,7 +26,10 @@ export default makeStyles((theme) => ({
     display: 'flex',
     marginTop: '1rem',
     padding: '1rem 1rem',
-    [theme.breakpoints.down('sm')]: {
+    ['@media (max-width:800px)']: {
+      padding: theme.spacing(1),
+    },
+    ['@media (max-width:656px)']: {
       padding: theme.spacing(0.5),
     },
     [theme.breakpoints.down('xs')]: {

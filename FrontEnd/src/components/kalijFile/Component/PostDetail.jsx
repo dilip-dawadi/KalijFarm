@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import {
@@ -8,7 +8,6 @@ import {
   Divider,
   CardActions,
   Button,
-  CardMedia,
 } from "@material-ui/core/";
 import { getKalij, getKalBySearch } from "../../../redux/actions/kalijs";
 import useStyles from "./Pdetail";
@@ -25,13 +24,6 @@ const KalijDetail = ({ handleAddProduct }) => {
   const handleOpenM = () => {
     setOpenM(true);
   };
-  useLayoutEffect(() => {
-    window.scrollTo({
-      left: 0,
-      top: 0,
-      behavior: "instant",
-    });
-  }, []);
   const classes = useStyles();
   const dispatch = useDispatch();
   const { kalij, Kal, isLoading } = useSelector((state) => state.Kalijs);
@@ -110,7 +102,11 @@ const KalijDetail = ({ handleAddProduct }) => {
                       variant="body2"
                       color="textSecondary"
                       component="h2"
-                      style={{ marginTop: "10px", letterSpacing: "1px" }}
+                      style={{
+                        marginTop: "10px",
+                        letterSpacing: "1px",
+                        color: "lightgray",
+                      }}
                     >
                       {kalij?.tags?.map((tag) => ` #${tag}`)}
                     </Typography>
@@ -184,7 +180,7 @@ const KalijDetail = ({ handleAddProduct }) => {
                       >
                         <Typography
                           gutterBottom
-                          variant="h5"
+                          variant="h6"
                           style={{
                             letterSpacing: "2px",
                             marginTop: "10px",
@@ -198,7 +194,11 @@ const KalijDetail = ({ handleAddProduct }) => {
                         <Typography
                           gutterBottom
                           variant="subtitle2"
-                          style={{ color: "gray", letterSpacing: "1.1px" }}
+                          style={{
+                            color: "gray",
+                            letterSpacing: "1.1px",
+                            fontWeight: "300",
+                          }}
                         >
                           {message.split(" ").splice(0, 4).join(" ")}..
                         </Typography>
@@ -206,9 +206,9 @@ const KalijDetail = ({ handleAddProduct }) => {
                           gutterBottom
                           variant="subtitle2"
                           style={{
-                            color: "gray",
                             letterSpacing: "2px",
                             margin: "10px 0",
+                            color: "lightgray",
                           }}
                         >
                           #{tags.slice(0, 2).join(", #")}

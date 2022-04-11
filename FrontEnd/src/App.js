@@ -14,6 +14,7 @@ import Contact from './components/pages/Navbar/contact/contact'
 import PageNotFound from './components/pages/PageNotFound'
 import Preload from './components/pages/PreLoad/Preload'
 import Verify from './components/Auth/getVerify';
+import ScrollToTop from './components/pages/ScroolToTop';
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]');
 const App = () => {
@@ -66,6 +67,7 @@ const App = () => {
             padding: '0px',
             overflow: 'hidden',
           }} >
+            <ScrollToTop />
             <Nav cartItems={cartItems} />
             <Zoom>
               <Routes>

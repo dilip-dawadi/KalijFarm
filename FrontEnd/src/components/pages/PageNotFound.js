@@ -1,18 +1,12 @@
-import React, { useLayoutEffect } from 'react'
+import React from 'react'
 import useStyles from '../kalijFile/Component/kalijcss'
 const PageNotFound = () => {
     const classes = useStyles();
-    useLayoutEffect(() => {
-        window.scrollTo({
-            left: 0,
-            top: 0,
-            behavior: 'instant',
-        });
-    }, []);
     return (
-        <div className={classes.PageNotFound}>
-           <div className={classes.Food}>🤔 No Such <span className={classes.spanFood}> Page</span> Detected 🧐</div> 
-        </div>
+        <div className={classes.PageNotFound} style={{ height: '50vh', display: 'grid', gridTemplateColumns: '1fr', justifyContent: 'center', alignItems: 'center', letterSpacing: '4px' }}>
+            <div className={classes.Food} style={{ letterSpacing: '1px' }}> 🤔 No Such <span className={classes.spanFood}> Page </span>, Detected 🧐</div>
+            {/* </div> */}
+        </div >
     )
 }
 

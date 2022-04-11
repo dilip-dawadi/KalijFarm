@@ -32,14 +32,16 @@ export default makeStyles((theme) => ({
     ObjectFit: 'fill',
     ObjectPosition: 'center',
     borderRadius: '0px 0px 4px 4px',
-    [theme.breakpoints.down('sm')]: {
-      height: '250px',
+    ['@media (max-width:650px)']: {
+      height: '180px',
     },
     [theme.breakpoints.down('xs')]: {
-      height: '250px',
+      height: '270px',
+    },
+    ['@media (max-width:420px)']: {
+      height: '220px',
     },
   },
-
   border: {
     border: 'solid',
   },

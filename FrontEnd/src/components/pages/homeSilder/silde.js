@@ -56,7 +56,7 @@ function Slider() {
             <Zoom duration={2000}>
               <AutoPlaySwipeableViews
                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-                interval={3500}
+                interval={5000}
                 index={activeStep}
                 onChangeIndex={handleStepChange}
                 enableMouseEvents

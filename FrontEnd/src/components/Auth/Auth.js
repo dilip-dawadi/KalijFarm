@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
@@ -11,13 +11,6 @@ import GoogleAuth from './GoogleAuth';
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
 const SignUp = () => {
-  useLayoutEffect(() => {
-    window.scrollTo({
-      left: 0,
-      top: 0,
-      behavior: 'instant',
-    });
-  }, []);
   const [formData, setFormData] = useState(initialState);
   //   form usestate i can save the form data in paylaod and later on in mongoodb
   const [isSignup, setIsSignup] = useState(false);

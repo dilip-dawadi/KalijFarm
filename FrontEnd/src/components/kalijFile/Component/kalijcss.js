@@ -6,7 +6,7 @@ export default makeStyles((theme) => ({
   },
   // pagenotfound
   PageNotFound: {
-    marginTop: '240px',
+    marginTop: '180px',
   },
   // cart
   marg: {
@@ -26,8 +26,17 @@ export default makeStyles((theme) => ({
   },
   media: {
     width: '100%',
-    height: '200px',
+    height: '210px',
     ObjectFit: 'cover',
+    ['@media (max-width:750px)']: {
+      height: '150px',
+    },
+    [theme.breakpoints.down('xs')]: {
+      height: '280px',
+    },
+    ['@media (max-width:420px)']: {
+      height: '220px',
+    },
   },
 
   border: {

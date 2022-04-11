@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Paper } from '@mui/material';
 import PText from '../kalijFile/Component/PText';
@@ -74,13 +74,6 @@ export default function About() {
     dispatch(getAbouts());
     // by putting the name in [ ] in every update the currentid is change 
   }, [dispatch]);
-  useLayoutEffect(() => {
-    window.scrollTo({
-      left: 0,
-      top: 0,
-      behavior: 'instant',
-    });
-  }, []);
 
   return (
     <>

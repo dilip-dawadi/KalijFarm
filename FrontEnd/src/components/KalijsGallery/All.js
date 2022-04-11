@@ -1,8 +1,7 @@
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import {
   Grid,
   Typography,
-  CircularProgress,
   CardActions,
   CardMedia,
   Button,
@@ -27,13 +26,6 @@ const All = () => {
   const { Kal, isLoading } = useSelector((state) => state.Kalijs);
   const classes = useStyles();
   const classed = useStyle();
-  useLayoutEffect(() => {
-    window.scrollTo({
-      left: 0,
-      top: 0,
-      behavior: "instant",
-    });
-  }, []);
   return isLoading ? (
     <Loading
     />
@@ -66,7 +58,7 @@ const All = () => {
                       color="textSecondary"
                       component="h2"
                     >
-                      {kalij?.tags?.map((tag) => `#${tag} `)}
+                      {kalij?.tags?.splice(0, 3).map((tag) => `#${tag} `)}
                     </Typography>
                   </div>
                   <Typography

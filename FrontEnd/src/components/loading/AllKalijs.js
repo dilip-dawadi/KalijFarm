@@ -13,11 +13,11 @@ const Loading = () => {
   return (
     <Grid className={classes.container} container alignItems="stretch" spacing={2}>
       {Array.from(Array(Math.ceil(6)).keys()).map((kalij) => (
-        <Grid key={kalij._id} item xs={12} sm={12} md={6} lg={4}>
+        <Grid key={kalij._id} item xs={12} sm={6} md={6} lg={4}>
           <Card className={classed.cards} raised elevation={4}>
             {isLoading ? <LoadingPlaceHolder extraStyles={{
               height: 0,
-              paddingTop: '68%', objectFit: 'cover',
+              paddingTop: '88%', objectFit: 'cover',
               margin: 'auto', borderRadius: '10px',
             }} /> :
               <div>
@@ -31,12 +31,12 @@ const Loading = () => {
                 <Typography variant="body2" color="textSecondary" component="h2"></Typography>
               </div>}
             {isLoading ? <LoadingPlaceHolder extraStyles={{
-              height: '20px', width: '200px',
+              height: '20px', width: '150px',
               borderRadius: '12px', margin: '3px 30px', padding: '0.1rem 0rem',
             }} /> :
               <Typography className={classes.title} gutterBottom variant="h5" component="h2"></Typography>}
             {isLoading ? <LoadingPlaceHolder extraStyles={{
-              height: '20px', width: '200px',
+              height: '20px', width: '150px',
               borderRadius: '12px', margin: '3px 30px', padding: '0.1rem 0rem',
             }} /> :
               <CardContent>

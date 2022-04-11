@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react'
+import React from 'react'
 import {
   Grid,
   Card,
@@ -12,13 +12,7 @@ import { Fade } from "react-reveal";
 import useStyle from './style';
 import CheckOut from './checkout'
 const Cart = ({ cartItems, handleAddProduct, handleRemove, handleClearAll }) => {
-  useLayoutEffect(() => {
-    window.scrollTo({
-      left: 0,
-      top: 0,
-      behavior: 'instant',
-    });
-  }, []);
+
   const user = JSON.parse(localStorage.getItem('profile'))
   const classed = useStyle();
   const totalPrice = cartItems.reduce((price, item) => price + item.quantity * item.price, 0);
@@ -28,7 +22,7 @@ const Cart = ({ cartItems, handleAddProduct, handleRemove, handleClearAll }) => 
       <Fade left>
         {cartItems.length === 0 && (
           <div className={classed.Food} style={{
-            height: '80vh', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', letterSpacing: '2px', fontWeight: '600',
+            height: '80vh', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', letterSpacing: '3px', fontWeight: '600',
           }} > No Cart Added <span className={classed.spanFood} > Login </span> To Add Cart </div>
         )}
       </Fade>
