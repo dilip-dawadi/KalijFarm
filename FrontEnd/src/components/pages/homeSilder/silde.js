@@ -68,9 +68,9 @@ function Slider() {
                         style={{
                           height: 0,
                           paddingTop: '66%',
-                          width: '95%',
+                          width: '94%',
                           objectFit: 'cover',
-                          borderRadius: '10px',
+                          borderRadius: '6px',
                         }}
                         title={step.title} />
                     ) : null}
@@ -135,7 +135,7 @@ function Slider() {
             elevation={3}
             sx={{
               overflow: "hidden",
-              borderRadius: '12px',
+              borderRadius: '8px',
               height: 'auto',
               padding: '2rem',
               textAlign: 'center',

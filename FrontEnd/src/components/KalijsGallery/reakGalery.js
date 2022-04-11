@@ -24,7 +24,7 @@ export default function MasonryImageList() {
                 mobile: 0,
                 bigMobile: 600,
                 tablet: 900,
-                desktop: 1400
+                desktop: 1360
             }
         }
     });

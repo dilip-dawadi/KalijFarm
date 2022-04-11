@@ -76,7 +76,6 @@ const Kalij = ({ handleAddProduct }) => {
           ))}
         </Grid>
         <br />
-        <br />
         <center><Button variant="contained" style={{ backgroundColor: 'coral', padding: '10px 20px', letterSpacing: '2px', fontWeight: '600', borderRadius: '7px', color: 'white' }}><Link
           to='/foods?page=1'
           className={classes.link}>
