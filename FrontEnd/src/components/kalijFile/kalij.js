@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { Grid, Card, CardActions, CardContent, CardMedia, Button, Typography, ButtonBase, CircularProgress } from '@material-ui/core/';
-import { Zoom, Fade, Flip, Rotate, Bounce, Roll } from 'react-reveal';
+import { Grid, Card, CardActions, CardContent, CardMedia, Button, Typography, ButtonBase } from '@material-ui/core/';
+import { Fade } from 'react-reveal';
 import useWindowPosition from '../../hook/useWindowPosition';
 import useStyles from './Component/kalijcs'
 import useStyle from './Component/onlyKalij'
