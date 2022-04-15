@@ -53,6 +53,7 @@ const AboutPageStyles = styled.div`
 `;
 const Contact = () => {
   const form = useRef();
+  const user = JSON.parse(localStorage.getItem("profile"));
   const initial = { email: "", subject: "", message: "" };
   const [cont, setCont] = useState(initial);
   const [error, setError] = useState(false);
@@ -62,6 +63,7 @@ const Contact = () => {
     setTimeout(() => {
       setError(false);
     }, 3000);
+    if (!user) return setError('Please login to send message');
     if (cont.email === "" || cont.subject === "" || cont.message === "") return setError('Please fill all the fields');
     emailjs
       .send(
