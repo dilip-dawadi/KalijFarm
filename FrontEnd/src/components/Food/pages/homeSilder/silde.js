@@ -1,28 +1,22 @@
 import React, { useEffect } from 'react'
 import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 import Grid from '@material-ui/core/Grid';
 import CardMedia from '@material-ui/core/CardMedia';
 import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { getKalijs } from '../../../../redux/actions/kalijs';
+import { getGalleries } from '../../../../redux/actions/galleryAction';
 import LoadingPlaceHolder, { containerStyles } from '../../loading/loading';
 import { Zoom } from 'react-reveal';
 import useStyles from './style';
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 function Slider() {
   const dispatch = useDispatch();
-  const { isLoading, Kalijs } = useSelector((state) => state.Kalijs);
-  const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem('profile'));
+  const { isLoading, gallery } = useSelector((state) => state.Gallery);
   useEffect(() => {
-    dispatch(getKalijs());
+    dispatch(getGalleries());
   }, [dispatch]);
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
@@ -45,7 +39,7 @@ function Slider() {
               onChangeIndex={handleStepChange}
               enableMouseEvents
             >
-              {Kalijs?.map((step, index) => (
+              {gallery?.map((step, index) => (
                 <div key={step.title}>
                   {Math.abs(activeStep - index) <= 2 ? (
                     <CardMedia

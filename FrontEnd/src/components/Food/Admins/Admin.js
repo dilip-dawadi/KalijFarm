@@ -5,6 +5,7 @@ import Form from './Form/Form';
 import Header from '../pages/Navbar/Header';
 import HomePage from '../kalijFile/UserIndex'
 import AboutAdmin from './About/AboutPage'
+import Gallery from './Gallery/gallery'
 import { useLocation } from 'react-router-dom';
 import Adminpagination from './pagination/pagination';
 import RoomForm from '../../Restaurant/Admin/roomForm/Form'
@@ -21,6 +22,7 @@ const Admin = () => {
   const [activeFood, setactiveFood] = useState(false);
   const [activeRoom, setactiveRoom] = useState(false);
   const [activeAbout, setactiveAbout] = useState(false);
+  const [activeGallery, setactiveGallery] = useState(false);
 
   const adminQuery = useQuery();
   const userPage = adminQuery.get('userPage' || 1);
@@ -77,6 +79,15 @@ const Admin = () => {
             </Grid>
           </Container>
         </Grow>
+        {/* start of image page */}
+        <Grid container spacing={3}>
+          {!activeGallery ? <Button style={{ margin: ' 20px auto', textAlign: 'center', color: "white", backgroundColor: 'coral' }} onClick={() => { setactiveGallery(true) }} variant="contained" size="large">Show Gallery</Button> : <Button style={{ margin: ' 20px auto', textAlign: 'center' }} onClick={() => setactiveGallery(false)} variant="contained" color="secondary" size="large">Hide Gallery</Button>}
+        </Grid>
+        <Grid item xs={12} sm={12} style={!activeGallery ? { display: 'none' } : { display: '' }}>
+          <Gallery />
+        </Grid>
+
+        {/* start of about page */}
         <Grid container spacing={3}>
           {!activeAbout ? <Button style={{ margin: ' 20px auto', textAlign: 'center', color: "white", backgroundColor: 'coral' }} onClick={() => { setactiveAbout(true) }} variant="contained" size="large">Show About</Button> : <Button style={{ margin: ' 20px auto', textAlign: 'center' }} onClick={() => setactiveAbout(false)} variant="contained" color="secondary" size="large">Hide About</Button>}
         </Grid>

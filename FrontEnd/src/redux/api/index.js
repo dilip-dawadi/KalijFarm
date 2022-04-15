@@ -45,6 +45,11 @@ export const createAbout = (newAbout) => API.post(`/about`, newAbout);
 export const updateAbout = (id, updatedAbout) => API.patch(`/about/${id}`, updatedAbout);
 export const deleteAbouts = (id) => API.delete(`/about/${id}`)
 
+// fetch Gallery
+export const fetchGalleries = () => API.get(`/gallery`);
+export const createaGallery = (newGallery) => API.post(`/gallery`, newGallery);
+export const updateaGallery = (id, gallery) => API.patch(`/gallery/${id}`, gallery);
+export const deleteaGallery = (id) => API.delete(`/gallery/${id}`)
 // fetch auth
 export const signIn = (formData) => API.post(`/user/signin`, formData);
 export const fetchVerified = (id, token) => API.get(`/user/${id}/verify/${token}`);
