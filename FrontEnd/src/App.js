@@ -1,21 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Container } from '@material-ui/core'
-import Home from './components/kalijFile/UserIndex'
+import Home from './components/Food/kalijFile/UserIndex'
 import { Zoom } from 'react-reveal';
-import Foo from './components/pages/footer/Footer';
-import Image from './components/KalijsGallery/imageGallery';
-import Gallery from './components/KalijsGallery/reakGalery';
-import Nav from './components/pages/Navbar/navPage';
-import Auth from './components/Auth/Auth'
-import About from './components/pages/About'
-import PostDetail from './components/kalijFile/Component/PostDetail'
-import Cart from './components/pages/Cart/Cart'
-import Contact from './components/pages/Navbar/contact/contact'
-import PageNotFound from './components/pages/PageNotFound'
-import Preload from './components/pages/PreLoad/Preload'
-import Verify from './components/Auth/getVerify';
-import ScrollToTop from './components/pages/ScroolToTop';
+import Foo from './components/Food/pages/footer/Footer';
+import Image from './components/Food/KalijsGallery/imageGallery';
+import Room from './components/Restaurant/RoomView/indexRoom';
+import Gallery from './components/Food/KalijsGallery/reakGalery';
+import Nav from './components/Food/pages/Navbar/navPage';
+import Auth from './components/Food/Auth/Auth'
+import About from './components/Food/pages/About'
+import PostDetail from './components/Food/kalijFile/Component/PostDetail'
+import Cart from './components/Food/pages/Cart/Cart'
+import Contact from './components/Food/pages/Navbar/contact/contact'
+import PageNotFound from './components/Food/pages/PageNotFound'
+import Preload from './components/Food/pages/PreLoad/Preload'
+import Verify from './components/Food/Auth/getVerify';
+import ScrollToTop from './components/Food/pages/ScroolToTop';
+import PostDetailOfRoom from './components/Restaurant/RoomView/postDetail/PostDetail';
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]');
 const App = () => {
@@ -77,11 +79,13 @@ const App = () => {
                 <Route path="/" exact element={<Navigate to="/kalijs?userPage=1" />} />
                 <Route path="/cart" exact element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemove={handleRemove} handleClearAll={handleClearAll} />} />
                 <Route path="/kalijs/:id" exact element={<PostDetail handleAddProduct={handleAddProduct} />} />
+                <Route path="/room/:id" exact element={<PostDetailOfRoom />} />
                 <Route path="/about" exact element={<About />} />
                 <Route path="/auth" exact element={<Auth />} />
                 <Route path="/users/:id/verify/:token" exact element={<Verify />} />
                 <Route path="/foods" exact element={<Image />} />
                 <Route path="/foods/search" exact element={<Image />} />
+                <Route path="/room" exact element={<Room />} />
                 <Route path="/gallery" exact element={<Gallery />} />
                 <Route path="*" element={<PageNotFound />} />
               </Routes>

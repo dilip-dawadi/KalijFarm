@@ -24,9 +24,7 @@ export const signup = (formData) => async (dispatch) => {
         dispatch({ type: AUTH, data })
     } catch (error) {
         if (error.response.status >= 400 && error.response.status <= 500) {
-            dispatch({ type: 'START' })
             dispatch({ type: 'ERROR-AUTH-SIGNUP', payload: { errorAuthSignUp: error.response.data.message } })
-            dispatch({ type: 'END' })
         } else {
             console.log(error.message);
         }
@@ -39,9 +37,7 @@ export const play = (play) => async (dispatch) => {
         dispatch({ type: PLAY, data: data })
     } catch (error) {
         if (error.response.status >= 400 && error.response.status <= 500) {
-            dispatch({ type: 'START' })
             dispatch({ type: 'ERROR-AUTH-PLAY', payload: { errorAuthPlay: error.response.data.message } })
-            dispatch({ type: 'END' })
         } else {
             console.log(error.message);
         }
