@@ -7,7 +7,7 @@ export default makeStyles((theme) => ({
     color: 'white',
     borderRadius: '8px',
     [theme.breakpoints.down('xs')]: {
-      padding: '0.25rem 0.6rem',
+      padding: '0.2rem 0.6rem',
     },
   },
   gallery: {
@@ -16,9 +16,9 @@ export default makeStyles((theme) => ({
   galleryH: {
     letterSpacing: '2px',
     color: 'Gray',
-    fontWeight: '700',
+    fontWeight: '600',
     [theme.breakpoints.down('xs')]: {
-      fontSize: '38px'
+      fontSize: '25px'
     },
   },
   appBarSearch: {

@@ -16,9 +16,9 @@ export default makeStyles((theme) => ({
   galleryH: {
     letterSpacing: '2px',
     color: 'Gray',
-    fontWeight: '700',
+    fontWeight: '600',
     [theme.breakpoints.down('xs')]: {
-      fontSize: '38px'
+      fontSize: '25px'
     },
   },
   appBarSearch: {

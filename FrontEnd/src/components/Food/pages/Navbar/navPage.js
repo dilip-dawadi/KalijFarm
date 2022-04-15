@@ -13,12 +13,13 @@ const NavStyles = styled.nav`
   top: 1;
   left: 0;
   right: 0;
-  width: 97.5%;
+  width: 98%;
   background-color: #fcfcfc;
   margin: 0px auto;
   border-radius: 0px 0px 10px 10px;
-  opacity: 0.99;
+  opacity: 1;
 }
+
   ul{
     max-width: 840px;
     margin: 9.5px auto;
@@ -214,7 +215,7 @@ export default function NavMenu({ cartItems }) {
     <NavStyles>
       <div className={'nav'}>
         <div
-          className={nav ? 'mobile-menu-icon menu' : 'mobile-menu-icon'}
+          className={'mobile-menu-icon'}
           onClick={() => setShowNav(!showNav)}
           role="button"
           onKeyDown={() => setShowNav(!showNav)}

@@ -136,7 +136,9 @@ export default function AboutSection() {
             </Fade>
             <Fade right>
               <div className="aboutSection__right">
-                <CardMedia className={classes.madia} image={A.AselectedFile || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png'} title={A.Atitle} />
+                <CardMedia className={classes.madia} style={{
+                  backgroundImage: `url(${A.AselectedFile})`,
+                }} title={A.Atitle} />
               </div>
             </Fade>
           </div>

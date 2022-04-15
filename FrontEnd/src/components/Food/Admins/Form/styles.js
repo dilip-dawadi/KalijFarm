@@ -88,11 +88,11 @@ export default makeStyles((theme) => ({
   // About message photo
   madia: {
     height: 0,
-    paddingTop: '70.25%',
+    paddingTop: '90%',
     width: '80%',
     margin: '0 auto',
-    backgroundColor: 'rgba(0, 0, 0, 0.25)',
-    backgroundBlendMode: 'darken',
+    objectFit: 'cover',
+    backgroundPosition: 'center',
   },
 
   // About Amedia in display to user

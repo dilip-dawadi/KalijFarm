@@ -24,8 +24,6 @@ function Slider() {
   useEffect(() => {
     dispatch(getKalijs());
   }, [dispatch]);
-  const user = JSON.parse(localStorage.getItem('profile'));
-  const navigate = useNavigate();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = Kalijs?.length;
@@ -42,92 +40,100 @@ function Slider() {
   };
 
   return (
-    <Box sx={{
-      flexGrow: 1,
-      paddingTop: '72px'
-    }} id="header">
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={12} md={8} >
-          {isLoading ? <Zoom duration={2000}> <LoadingPlaceHolder extraStyles={{
-            height: 0,
-            paddingTop: '66%', objectFit: 'cover',
-            width: '95%', margin: 'auto', borderRadius: '10px'
-          }} /> </Zoom> :
-            <Zoom duration={3000}>
-              <AutoPlaySwipeableViews
-                axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-                interval={5000}
-                index={activeStep}
-                onChangeIndex={handleStepChange}
-                enableMouseEvents
-              >
-                {Kalijs?.map((step, index) => (
-                  <div key={step.title}>
-                    {Math.abs(activeStep - index) <= 2 ? (
-                      <CardMedia image={step.selectedFile}
-                        style={{
-                          height: 0,
-                          paddingTop: '66%',
-                          width: '94%',
-                          objectFit: 'cover',
-                          borderRadius: '6px',
-                        }}
-                        title={step.title} />
-                    ) : null}
-                  </div>
-                ))}
-              </AutoPlaySwipeableViews>
-            </Zoom>
-          }
-          <MobileStepper
-            steps={maxSteps}
-            position="static"
-            sx={{
-              [theme.breakpoints.down('xl')]: {
-                display: 'none',
-              },
-            }}
-            activeStep={activeStep}
-            nextButton={
-              <Button
-                style={{
-                  backgroundColor: 'coral',
-                  margin: '0.1rem',
-                  padding: '0.1rem 0.4rem',
-                  color: 'white',
-                }}
-                size="small"
-                onClick={handleNext}
-                disabled={activeStep === maxSteps - 1}
-
-              >
-                Next
-                {theme.direction === 'rtl' ? (
-                  <KeyboardArrowLeft />
-                ) : (
-                  <KeyboardArrowRight />
-                )}
-              </Button>
-            }
-            backButton={
-              <Button size="small" style={{
-                margin: '0.1rem',
+    <Grid container style={{
+      paddingTop: '70px',
+      ['@media (max-width:768px)']: {
+        paddingTop: '0px',
+      },
+    }} >
+      <Grid item xs={12} sm={12} md={12}>
+        {isLoading ? <Zoom duration={2000}> <LoadingPlaceHolder extraStyles={{
+          height: '90vh', objectFit: 'cover', width: '100%',
+          margin: 'auto', borderRadius: '10px'
+        }} /> </Zoom> :
+          <Zoom duration={3000}>
+            <AutoPlaySwipeableViews
+              axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+              interval={5000}
+              index={activeStep}
+              onChangeIndex={handleStepChange}
+              enableMouseEvents
+            >
+              {Kalijs?.map((step, index) => (
+                <div key={step.title}>
+                  {Math.abs(activeStep - index) <= 2 ? (
+                    <CardMedia
+                      style={{
+                        height: '90vh',
+                        objectFit: 'cover',
+                        width: '95%',
+                        backgroundImage: `url('./backimage.png'), url(${step.selectedFile})`,
+                        borderRadius: '2rem',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                        margin: 'auto',
+                        ['@media (max-width:768px)']: {
+                          height: '50vh',
+                          width: '100%',
+                        },
+                      }}
+                      title={step.title} />
+                  ) : null}
+                </div>
+              ))}
+            </AutoPlaySwipeableViews>
+          </Zoom>
+        }
+        <MobileStepper
+          steps={maxSteps}
+          position="relative"
+          sx={{
+            [theme.breakpoints.down('xl')]: {
+              display: 'none',
+            },
+          }}
+          activeStep={activeStep}
+          nextButton={
+            <Button
+              style={{
                 backgroundColor: 'coral',
+                margin: '0.1rem',
                 padding: '0.1rem 0.4rem',
                 color: 'white',
-              }} onClick={handleBack}
-                disabled={activeStep === 0}>
-                {theme.direction === 'rtl' ? (
-                  <KeyboardArrowRight />
-                ) : (
-                  <KeyboardArrowLeft />
-                )}
-                Back
-              </Button>
-            }
-          />
-        </Grid>
-        <Grid item xs={12} sm={12} md={4} sx={{
+              }}
+              size="small"
+              onClick={handleNext}
+              disabled={activeStep === maxSteps - 1}
+
+            >
+              Next
+              {theme.direction === 'rtl' ? (
+                <KeyboardArrowLeft />
+              ) : (
+                <KeyboardArrowRight />
+              )}
+            </Button>
+          }
+          backButton={
+            <Button size="small" style={{
+              margin: '0.1rem',
+              backgroundColor: 'coral',
+              padding: '0.1rem 0.4rem',
+              color: 'white',
+            }} onClick={handleBack}
+              disabled={activeStep === 0}>
+              {theme.direction === 'rtl' ? (
+                <KeyboardArrowRight />
+              ) : (
+                <KeyboardArrowLeft />
+              )}
+              Back
+            </Button>
+          }
+        />
+      </Grid>
+      {/* <Grid item xs={12} sm={12} md={12} sx={{
           margin: 'auto',
         }} >
           <Paper
@@ -225,9 +231,8 @@ function Slider() {
                 Learn More
               </Button> : null}
           </Paper>
-        </Grid>
-      </Grid>
-    </Box>
+        </Grid> */}
+    </Grid>
   );
 }
 
