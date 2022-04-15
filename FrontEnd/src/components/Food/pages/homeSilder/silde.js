@@ -66,7 +66,7 @@ function Slider() {
                       style={{
                         height: '90vh',
                         objectFit: 'cover',
-                        width: '95%',
+                        width: '99.5%',
                         backgroundImage: `url('./backimage.png'), url(${step.selectedFile})`,
                         borderRadius: '2rem',
                         backgroundSize: 'cover',
