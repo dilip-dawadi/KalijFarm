@@ -40,7 +40,7 @@ const All = () => {
         >
           {Rooms?.map((kalij) => (
             <Grid key={kalij?._id} item xs={12} sm={6} md={6} lg={4} >
-              <Fade left duration={2000}>
+              <Fade left duration={1500}>
                 <Card className={classed.cards} raised elevation={4}>
                   <ButtonBase
                     component="span"
@@ -58,7 +58,7 @@ const All = () => {
                       color="textSecondary"
                       component="h2"
                     >
-                      {kalij?.tags?.map((tag) => `#${tag} `)}
+                      {kalij.tags.map((tag) => "#" + tag).splice(-2).join(", ")}
                     </Typography>
                   </div>
                   <Typography

@@ -107,7 +107,7 @@ const Form = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {gallery?.slice(0, 4).map((A) => (
+                            {gallery?.slice(0, 2).map((A) => (
                                 <tr key={A._id}>
                                     <td>{A.title}</td>
                                     <td><CardMedia className={classes.madia} image={A.selectedFile} title={A.title} /></td>

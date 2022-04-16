@@ -3,6 +3,15 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   container: {
     padding: '1rem 0rem',
+    ['@media (max-width:600px)']: {
+      padding: '1rem 3rem',
+    },
+    ['@media (max-width:500px)']: {
+      padding: '1rem 1rem',
+    },
+    ['@media (max-width:400px)']: {
+      padding: '1rem 0rem',
+    },
   },
   // pagenotfound
   PageNotFound: {

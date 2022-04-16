@@ -43,7 +43,7 @@ const Kalij = ({ handleAddProduct }) => {
                     className={classes.cardAction} onClick={() => { (user?.result?.name) && navigate(`/kalijs/${kalij._id}`) }} >
                     <CardMedia className={classes.media} style={{ backgroundImage: `url(${kalij.selectedFile})` }} title={kalij.title} />
                     <div className={classes.details}>
-                      <Typography variant="body2" color="textSecondary" component="h2">{kalij?.tags?.map((tag) => `#${tag} `)}</Typography>
+                      <Typography variant="body2" color="textSecondary" component="h2">{kalij?.tags?.splice(0, 4).map((tag) => `#${tag} `)}</Typography>
                     </div>
                     <Typography className={classes.title} gutterBottom variant="h5" component="h2">{kalij.title.split(' ').splice(0, 2).join(' ')}</Typography>
                     <CardContent className={classes.cartTitle} >

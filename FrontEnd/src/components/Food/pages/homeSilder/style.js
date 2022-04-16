@@ -11,7 +11,7 @@ export default makeStyles((theme) => ({
     media: {
         height: '90vh',
         objectFit: 'cover',
-        width: '90.5%',
+        width: '95.5%',
         borderRadius: '1rem',
         margin: 'auto',
         ['@media (max-width:768px)']: {

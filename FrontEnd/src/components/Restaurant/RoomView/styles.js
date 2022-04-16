@@ -41,6 +41,15 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       padding: '0rem',
     },
+    [theme.breakpoints.down('xs')]: {
+      padding: '0rem 4rem',
+    },
+    ['@media (max-width:500px)']: {
+      padding: '0rem 2rem',
+    },
+    ['@media (max-width:400px)']: {
+      padding: '0rem 0.5rem',
+    },
   },
   pagination: {
     borderRadius: 4,

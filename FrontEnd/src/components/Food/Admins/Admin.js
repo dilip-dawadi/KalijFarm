@@ -37,7 +37,7 @@ const Admin = () => {
       <Container maxWidth="lg" style={{ padding: '0px' }}>
 
         <Grid container spacing={3} >
-          {!activeFood ? <Button style={{ margin: ' 40px auto auto auto', textAlign: 'center', color: "white", backgroundColor: 'coral' }} onClick={() => { setactiveAbout(false); setactiveFood(true) }} variant="contained" size="large">Show Food</Button> : <Button style={{ margin: ' 40px auto auto auto', textAlign: 'center' }} onClick={() => setactiveFood(false)} variant="contained" color="secondary" size="large">Hide Food</Button>}
+          {!activeFood ? <Button style={{ margin: ' 40px auto auto auto', textAlign: 'center', color: "white", backgroundColor: 'coral' }} onClick={() => { setactiveAbout(false); setactiveFood(true) }} variant="contained" size="large">Show Food</Button> : <Button style={{ margin: ' 40px auto 40px auto', textAlign: 'center' }} onClick={() => setactiveFood(false)} variant="contained" color="secondary" size="large">Hide Food</Button>}
         </Grid>
 
         <Grow in>

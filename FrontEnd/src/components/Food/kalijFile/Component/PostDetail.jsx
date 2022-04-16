@@ -108,7 +108,10 @@ const KalijDetail = ({ handleAddProduct }) => {
                         color: "lightgray",
                       }}
                     >
-                      {kalij?.tags?.map((tag) => ` #${tag}`)}
+                      {kalij?.tags
+                        .map((tag) => "#" + tag)
+                        .splice(-5)
+                        .join(", ")}
                     </Typography>
                   </div>
                   <Typography
@@ -211,7 +214,10 @@ const KalijDetail = ({ handleAddProduct }) => {
                             color: "lightgray",
                           }}
                         >
-                          #{tags.slice(0, 2).join(", #")}
+                          {tags
+                            .map((tag) => "#" + tag)
+                            .splice(-2)
+                            .join(", ")}
                         </Typography>
                         <img src={selectedFile} width="220px" />
                       </Paper>

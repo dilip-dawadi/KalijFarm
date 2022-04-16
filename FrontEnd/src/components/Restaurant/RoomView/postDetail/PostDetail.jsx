@@ -109,7 +109,10 @@ const KalijDetail = () => {
                         color: "lightgray",
                       }}
                     >
-                      {Room?.tags?.map((tag) => ` #${tag}`)}
+                      {Room?.tags
+                        .map((tag) => "#" + tag)
+                        .splice(-5)
+                        .join(", ")}
                     </Typography>
                   </div>
                   <Typography
@@ -203,7 +206,10 @@ const KalijDetail = () => {
                             color: "lightgray",
                           }}
                         >
-                          #{tags.slice(0, 2).join(", #")}
+                          {tags
+                            .map((tag) => "#" + tag)
+                            .splice(-2)
+                            .join(", ")}
                         </Typography>
                         <img src={selectedFile} width="220px" />
                       </Paper>

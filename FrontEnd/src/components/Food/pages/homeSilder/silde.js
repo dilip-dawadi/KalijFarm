@@ -28,8 +28,8 @@ function Slider() {
     <Grid container className={classes.container} >
       <Grid item xs={12} sm={12} md={12}>
         {isLoading ? <Zoom duration={2000}> <LoadingPlaceHolder extraStyles={{
-          height: '90vh', objectFit: 'cover', width: '100%',
-          margin: 'auto', borderRadius: '10px'
+          height: '85vh', objectFit: 'cover', width: '90%',
+          margin: '10px auto', borderRadius: '10px'
         }} /> </Zoom> :
           <Zoom duration={3000}>
             <AutoPlaySwipeableViews
