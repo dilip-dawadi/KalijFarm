@@ -29,7 +29,7 @@ const Image = () => {
   const [book, setBook] = useState('');
   let [pe, setpe] = useState('');
   const [ps, setps] = useState('');
-  const [price, setprice] = React.useState([0, 1000]);
+  const [price, setprice] = React.useState([500, 2000]);
 
   const searchPost = () => {
     dispatch(getRoomBySearch({ book, pe, ps, tags: tags.join(',') }));
@@ -103,9 +103,9 @@ const Image = () => {
                         value={price}
                         onChange={handlePrice}
                         valueLabelDisplay="auto"
-                        min={0}
+                        min={500}
                         step={100}
-                        max={1000}
+                        max={2000}
                         getAriaValueText={valuetext}
                       />
                     </div>

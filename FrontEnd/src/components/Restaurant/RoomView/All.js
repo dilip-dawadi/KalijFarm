@@ -9,7 +9,7 @@ import {
   Card,
   CardContent,
 } from "@material-ui/core";
-import { Fade } from "react-reveal";
+import { Fade, Zoom } from "react-reveal";
 import { useSelector } from "react-redux";
 import Model from "../../Food/modal/messageM";
 import { useNavigate } from "react-router-dom";
@@ -40,7 +40,7 @@ const All = () => {
         >
           {Rooms?.map((kalij) => (
             <Grid key={kalij?._id} item xs={12} sm={6} md={6} lg={4} >
-              <Fade left duration={1500}>
+              <Zoom in duration={1500}>
                 <Card className={classed.cards} raised elevation={4}>
                   <ButtonBase
                     component="span"
@@ -98,12 +98,12 @@ const All = () => {
                     )}
                   </CardActions>
                 </Card>
-              </Fade>
+              </Zoom>
             </Grid>
           ))}
         </Grid> :
         <Grid item lg={12} >
-          <Fade left>
+          <Zoom in>
             <Card className={classed.cardsearch} raised elevation={4}>
               <CardContent>
                 <Typography
@@ -114,16 +114,9 @@ const All = () => {
                 >
                   No Post Found 🧐
                 </Typography>
-                <Button
-                  size="large"
-                  style={{ width: '100%', margin: '10px 0px', padding: "10px", backgroundColor: '#f50057', color: 'white', borderRadius: '5px', letterSpacing: '4px' }}
-                  onClick={() => {
-                    navigate("/room?roomNo=1");
-                  }}
-                >Search All</Button>
               </CardContent>
             </Card>
-          </Fade>
+          </Zoom>
         </Grid>}
     </>
   );
