@@ -37,6 +37,7 @@ export const fetchaRoom = (id) => API.get(`/room/${id}`);
 export const deleteaRoom = (id) => API.delete(`/room/${id}`)
 export const updateaRoom = (id, updateaRoom) => API.patch(`/room/${id}`, updateaRoom);
 export const createaRoom = (createaRoom) => API.post(`/room`, createaRoom);
+export const roomBook = (booked) => API.post(`/room/booked`, booked);
 // End Room
 
 // fetch About

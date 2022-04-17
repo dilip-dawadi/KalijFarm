@@ -25,6 +25,10 @@ export default (state = { isLoading: true, Rooms: [] }, action) => {
             return { ...state, Rooms: state.Rooms.map((Room) => (Room._id === action.payload._id ? action.payload : Room)), updateMsg: action.payload.message };
         case 'DELETE_ROOM':
             return { ...state, Rooms: state.Rooms?.filter((Room) => Room._id !== action.payload) }
+        case 'ROOM_BOOK':
+            return { ...state, RoomBook: action.successBook };
+        case 'ERROR_ROOM_BOOK':
+            return { ...state, errorRoomBook: action.payload.errorRoomBook };
         default:
             return state;
     }

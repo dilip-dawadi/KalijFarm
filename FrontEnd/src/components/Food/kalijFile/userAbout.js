@@ -11,7 +11,7 @@ import { useTheme } from '@mui/material/styles';
 import LoadingAbout from './../loading/loadingAbout';
 const AboutSectionStyles = styled.div`
   .container {
-    margin: 6rem 1.25rem;
+    margin: 6rem 1.1rem;
     display: flex;
     text-align: center;
     justify-content: flex-start;

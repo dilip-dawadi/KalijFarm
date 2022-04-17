@@ -12,7 +12,7 @@ import {
 import { getRoom, getRoomBySearch } from "../../../../redux/actions/roomaction";
 import useStyles from "./Pdetail";
 import moment from "moment";
-// import Mail from "../../modal/buyNow";
+import Mail from "../../../Food/modal/buyRoom";
 
 const KalijDetail = () => {
   const [openM, setOpenM] = React.useState(false);
@@ -26,6 +26,7 @@ const KalijDetail = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const { Room, Rooms, isLoading } = useSelector((state) => state.Room);
+  const user = JSON.parse(localStorage.getItem("profile"));
   const { id } = useParams();
   useEffect(() => {
     dispatch(getRoom(id));
@@ -137,22 +138,33 @@ const KalijDetail = () => {
                     >
                       Rs.{Room?.price}
                     </span>
+                    <br />
+                    <span
+                      style={{
+                        padding: " 4.5px 15px",
+                        borderRadius: "6px",
+                        fontSize: "10px",
+                        color: "black",
+                      }}
+                    >
+                      {user?.result.role === 1 && `Id: ${Room?._id}`}
+                    </span>
                   </Typography>
                   <Divider style={{ margin: "20px 0" }} />
-                  {/* <CardActions className={classes.cardActionsS}>
+                  <CardActions className={classes.cardActionsS}>
                     <Button
                       size="small"
                       className={classes.buy}
                       onClick={handleOpenM}
                     >
                       Buy Now
-                    </Button> */}
-                  {/* <Mail openM={openM} setOpenM={setOpenM} /> */}
-                  {/* </CardActions> */}
-                  <Divider style={{ margin: "20px 0" }} />
+                    </Button>
+                    <Mail openM={openM} setOpenM={setOpenM} />
+                  </CardActions>
                 </div>
               </div>
             </div>
+            <Divider style={{ margin: "20px 0" }} />
             {!!recommented.length && (
               <div className={classes.section}>
                 <Typography gutterBottom variant="h5">

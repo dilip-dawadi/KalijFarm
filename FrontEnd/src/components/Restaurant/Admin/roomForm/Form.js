@@ -5,6 +5,7 @@ import ChipInput from 'material-ui-chip-input';
 import useStyles from './styles';
 import { createRooms, updateRooms } from '../../../../redux/actions/roomaction';
 import { play } from '../../../../redux/actions/Auth';
+import UpdateBook from './updateBook';
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import { storage } from "../../../Food/Admins/Form/firebase";
 
@@ -116,15 +117,6 @@ const Form = ({ currentRoomId, setcurrentRoomId }) => {
       dispatch(createRooms({ ...postData, selectedFile: imageUrl, name: user?.result?.name }));
     }
   };
-  const handlePlay = async (e) => {
-    e.preventDefault();
-    if (!playForm.email || !playForm.bill) return;
-    setplayDisable(true);
-    setTimeout(() => {
-      setplayDisable(false);
-    }, 3000);
-    dispatch(play({ ...playForm }));
-  };
   const handleAddChip = (tag) => {
     setPostData({ ...postData, tags: [...postData.tags, tag] });
   };
@@ -136,8 +128,8 @@ const Form = ({ currentRoomId, setcurrentRoomId }) => {
   return (
     <>
       {(user?.result.bill) ?
-        <Paper className={classes.paper}>
-          <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit} encType="multipart/form-data" >
+        <><UpdateBook /><Paper className={classes.paper}>
+          <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit} encType="multipart/form-data">
             <Typography variant="h6">{currentRoomId
               ? `Editing a Room` : 'Creating a Room'}</Typography>
             <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
@@ -152,14 +144,13 @@ const Form = ({ currentRoomId, setcurrentRoomId }) => {
                 fullWidth
                 value={postData.tags}
                 onAdd={(chip) => handleAddChip(chip)}
-                onDelete={(chip) => handleDeleteChip(chip)}
-              />
+                onDelete={(chip) => handleDeleteChip(chip)} />
             </div>
             {progress ?
               <div style={{ padding: '7px 0', width: '98%', margin: '20px auto', textAlign: 'center' }}>
                 <Typography variant="body1">{progress}</Typography>
               </div> :
-              <div style={{ textAlign: "center" }} ><input style={{ padding: '20px 0px', marginLeft: "50px" }} type="file" id='selectedFile' name='selectedFile' onChange={(e) => setimage({ ...image, selectedFile: e.target.files[0] })} />
+              <div style={{ textAlign: "center" }}><input style={{ padding: '20px 0px', marginLeft: "50px" }} type="file" id='selectedFile' name='selectedFile' onChange={(e) => setimage({ ...image, selectedFile: e.target.files[0] })} />
                 <Button variant="contained" color="primary" size="large" onClick={upload}>Upload</Button></div>}
             {/* error or createMessage or updateMessage display*/}
             {(Error || createMessage || updateMessage) && <Button color="secondary"
@@ -168,7 +159,7 @@ const Form = ({ currentRoomId, setcurrentRoomId }) => {
             <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" disabled={playDisable} fullWidth>Submit</Button>
             <Button variant="contained" color="secondary" size="small" onClick={clear} fullWidth>Clear</Button>
           </form>
-        </Paper>
+        </Paper></>
         :
         <div
           style={{

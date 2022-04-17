@@ -77,3 +77,17 @@ export const deleteaRoom = (id) => async (dispatch) => {
         console.log(error);
     }
 }
+
+export const roomBook = (booked) => async (dispatch) => {
+    try {
+        console.log(booked, 'booked');
+        const { data: { message: data } } = await api.roomBook(booked);
+        dispatch({ type: 'ROOM_BOOK', successBook: data })
+    } catch (error) {
+        if (error.response.status >= 400 && error.response.status <= 500) {
+            dispatch({ type: 'ERROR_ROOM_BOOK', payload: { errorRoomBook: error.response.data.message } })
+        } else {
+            console.log(error.message);
+        }
+    }
+}

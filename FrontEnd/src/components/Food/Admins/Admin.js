@@ -18,7 +18,7 @@ function useQuery() {
 const Admin = () => {
   const user = JSON.parse(localStorage.getItem('profile'))
   const [currentId, setCurrentId] = useState('');
-  const [currentRoomId, setcurrentRoomId] = useState(1);
+  const [currentRoomId, setcurrentRoomId] = useState('');
   const [activeFood, setactiveFood] = useState(false);
   const [activeRoom, setactiveRoom] = useState(false);
   const [activeAbout, setactiveAbout] = useState(false);
@@ -39,7 +39,6 @@ const Admin = () => {
         <Grid container spacing={3} >
           {!activeFood ? <Button style={{ margin: ' 40px auto auto auto', textAlign: 'center', color: "white", backgroundColor: 'coral' }} onClick={() => { setactiveAbout(false); setactiveFood(true) }} variant="contained" size="large">Show Food</Button> : <Button style={{ margin: ' 40px auto 40px auto', textAlign: 'center' }} onClick={() => setactiveFood(false)} variant="contained" color="secondary" size="large">Hide Food</Button>}
         </Grid>
-
         <Grow in>
           <Container style={{
             padding: '12px',
