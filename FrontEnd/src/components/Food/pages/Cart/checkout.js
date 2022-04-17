@@ -60,7 +60,6 @@ function between(min, max) {
 }
 export default function App({ cartItems }) {
   const [btnDisable, setbtnDisable] = useState(false);
-  console.log(btnDisable);
   const user = JSON.parse(localStorage.getItem('profile'))
   const sendEmail = (e) => {
     e.preventDefault();

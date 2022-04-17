@@ -24,7 +24,7 @@ export default makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     height: '100%',
-    borderRadius: '20px',
+    borderRadius: '8px',
     position: 'relative',
     '&:hover': {
       padding: '0.5x 0.5px'

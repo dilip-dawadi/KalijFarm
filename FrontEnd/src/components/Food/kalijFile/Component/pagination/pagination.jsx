@@ -42,7 +42,6 @@ export const PaginateGallery = ({ page }) => {
   const dispatch = useDispatch();
 
   const classes = useStyles();
-  console.log(page, "page");
   useEffect(() => {
     dispatch(getKal(page));
   }, [dispatch, page]);

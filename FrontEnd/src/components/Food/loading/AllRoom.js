@@ -19,7 +19,7 @@ const Loading = () => {
                             {isLoading ? <LoadingPlaceHolder extraStyles={{
                                 height: 0,
                                 paddingTop: '88%', objectFit: 'cover',
-                                margin: 'auto', borderRadius: '10px',
+                                margin: 'auto', borderRadius: '8px',
                             }} /> :
                                 <div>
                                     <CardMedia className={classes.media} style={{ backgroundImage: `url(${room.selectedFile})` }} title={room.title} />
@@ -37,8 +37,8 @@ const Loading = () => {
                             }} /> :
                                 <Typography className={classes.title} gutterBottom variant="h5" component="h2"></Typography>}
                             {isLoading ? <LoadingPlaceHolder extraStyles={{
-                                height: '40px', width: '150px',
-                                borderRadius: '12px', margin: '3px 30px', padding: '0.1rem 0rem',
+                                height: '40px',
+                                borderRadius: '1px', margin: '0px auto', padding: '0.1rem 0rem',
                             }} /> :
                                 <CardContent>
                                     <Typography variant="body2" color="textSecondary" component="p"></Typography>

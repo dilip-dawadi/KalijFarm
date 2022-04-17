@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Grid, Card, CardActions, CardContent, CardMedia, Button, Typography, ButtonBase } from '@material-ui/core/';
-import { Fade } from 'react-reveal';
+import { Fade, Zoom } from 'react-reveal';
 import useWindowPosition from '../../../hook/useWindowPosition';
 import useStyles from './Component/kalijcs'
 import useStyle from './Component/onlyKalij'
@@ -36,7 +36,7 @@ const Kalij = ({ handleAddProduct }) => {
         <Grid className={classes.container} container alignItems="stretch" spacing={2}>
           {Kalijs.slice(0, 4).map((kalij) => (
             <Grid key={kalij._id} checked={checked} item xs={12} sm={6} md={4} lg={3}>
-              <Fade button duration={2000}>
+              <Zoom out duration={2000}>
                 <Card className={classed.cards} raised elevation={3}>
                   <ButtonBase component="span"
                     name="test"
@@ -71,7 +71,7 @@ const Kalij = ({ handleAddProduct }) => {
                     )}
                   </CardActions>
                 </Card>
-              </Fade>
+              </Zoom>
             </Grid>
           ))}
         </Grid>

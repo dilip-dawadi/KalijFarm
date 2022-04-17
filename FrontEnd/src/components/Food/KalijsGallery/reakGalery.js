@@ -33,7 +33,6 @@ export default function MasonryImageList() {
     const { Kal, isLoading } = useSelector((state) => state.Kalijs);
     const query = useQuery();
     const page = query.get('page' || 1);
-    console.log(page, 'page');
     return (
         (isLoading) ?
             <ThemeProvider theme={theme}>

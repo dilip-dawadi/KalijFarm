@@ -17,7 +17,6 @@ const Image = () => {
   const navigate = useNavigate();
   const query = useQuery();
   const page = query.get('page' || 1);
-  console.log(page, 'fromsearch');
   const searchKals = query.get('searchKals');
 
   const [search, setSearch] = useState('');

@@ -11,7 +11,7 @@ export default function LoadingAbout() {
         <div className="container" id="place-to-visit" style={{ margin: '50px' }} >
             <Fade left>
                 <div className="aboutSection__left">
-                    <Paper elevation={3}
+                    <Paper elevation={1}
                         style={{
                             margin: '0 auto',
                             maxwidth: '50%',
