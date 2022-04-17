@@ -30,8 +30,8 @@ export default makeStyles((theme) => ({
         },
     },
     gurantee: {
-        maxWidth: '35%',
-        height: '40%',
+        maxWidth: '120px',
+        maxheight: '50px',
         borderRadius: '1rem',
         margin: '10px auto',
         display: 'flex',
@@ -39,7 +39,8 @@ export default makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
         ['@media (max-width:400px)']: {
-            maxWidth: '50%',
+            maxWidth: '90px',
+            maxheight: '50px',
         },
     },
     guranteeMessage: {

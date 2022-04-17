@@ -141,7 +141,7 @@ const Form = ({ currentRoomId, setcurrentRoomId }) => {
             <Typography variant="h6">{currentRoomId
               ? `Editing a Room` : 'Creating a Room'}</Typography>
             <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
-            <TextField name="message" variant="outlined" label="Message" fullWidth multiline rows={4} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
+            <TextField name="message" variant="outlined" label="Message" fullWidth multiline minRows={4} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
             <TextField name="price" variant="outlined" label="Price" fullWidth value={postData.price} onChange={(e) => setPostData({ ...postData, price: e.target.value })} />
             <TextField name="booked" variant="outlined" label="Booked" fullWidth value={postData.booked} onChange={(e) => setPostData({ ...postData, booked: e.target.value })} />
             <div style={{ padding: '7px 0', width: '98%' }}>

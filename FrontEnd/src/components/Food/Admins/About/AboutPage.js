@@ -48,7 +48,7 @@ const Form = () => {
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmitAbout}>
               <Typography variant="h6">{currentIdAbout ? `Editing a About` : 'Creating a Abouts'}</Typography>
               <TextField name="Atitle" variant="outlined" label="Title" fullWidth value={aboutPage.Atitle} onChange={(e) => setAboutPage({ ...aboutPage, Atitle: e.target.value })} />
-              <TextField name="Amessage" variant="outlined" label="Message" fullWidth multiline rows={4} value={aboutPage.Amessage} onChange={(e) => setAboutPage({ ...aboutPage, Amessage: e.target.value })} />
+              <TextField name="Amessage" variant="outlined" label="Message" fullWidth multiline minRows={4} value={aboutPage.Amessage} onChange={(e) => setAboutPage({ ...aboutPage, Amessage: e.target.value })} />
               <div className={classes.fileInput}><FileBase type="file" multiple={false} onDone={({ base64 }) => setAboutPage({ ...aboutPage, AselectedFile: base64 })} /></div>
 
               <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
