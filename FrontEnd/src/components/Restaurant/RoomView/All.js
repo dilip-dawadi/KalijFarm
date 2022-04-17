@@ -15,7 +15,7 @@ import Model from "../../Food/modal/messageM";
 import { useNavigate } from "react-router-dom";
 import useStyles from "../../Food/kalijFile/Component/kalijcss";
 import useStyle from "../../Food/kalijFile/Component/onlyKalij";
-import Loading from "../../Food/loading/AllKalijs";
+import Loading from "../../Food/loading/AllRoom";
 const All = () => {
   const [openM, setOpenM] = React.useState(false);
   const handleOpenM = () => {
@@ -40,7 +40,7 @@ const All = () => {
         >
           {Rooms?.map((kalij) => (
             <Grid key={kalij?._id} item xs={12} sm={6} md={6} lg={4} >
-              <Zoom in duration={1500}>
+              <Zoom out duration={1500}>
                 <Card className={classed.cards} raised elevation={4}>
                   <ButtonBase
                     component="span"
@@ -103,7 +103,7 @@ const All = () => {
           ))}
         </Grid> :
         <Grid item lg={12} >
-          <Zoom in>
+          <Zoom out duration={1500}>
             <Card className={classed.cardsearch} raised elevation={4}>
               <CardContent>
                 <Typography

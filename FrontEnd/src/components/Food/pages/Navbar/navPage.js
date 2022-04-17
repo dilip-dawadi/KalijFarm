@@ -283,7 +283,10 @@ export default function NavMenu({ cartItems }) {
             {user?.result ? (
               <Login />
             ) : (
-              <NavLink className='Signin' to="/auth">Sign in</NavLink>
+              <Link className='Signin' to="/auth" onClick={() => setShowNav(!showNav)}
+                role="button"
+                onKeyDown={() => setShowNav(!showNav)}
+                tabIndex={0}>Sign in</Link>
             )}
           </li>
 

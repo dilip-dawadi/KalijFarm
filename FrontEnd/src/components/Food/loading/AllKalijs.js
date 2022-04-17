@@ -1,5 +1,5 @@
 // react usestate
-import React, { useState } from 'react';
+import React from 'react';
 import { Grid, Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core/';
 import { Zoom, Fade, Flip, Rotate, Bounce, Roll } from 'react-reveal';
 import useStyles from '../kalijFile/Component/kalijcs'
@@ -14,7 +14,7 @@ const Loading = () => {
     <Grid className={classes.container} container alignItems="stretch" spacing={2}>
       {Array.from(Array(Math.ceil(6)).keys()).map((kalij) => (
         <Grid key={kalij._id} item xs={12} sm={6} md={6} lg={4}>
-          <Zoom in duration={3000}>
+          <Zoom in duration={2000}>
             <Card className={classed.cards} raised elevation={4}>
               {isLoading ? <LoadingPlaceHolder extraStyles={{
                 height: 0,
@@ -37,7 +37,7 @@ const Loading = () => {
               }} /> :
                 <Typography className={classes.title} gutterBottom variant="h5" component="h2"></Typography>}
               {isLoading ? <LoadingPlaceHolder extraStyles={{
-                height: '20px', width: '150px',
+                height: '40px', width: '150px',
                 borderRadius: '12px', margin: '3px 30px', padding: '0.1rem 0rem',
               }} /> :
                 <CardContent>
