@@ -94,7 +94,7 @@ const Image = () => {
                     </Select>
                   </FormControl>
                   <Box sx={{ margin: '10px auto' }}>
-                    <div> <Typography id="non-linear-slider" gutterBottom style={{ backgroundColor: "coral", padding: '5px 10px', borderRadius: '10px' }} >
+                    <div> <Typography id="non-linear-slider" gutterBottom style={{ backgroundColor: "coral", padding: '5px 10px', color: 'white', borderRadius: '3px' }} >
                       Rs.{price.at(0)} to Rs.{price.at(1)}
                     </Typography>
                     </div>
