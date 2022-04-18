@@ -151,16 +151,43 @@ const KalijDetail = () => {
                     </span>
                   </Typography>
                   <Divider style={{ margin: "20px 0" }} />
-                  <CardActions className={classes.cardActionsS}>
-                    <Button
-                      size="small"
-                      className={classes.buy}
-                      onClick={handleOpenM}
+                  {Room.booked === "false" ? (
+                    <CardActions className={classes.cardActionsS}>
+                      <Button
+                        size="small"
+                        className={classes.buy}
+                        onClick={handleOpenM}
+                      >
+                        Book Now
+                      </Button>
+                      <Mail openM={openM} setOpenM={setOpenM} />
+                    </CardActions>
+                  ) : (
+                    <CardActions
+                      className={classes.cardActionsS}
+                      style={{
+                        justifyContent: "space-around",
+                      }}
                     >
-                      Buy Now
-                    </Button>
-                    <Mail openM={openM} setOpenM={setOpenM} />
-                  </CardActions>
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        component="h2"
+                        textAlign="center"
+                        style={{
+                          marginTop: "10px",
+                          letterSpacing: "1px",
+                          color: "white",
+                          fontWeight: "bold",
+                          padding: "10px",
+                          backgroundColor: "red",
+                          borderRadius: "7px",
+                        }}
+                      >
+                        Room is not available for today
+                      </Typography>
+                    </CardActions>
+                  )}
                 </div>
               </div>
             </div>

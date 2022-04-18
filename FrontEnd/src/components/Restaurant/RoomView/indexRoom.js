@@ -77,10 +77,10 @@ const Image = () => {
                     label="Search Rooms"
                     variant="outlined"
                   />
-                  <FormControl sx={{ overflow: 'hidden' }}>
+                  <FormControl sx={{ overflow: 'hidden', marginTop: '5px' }}>
                     <InputLabel id="demo-simple-select-helper-label">Room Status</InputLabel>
                     <Select
-                      style={{ color: '#000', margin: '0px 0' }}
+                      style={{ color: '#000', margin: '0px' }}
                       value={book}
                       variant="outlined"
                       onChange={(e) => setBook(e.target.value)}
@@ -89,8 +89,8 @@ const Image = () => {
                       <MenuItem value="">
                         <em>None</em>
                       </MenuItem>
-                      <MenuItem value={'true'}>Available</MenuItem>
-                      <MenuItem value={'false'}>Unavailabe</MenuItem>
+                      <MenuItem value={'false'}>Available</MenuItem>
+                      <MenuItem value={'true'}>Unavailabe</MenuItem>
                     </Select>
                   </FormControl>
                   <Box sx={{ margin: '10px auto' }}>

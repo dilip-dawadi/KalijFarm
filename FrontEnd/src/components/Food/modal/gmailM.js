@@ -48,7 +48,7 @@ export default function CustomizedSnackbars() {
   return (
     <div className={classes.root}>
       <Button variant="outlined" onClick={handleClick} className={classes.btn}>
-        Esewa Pay
+        Pay Now
       </Button>
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert severity="success">
