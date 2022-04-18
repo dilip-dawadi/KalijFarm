@@ -250,6 +250,7 @@ const KalijDetail = () => {
                             .splice(-2)
                             .join(", ")}
                         </Typography>
+                        {/* <img src={selectedFile} width="220px" height="200px" /> */}
                         <img src={selectedFile} width="220px" />
                       </Paper>
                     ))}

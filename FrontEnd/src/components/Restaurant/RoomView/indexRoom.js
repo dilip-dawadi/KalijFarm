@@ -94,7 +94,7 @@ const Image = () => {
                     </Select>
                   </FormControl>
                   <Box sx={{ margin: '10px auto' }}>
-                    <div> <Typography id="non-linear-slider" gutterBottom style={{ backgroundColor: "lightblue", padding: '5px 10px', borderRadius: '10px' }} >
+                    <div> <Typography id="non-linear-slider" gutterBottom style={{ backgroundColor: "coral", padding: '5px 10px', borderRadius: '10px' }} >
                       Rs.{price.at(0)} to Rs.{price.at(1)}
                     </Typography>
                     </div>
@@ -102,6 +102,7 @@ const Image = () => {
                       <Slider
                         value={price}
                         onChange={handlePrice}
+                        style={{ color: "coral", padding: '5px 10px', borderRadius: '10px', margin: '10px 0' }}
                         valueLabelDisplay="auto"
                         min={500}
                         step={100}
@@ -111,8 +112,8 @@ const Image = () => {
                     </div>
                   </Box>
                   <Button onClick={searchPost} style={{
-                    letterSpacing: '2.5px',
-                  }} variant="contained" color="primary">Search</Button>
+                    letterSpacing: '2.5px', backgroundColor: 'coral', color: 'white', fontWeight: 'bold', fontSize: '14px',
+                  }} variant="contained">Search</Button>
                   {(roomSearchD || tags.length > 0) ? <Button onClick={allPost} style={{
                     marginTop: '3px', letterSpacing: '3px',
                   }} variant="contained" color="secondary">See All</Button> : null}
