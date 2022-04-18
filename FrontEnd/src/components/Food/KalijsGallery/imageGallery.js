@@ -25,14 +25,14 @@ const Image = () => {
     if (search.trim() || tags) {
       dispatch(getKalBySearch({ search, tags: tags.join(',') }));
 
-      navigate(`/foods/search?searchKals=${search || 'none'}&tags=${tags.join(',')}`);
+      navigate(`/food/search?searchKals=${search || 'none'}&tags=${tags.join(',')}`);
     } else {
-      navigate('/foods');
+      navigate('/food');
     }
   };
   const allPost = () => {
     dispatch(getKal(1));
-    navigate('/foods?page=1');
+    navigate('/food?page=1');
   };
   const handleKeyPress = (e) => {
     if (e.keyCode === 13) {
@@ -61,7 +61,7 @@ const Image = () => {
             <Grid item xs={12} sm={3} md={4}>
               <div className={classes.mainSearch} >
                 <AppBar className={classes.appBarSearch} position="static" color="inherit">
-                  <TextField onKeyDown={handleKeyPress} name="search" variant="outlined" label="Search Foods" fullWidth value={search} onChange={(e) => setSearch(e.target.value)} />
+                  <TextField onKeyDown={handleKeyPress} name="search" variant="outlined" label="Search Food" fullWidth value={search} onChange={(e) => setSearch(e.target.value)} />
                   <ChipInput
                     style={{ margin: '10px 0' }}
                     value={tags}

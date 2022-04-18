@@ -9,6 +9,7 @@ import Room from './components/Restaurant/RoomView/indexRoom';
 import Gallery from './components/Food/KalijsGallery/reakGalery';
 import Nav from './components/Food/pages/Navbar/navPage';
 import Auth from './components/Food/Auth/Auth'
+import Admin from './components/Food/Admins/Admin';
 import About from './components/Food/pages/About'
 import PostDetail from './components/Food/kalijFile/Component/PostDetail'
 import Cart from './components/Food/pages/Cart/Cart'
@@ -61,6 +62,7 @@ const App = () => {
     setCartItems([]);
     localStorage.removeItem('cart')
   }
+  // const user = JSON.parse(localStorage.getItem('profile'))
   return (
     loading ? <Preload /> :
       (
@@ -75,16 +77,18 @@ const App = () => {
             <Zoom>
               <Routes>
                 <Route path="/contact" exact element={<Contact />} />
-                <Route path="/kalijs" exact element={<Home handleAddProduct={handleAddProduct} />} />
-                <Route path="/" exact element={<Navigate to="/kalijs?userPage=1" />} />
+                <Route path="/home" exact element={<Home handleAddProduct={handleAddProduct} />} />
+                <Route path="/" exact element={<Navigate to="/home?up=1" />} />
+                {/* <Route path="/admin" exact element={<Admin />} /> */}
+                {/* {user?.result.role === 1 ? <Route path="/" exact element={<Navigate to="/admin" />} /> : <Route path="/" exact element={<Navigate to="/" />} />} */}
                 <Route path="/cart" exact element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemove={handleRemove} handleClearAll={handleClearAll} />} />
-                <Route path="/kalijs/:id" exact element={<PostDetail handleAddProduct={handleAddProduct} />} />
+                <Route path="/food/:id" exact element={<PostDetail handleAddProduct={handleAddProduct} />} />
                 <Route path="/room/:id" exact element={<PostDetailOfRoom />} />
                 <Route path="/about" exact element={<About />} />
                 <Route path="/auth" exact element={<Auth />} />
                 <Route path="/users/:id/verify/:token" exact element={<Verify />} />
-                <Route path="/foods" exact element={<Image />} />
-                <Route path="/foods/search" exact element={<Image />} />
+                <Route path="/food" exact element={<Image />} />
+                <Route path="/food/search" exact element={<Image />} />
                 <Route path="/room" exact element={<Room />} />
                 <Route path="/gallery" exact element={<Gallery />} />
                 <Route path="*" element={<PageNotFound />} />

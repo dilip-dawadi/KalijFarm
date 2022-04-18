@@ -47,7 +47,7 @@ const All = () => {
                     name="test"
                     className={classes.cardAction}
                     onClick={() => {
-                      user?.result?.name && navigate(`/kalijs/${kalij._id}`);
+                      user?.result?.name && navigate(`/food/${kalij._id}`);
                     }}
                   >
                     <CardMedia className={classes.media} style={{ backgroundImage: `url(${kalij.selectedFile})` || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png' }} title={kalij.title} />
@@ -89,7 +89,7 @@ const All = () => {
                         size="small"
                         className={classed.btn}
                         onClick={() => {
-                          navigate(`/kalijs/${kalij._id}`);
+                          navigate(`/food/${kalij._id}`);
                         }}
                       >
                         Learn More
@@ -117,7 +117,7 @@ const All = () => {
                   size="large"
                   style={{ width: '100%', margin: '10px 0px', padding: "10px", backgroundColor: '#f50057', color: 'white', borderRadius: '5px', letterSpacing: '4px' }}
                   onClick={() => {
-                    navigate("/foods?page=1");
+                    navigate("/food");
                   }}
                 >Search All</Button>
               </CardContent>

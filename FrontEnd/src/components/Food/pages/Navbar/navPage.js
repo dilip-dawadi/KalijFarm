@@ -236,7 +236,7 @@ export default function NavMenu({ cartItems }) {
           </div>
           <li>
             <NavLink
-              to="/kalijs?userPage=1"
+              to="/home?up=1"
               onClick={() => setShowNav(!showNav)}
               role="button"
               onKeyDown={() => setShowNav(!showNav)}
@@ -247,13 +247,13 @@ export default function NavMenu({ cartItems }) {
           </li>
           <li>
             <NavLink
-              to="/foods?page=1"
+              to="/food"
               onClick={() => setShowNav(!showNav)}
               role="button"
               onKeyDown={() => setShowNav(!showNav)}
               tabIndex={0}
             >
-              Foods
+              Food
             </NavLink>
           </li>
           <li>

@@ -40,7 +40,7 @@ const Kalij = ({ handleAddProduct }) => {
                 <Card className={classed.cards} raised elevation={3}>
                   <ButtonBase component="span"
                     name="test"
-                    className={classes.cardAction} onClick={() => { (user?.result?.name) && navigate(`/kalijs/${kalij._id}`) }} >
+                    className={classes.cardAction} onClick={() => { (user?.result?.name) && navigate(`/food/${kalij._id}`) }} >
                     <CardMedia className={classes.media} style={{ backgroundImage: `url(${kalij.selectedFile})` }} title={kalij.title} />
                     <div className={classes.details}>
                       <Typography variant="body2" color="textSecondary" component="h2">{kalij?.tags?.splice(0, 4).map((tag) => `#${tag} `)}</Typography>
@@ -65,7 +65,7 @@ const Kalij = ({ handleAddProduct }) => {
                       </Button><Model openM={openM} setOpenM={setOpenM} /></>
 
                     ) : (
-                      <Button size="small" className={classed.btn} onClick={() => { navigate(`/kalijs/${kalij._id}`) }}>
+                      <Button size="small" className={classed.btn} onClick={() => { navigate(`/food/${kalij._id}`) }}>
                         Learn More
                       </Button>
                     )}
@@ -77,7 +77,7 @@ const Kalij = ({ handleAddProduct }) => {
         </Grid>
         <br />
         <center><Button variant="contained" style={{ backgroundColor: 'coral', padding: '10px 20px', letterSpacing: '2px', fontWeight: '600', borderRadius: '7px', color: 'white' }}><Link
-          to='/foods?page=1'
+          to='/food?page=1'
           className={classes.link}>
           View More
         </Link></Button></center>

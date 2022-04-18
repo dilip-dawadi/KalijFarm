@@ -30,7 +30,7 @@ export const Paginate = ({ page }) => {
         <PaginationItem
           {...item}
           component={Link}
-          to={`/foods?page=${item.page}`}
+          to={`/food?page=${item.page}`}
         />
       )}
     />
@@ -58,7 +58,7 @@ export const PaginateGallery = ({ page }) => {
         <PaginationItem
           {...item}
           component={Link}
-          to={`/kalijs/all?page=${item.page}`}
+          to={`/food/all?page=${item.page}`}
         />
       )}
     />
@@ -86,7 +86,7 @@ export const PaginateRoom = ({ page }) => {
         <PaginationItem
           {...item}
           component={Link}
-          to={`/room?roomNo=${item.page}`}
+          to={`/room?rp=${item.page}`}
         />
       )}
     />

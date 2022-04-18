@@ -19,7 +19,7 @@ const KalijDetail = ({ handleAddProduct }) => {
   const [openM, setOpenM] = React.useState(false);
   const navigate = useNavigate();
   const openPost = (id) => {
-    navigate(`/kalijs/${id}`);
+    navigate(`/food/${id}`);
   };
   const handleOpenM = () => {
     setOpenM(true);

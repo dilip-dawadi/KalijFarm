@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Container, Grow, Grid, Paper, Button } from '@material-ui/core';
 import Posts from './Posts/Posts';
 import Form from './Form/Form';
-import Header from '../pages/Navbar/Header';
 import HomePage from '../kalijFile/UserIndex'
 import AboutAdmin from './About/AboutPage'
 import Gallery from './Gallery/gallery'
@@ -25,7 +24,7 @@ const Admin = () => {
   const [activeGallery, setactiveGallery] = useState(false);
 
   const adminQuery = useQuery();
-  const userPage = adminQuery.get('userPage' || 1);
+  const up = adminQuery.get('up' || 1);
   if (!user?.result.role) {
     return (
       <HomePage />
@@ -33,9 +32,7 @@ const Admin = () => {
   }
   return (
     <>
-      <Header />
-      <Container maxWidth="lg" style={{ padding: '0px' }}>
-
+      <Container maxWidth="lg" style={{ paddingTop: '77px' }}>
         <Grid container spacing={3} >
           {!activeFood ? <Button style={{ margin: ' 40px auto auto auto', textAlign: 'center', color: "white", backgroundColor: 'coral' }} onClick={() => { setactiveAbout(false); setactiveFood(true) }} variant="contained" size="large">Show Food</Button> : <Button style={{ margin: ' 40px auto 40px auto', textAlign: 'center' }} onClick={() => setactiveFood(false)} variant="contained" color="secondary" size="large">Hide Food</Button>}
         </Grid>
@@ -51,7 +48,7 @@ const Admin = () => {
               <Grid item xs={12} md={8} >
                 <Posts setCurrentId={setCurrentId} />
                 <Paper elevation={3} style={{ padding: '20px', margin: '20px' }}>
-                  <Adminpagination userPage={userPage} />
+                  <Adminpagination up={up} />
                 </Paper>
               </Grid>
             </Grid>
@@ -72,7 +69,7 @@ const Admin = () => {
               <Grid item xs={12} md={8} >
                 <RoomPost setcurrentRoomId={setcurrentRoomId} />
                 <Paper elevation={3} style={{ padding: '20px', margin: '20px' }}>
-                  <RoomPagination userPage={userPage} />
+                  <RoomPagination up={up} />
                 </Paper>
               </Grid>
             </Grid>

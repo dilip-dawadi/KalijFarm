@@ -7,29 +7,29 @@ import { Link } from "react-router-dom";
 import { getKalijs } from "../../../../redux/actions/kalijs";
 import useStyles from "./styles";
 
-const Adminpaginate = ({ userPage }) => {
+const Adminpaginate = ({ up }) => {
   const { adminNumberOfPages } = useSelector((state) => state.Kalijs);
   const dispatch = useDispatch();
 
   const classes = useStyles();
 
   useEffect(() => {
-    if (userPage) dispatch(getKalijs(userPage));
-  }, [dispatch, userPage]);
+    if (up) dispatch(getKalijs(up));
+  }, [dispatch, up]);
 
   return (
     <Pagination
       classes={{ ul: classes.ul }}
       className={classes.pagination}
       count={adminNumberOfPages}
-      page={Number(userPage)}
+      page={Number(up)}
       variant="outlined"
       color="primary"
       renderItem={(item) => (
         <PaginationItem
           {...item}
           component={Link}
-          to={`/kalijs?userPage=${item.page}`}
+          to={`/home/?up=${item.page}`}
         />
       )}
     />

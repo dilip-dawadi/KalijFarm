@@ -2,10 +2,10 @@ import * as api from '../api';
 
 // Action Creators
 
-export const getRooms = (roomNo) => async (dispatch) => {
+export const getRooms = (rp) => async (dispatch) => {
     try {
         dispatch({ type: 'START_ROOM' })
-        const { data: { Roomdata: data, currentPage, numberOfPages } } = await api.fetchRooms(roomNo || 1);
+        const { data: { Roomdata: data, currentPage, numberOfPages } } = await api.fetchRooms(rp || 1);
         dispatch({ type: 'FETCH_ALL_ROOM', payload: { data, currentPage, numberOfPages } })
         dispatch({ type: 'END_ROOM' })
     } catch (error) {

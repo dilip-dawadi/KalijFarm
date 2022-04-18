@@ -17,7 +17,7 @@ const Post = ({ kalij, setCurrentId }) => {
   const [billPay, setbillPay] = useState(false);
 
   const openPost = () => {
-    navigate(`/kalijs/${kalij._id}`)
+    navigate(`/food/${kalij._id}`)
   }
   return (
     <Card className={classes.card}>

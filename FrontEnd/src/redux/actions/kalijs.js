@@ -24,10 +24,10 @@ export const getKalBySearch = (searchKals) => async (dispatch) => {
         console.log(error);
     }
 }
-export const getKalijs = (userPage) => async (dispatch) => {
+export const getKalijs = (up) => async (dispatch) => {
     try {
         dispatch({ type: 'START' })
-        const { data: { adminData: Kalijs, adminCurrentPage, adminNumberOfPages } } = await api.fetchKalijs(userPage || 1);
+        const { data: { adminData: Kalijs, adminCurrentPage, adminNumberOfPages } } = await api.fetchKalijs(up || 1);
         dispatch({ type: 'FETCH_ALL', payload: { data: Kalijs, adminCurrentPage, adminNumberOfPages } })
         dispatch({ type: 'END' })
     } catch (error) {
@@ -50,7 +50,7 @@ export const createKalijing = (formData) => async (dispatch) => {
         const { data: { data, message } } = await api.createKalijs(formData);
         dispatch({ type: 'CREATE', payload: { data, message } });
         dispatch({ type: 'END' });
-        // navigate(`/kalijs/${data._id}`);
+        // navigate(`/food/${data._id}`);
     } catch (error) {
         if (error.response.status >= 400 && error.response.status <= 500) {
             dispatch({ type: 'START' })

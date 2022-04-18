@@ -6,29 +6,29 @@ import { Link } from "react-router-dom";
 import { getRooms } from "../../../../redux/actions/roomaction";
 import useStyles from "./styles";
 
-const Adminpaginate = ({ userPage }) => {
+const Adminpaginate = ({ up }) => {
   const { adminNumberOfPages } = useSelector((state) => state?.Room);
   const dispatch = useDispatch();
 
   const classes = useStyles();
 
   useEffect(() => {
-    if (userPage) dispatch(getRooms(userPage));
-  }, [dispatch, userPage]);
+    if (up) dispatch(getRooms(up));
+  }, [dispatch, up]);
 
   return (
     <Pagination
       classes={{ ul: classes.ul }}
       className={classes.pagination}
       count={adminNumberOfPages}
-      page={Number(userPage)}
+      page={Number(up)}
       variant="outlined"
       color="primary"
       renderItem={(item) => (
         <PaginationItem
           {...item}
           component={Link}
-          to={`/room?roomNo=${item.page}`}
+          to={`/room?rp=${item.page}`}
         />
       )}
     />

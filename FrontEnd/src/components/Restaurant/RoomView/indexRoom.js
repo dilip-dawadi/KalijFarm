@@ -23,7 +23,7 @@ const Image = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const query = useQuery();
-  const page = query.get('roomNo' || 1);
+  const page = query.get('rp' || 1);
   const roomSearchD = query.get('roomSearchD');
   const [tags, setTags] = useState([]);
   const [book, setBook] = useState('');
@@ -37,7 +37,7 @@ const Image = () => {
   };
   const allPost = () => {
     dispatch(getRooms(1));
-    navigate('/room?roomNo=1');
+    navigate('/room?rp=1');
   };
   const handlePrice = (event, newValue) => {
     setprice(newValue);

@@ -124,7 +124,7 @@ export default function MasonryImageList() {
                                                 sx={{ color: "rgba(255, 255, 255, 0.54)" }}
                                                 aria-label={`info about ${item.title}`}
                                                 onClick={() => {
-                                                    navigate(`/kalijs/${item._id}`);
+                                                    navigate(`/food/${item._id}`);
                                                 }}
                                             >
                                                 <InfoIcon />

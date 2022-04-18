@@ -13,7 +13,7 @@ API.interceptors.request.use((req) => {
   return req;
 });
 // fetch food
-export const fetchKalijs = (userPage) => API.get(`/kalijs?userPage=${userPage}`);
+export const fetchKalijs = (up) => API.get(`/kalijs?up=${up}`);
 export const fetchKal = (page) => API.get(`/kalijs/all?page=${page}`);
 export const fetchKalBySearch = (searchKals) => API.get(`/kalijs/all/search?searchKals=${searchKals.search || 'none'}&tags=${searchKals.tags}`);
 export const fetchKalij = (id) => API.get(`/kalijs/${id}`);
@@ -31,7 +31,7 @@ export const createKalijs = (formData) => API.post(`/kalijs`, formData);
 // end Food
 
 // fetch Room
-export const fetchRooms = (roomNo) => API.get(`/room?roomNo=${roomNo}`);
+export const fetchRooms = (rp) => API.get(`/room?rp=${rp}`);
 export const fetchRoomBySearch = (roomSearchD) => API.get(`/room/search?book=${roomSearchD.book}&ps=${roomSearchD.ps}&pe=${roomSearchD.pe}&tags=${roomSearchD.tags}`);
 export const fetchaRoom = (id) => API.get(`/room/${id}`);
 export const deleteaRoom = (id) => API.delete(`/room/${id}`)

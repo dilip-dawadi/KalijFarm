@@ -3,6 +3,7 @@ import { Grid, CircularProgress } from '@material-ui/core'
 import { useSelector } from 'react-redux'
 import Post from './Post/Post'
 import useStyles from './styles';
+import Paginate from '../roomPagination/pagination'
 const Posts = ({ setcurrentRoomId }) => {
     const { Rooms, isLoading } = useSelector((state) => state.Room);
     const classes = useStyles();
