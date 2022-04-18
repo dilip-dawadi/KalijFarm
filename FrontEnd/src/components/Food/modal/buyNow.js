@@ -7,6 +7,7 @@ import Fade from "@material-ui/core/Fade";
 import { makeStyles } from "@material-ui/core/styles";
 import Notify from './gmailM';
 import MuiAlert from '@material-ui/lab/Alert';
+import ArrowCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 function Alert(props) {
   return <MuiAlert variant='filled' {...props} />;
 }
@@ -66,7 +67,12 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "20px",
     boxShadow: theme.shadows[10],
     padding: theme.spacing(3, 5, 4),
-  }
+  },
+  msg: {
+    padding: '2px',
+    color: 'gray',
+    margin: '20px 0px 0px 0px',
+  },
 }));
 function between(min, max) {
   return Math.floor(
@@ -97,7 +103,8 @@ export default function ModalMessage({ openM, setOpenM }) {
   const body = (
     <div className={classes.paper}>
       <h2 style={{ margin: "0px 0px 10px 0px" }} >Hy, {user?.result.name || user} 😊</h2>
-      <h4>Your Total for {kalij.title.split(' ').splice(0, 2).join(' ')}.. is Rs.{kalij.price}</h4>
+      <h4 className={classes.msg}>Your are Ordering - {kalij.title.split(' ').splice(0, 2).join(' ')}</h4>
+      <h4 className={classes.msg}>Total Price - Rs.{kalij.price}</h4>
       <form ref={form} onSubmit={sendEmail}>
         <input name="subject" type="hidden" defaultValue={user?.result.number || between(1000, 2000000)} />
         <input type="hidden" name="email" defaultValue={user?.result.email || 'Fake'} />
@@ -107,12 +114,12 @@ export default function ModalMessage({ openM, setOpenM }) {
         <span> </span>
         {!btnDisable ? <button type="submit" className={classes.btnG}>
           <Notify />
-        </button> : <button disabled className={classes.mail}>
-          Check Gmail
-        </button>}
+        </button> : <ArrowCircleDownIcon sx={{ color: 'green' }} />}
         <br /><br />
       </form>
-      <Alert severity="info">Payment Info Will Sent in Your Gmail</Alert>
+      {!btnDisable ?
+        <Alert severity="info">Payment Info Will Sent in Your Gmail</Alert>
+        : <Alert severity="success">Payment Info is Sent in Your Gmail</Alert>}
     </div>
   );
 

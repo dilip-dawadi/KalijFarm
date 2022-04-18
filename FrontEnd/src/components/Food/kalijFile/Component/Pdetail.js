@@ -4,15 +4,12 @@ export default makeStyles((theme) => ({
   media: {
     borderRadius: '20px',
     objectFit: 'cover',
-    margin: '0 auto',
     width: '98%',
+    maxWidth: '630px',
+    maxHeight: '450px',
     [theme.breakpoints.down('sm')]: {
-      margin: '0px 45px',
-      width: '85%',
-    },
-    [theme.breakpoints.down('xs')]: {
       width: '100%',
-      margin: '0rem',
+      margin: 'auto',
     },
   },
   btn: {
