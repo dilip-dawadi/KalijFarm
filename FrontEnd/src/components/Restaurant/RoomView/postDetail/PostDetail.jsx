@@ -8,6 +8,7 @@ import {
   Divider,
   CardActions,
   Button,
+  CardMedia,
 } from "@material-ui/core/";
 import { getRoom, getRoomBySearch } from "../../../../redux/actions/roomaction";
 import useStyles from "./Pdetail";
@@ -251,7 +252,15 @@ const KalijDetail = () => {
                             .join(", ")}
                         </Typography>
                         {/* <img src={selectedFile} width="220px" height="200px" /> */}
-                        <img src={selectedFile} width="220px" />
+                        <Paper style={{ width: "220px" }} elevation={0}>
+                          <CardMedia
+                            style={{
+                              backgroundImage: `url('./backimage.png'), url(${selectedFile})`,
+                            }}
+                            className={classes.relatedImage}
+                            title={title}
+                          />
+                        </Paper>
                       </Paper>
                     ))}
                 </div>

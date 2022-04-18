@@ -84,6 +84,7 @@ export default makeStyles((theme) => ({
   },
   title: {
     padding: '0px 16px',
+    color: 'gray',
   },
   message: {
     padding: '4px 20px',

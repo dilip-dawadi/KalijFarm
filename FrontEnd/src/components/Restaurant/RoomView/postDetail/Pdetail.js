@@ -95,4 +95,13 @@ export default makeStyles((theme) => ({
       gridTemplateColumns: 'repeat(1, 1fr)',
     },
   },
+  relatedImage: {
+    // height: 0,
+    // paddingTop: '100%',
+    width: '220px',
+    height: '200px',
+    objectFit: 'contain',
+    margin: 'auto',
+    borderRadius: "5px"
+  }
 }));
