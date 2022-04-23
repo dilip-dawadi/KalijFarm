@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Grid, Card, CardActions, CardContent, CardMedia, Button, Typography, ButtonBase } from '@material-ui/core/';
+import { Grid, Card, CardActions, CardContent, CardMedia, Button, Typography, ButtonBase, Paper } from '@material-ui/core/';
 import { Fade, Zoom } from 'react-reveal';
 import useWindowPosition from '../../../hook/useWindowPosition';
 import useStyles from './Component/kalijcs'
@@ -41,7 +41,8 @@ const Kalij = ({ handleAddProduct }) => {
                   <ButtonBase component="span"
                     name="test"
                     className={classes.cardAction} onClick={() => { (user?.result?.name) && navigate(`/food/${kalij._id}`) }} >
-                    <CardMedia className={classes.media} style={{ backgroundImage: `url(${kalij.selectedFile})` }} title={kalij.title} />
+                    <CardMedia className={classes.media} style={{ backgroundImage: `url(${kalij.selectedFile})` }}
+                      component="img" title={kalij.title} />
                     <div className={classes.details}>
                       <Typography variant="body2" color="textSecondary" component="h2">{kalij?.tags?.splice(0, 4).map((tag) => `#${tag} `)}</Typography>
                     </div>
@@ -51,24 +52,16 @@ const Kalij = ({ handleAddProduct }) => {
                     </CardContent>
                   </ButtonBase>
                   <CardActions className={classes.cardActions}>
-                    {(user?.result?.name) ? (
-                      <Button size="small" onClick={() => { handleAddProduct(kalij) }}>
-                        <Notify />
-                      </Button>
-                    ) : (
-                      <Button size="small">
-                        <Notification />
-                      </Button>
-                    )}
-                    {(!user?.result?.name) ? (
-                      <><Button size="small" className={classed.btn} onClick={handleOpenM} type="button">Learn More
-                      </Button><Model openM={openM} setOpenM={setOpenM} /></>
+                    <Button size="small" onClick={() => user?.result?.name ? handleAddProduct(kalij) : null}>
+                      {(user?.result?.name) ? <Notify /> : <Notification />}
+                    </Button>
 
-                    ) : (
-                      <Button size="small" className={classed.btn} onClick={() => { navigate(`/food/${kalij._id}`) }}>
-                        Learn More
-                      </Button>
-                    )}
+                    <><Button size="small" className={classed.btn} onClick={!user?.result?.name ? handleOpenM : () => navigate(`/food/${kalij._id}`)} type="button">
+                      Learn More
+                    </Button>
+                      {!user?.result?.name ? <Model openM={openM} setOpenM={setOpenM} /> : null}
+                    </>
+
                   </CardActions>
                 </Card>
               </Zoom>

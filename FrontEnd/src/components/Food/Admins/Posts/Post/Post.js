@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card, CardActions, CardContent, Button, Typography, ButtonBase, CardMedia } from '@material-ui/core/';
+import { Card, CardActions, CardContent, Button, Typography, ButtonBase, CardMedia, Paper } from '@material-ui/core/';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz'
 import DeleteIcon from '@material-ui/icons/Delete'
 import useStyles from './styles'
