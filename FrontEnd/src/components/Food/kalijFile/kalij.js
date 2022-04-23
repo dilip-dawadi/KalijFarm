@@ -41,8 +41,7 @@ const Kalij = ({ handleAddProduct }) => {
                   <ButtonBase component="span"
                     name="test"
                     className={classes.cardAction} onClick={() => { (user?.result?.name) && navigate(`/food/${kalij._id}`) }} >
-                    <CardMedia className={classes.media} style={{ backgroundImage: `url(${kalij.selectedFile})` }}
-                      component="img" title={kalij.title} />
+                    <CardMedia className={classes.media} style={{ backgroundImage: `url(${kalij.selectedFile})` }} title={kalij.title} />
                     <div className={classes.details}>
                       <Typography variant="body2" color="textSecondary" component="h2">{kalij?.tags?.splice(0, 4).map((tag) => `#${tag} `)}</Typography>
                     </div>
