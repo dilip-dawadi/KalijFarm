@@ -5,10 +5,11 @@ import Avatar from '@material-ui/core/Avatar';
 import MenuItem from '@material-ui/core/MenuItem';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { deepOrange, deepPurple } from '@mui/material/colors';
 
 export default function SimpleMenu() {
-    const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
-    const dispatch = useDispatch();
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -27,9 +28,9 @@ export default function SimpleMenu() {
   };
   return (
     <div>
-      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-      <Avatar alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}
-      </Avatar>
+      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} >
+        <Avatar alt={user?.result.name} src={user?.result.imageUrl || user?.result.selectedFile} style={{ backgroundColor: '#008f95' }}>{user?.result.name.charAt(0)}
+        </Avatar>
       </Button>
       <Menu
         id="simple-menu"
@@ -38,9 +39,9 @@ export default function SimpleMenu() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem>Hy,&nbsp;{user?.result.name.slice(0, 6)}</MenuItem>
+        <MenuItem>Hy,&nbsp;{user?.result.name.split(' ')[0]}</MenuItem>
         <MenuItem className='logout' color="secondary" onClick={logout}>Logout</MenuItem>
       </Menu>
-    </div>
+    </div >
   );
 }

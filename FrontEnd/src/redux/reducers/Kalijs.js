@@ -30,8 +30,10 @@ export default (state = { isLoading: true, Kalijs: [] }, action) => {
             return { ...state, Kalijs: [...state.Kalijs, action.payload.data], createMsg: action.payload.message };
         case 'UPDATE':
             return { ...state, Kalijs: state.Kalijs.map((kalij) => (kalij._id === action.payload._id ? action.payload : kalij)), updateMsg: action.payload.message };
-        // case 'LIKEPOST':
-        //     return state.map((kalij) => (kalij._id === action.payload._id ? action.payload : kalij));    
+        case 'LIKE_FOOD':
+            return { ...state, Kal: state.Kal.map((kalij) => (kalij._id === action.payload.foodLike._id ? action.payload.foodLike : kalij)) };
+        case 'LIKE_FOOD_MESSAGE':
+            return { ...state, likeFoodMessage: action.payload.message };
         case 'DELETE':
             return { ...state, Kalijs: state.Kalijs?.filter((kalij) => kalij._id !== action.payload) }
         default:

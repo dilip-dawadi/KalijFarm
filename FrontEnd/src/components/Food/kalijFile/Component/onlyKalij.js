@@ -3,17 +3,28 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   btn: {
     textTransform: 'capitalize',
-    padding: '6.2px 12px',
-    backgroundColor: '#ED9F64',
-    borderRadius: '12px',
+    padding: '0.4rem 0.7rem',
+    backgroundColor: '#4abdac',
     letterSpacing: '1px',
     fontSize: '14px',
     color: 'white',
     fontWeight: 'bold',
+    display: 'flex',
     '&:hover': {
-      background: "#FE540B",
-      color: 'white',
+      background: '#008f95',
     },
+  },
+  like: {
+    display: 'flex',
+    width: '100%',
+    padding: '5px',
+    justifyContent: 'space-between',
+    letterSpacing: '1px',
+    fontSize: '14px',
+    color: 'black',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    cursor: 'pointer',
   },
   cardActionsI: {
     display: 'grid',
@@ -28,6 +39,17 @@ export default makeStyles((theme) => ({
     position: 'relative',
     '&:hover': {
       padding: '0.5x 0.5px'
+    },
+    // media queries
+    ['@media (max-width:600px)']: {
+      width: '80%',
+      height: 'auto',
+      margin: '0 auto',
+    },
+    ['@media (max-width:470px)']: {
+      width: '100%',
+      height: 'auto',
+      margin: '0 auto',
     },
   },
   cardsearch: {

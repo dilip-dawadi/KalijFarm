@@ -22,37 +22,47 @@ const Loading = () => {
                 {isLoading ? <LoadingPlaceHolder extraStyles={{
                   height: 0,
                   paddingTop: '70%', objectFit: 'cover',
-                  margin: 'auto', borderRadius: '10px',
+                  margin: 'auto', borderRadius: '10px 5px 10px 5px',
                 }} /> :
                   <div>
                     <CardMedia className={classes.media} style={{ backgroundImage: `url(${kalij.selectedFile})` }} title={kalij.title} />
                   </div>}
                 {isLoading ? <LoadingPlaceHolder extraStyles={{
-                  height: '20px', width: '60px',
-                  borderRadius: '12px', margin: '2px', padding: '0.1rem 0rem',
-                }} /> :
-                  <div className={classes.details}>
-                    <Typography variant="body2" color="textSecondary" component="h2"></Typography>
-                  </div>}
-                {isLoading ? <LoadingPlaceHolder extraStyles={{
-                  height: '20px', width: '200px',
-                  borderRadius: '12px', margin: '3px 30px', padding: '0.1rem 0rem',
+                  height: '30px', margin: '10px auto 0px auto', padding: '0.1rem 0rem',
                 }} /> :
                   <Typography className={classes.title} gutterBottom variant="h5" component="h2"></Typography>}
                 {isLoading ? <LoadingPlaceHolder extraStyles={{
-                  height: '20px', width: '200px',
-                  borderRadius: '12px', margin: '3px 30px', padding: '0.1rem 0rem',
+                  height: '25px',
+                  margin: '4px auto', padding: '0.1rem 0rem',
                 }} /> :
                   <CardContent>
                     <Typography variant="body2" color="textSecondary" component="p"></Typography>
                   </CardContent>}
-                <CardActions className={classes.cardActions}>
-                  <Button className={classed.btn} size="small">
-                    Add Cart
-                  </Button>
-                  <Button size="small" className={classed.btn} type="button">Learn More
-                  </Button>
-                </CardActions>
+                {isLoading ? <span style={{
+                  display: 'flex', margin: '10px 20px',
+                }} > <LoadingPlaceHolder extraStyles={{
+                  height: '20px', width: '90px',
+                  borderRadius: '12px', margin: '2px 10px', padding: '0.1rem 0rem',
+                }} /> <LoadingPlaceHolder extraStyles={{
+                  height: '20px', width: '90px',
+                  borderRadius: '12px', margin: '2px 10px', padding: '0.1rem 0rem',
+                }} />
+                  <LoadingPlaceHolder extraStyles={{
+                    height: '20px', width: '90px',
+                    borderRadius: '12px', margin: '2px 0px', padding: '0.1rem 0rem',
+                  }} /></span> :
+                  <div className={classes.details}>
+                    <Typography variant="body2" color="textSecondary" component="h2"></Typography>
+                  </div>}
+
+                {isLoading ? <><CardActions className={classes.cardActionsI}><LoadingPlaceHolder extraStyles={{
+                  height: '40px',
+                  borderRadius: '1px', margin: '0px auto', padding: '0.1rem 0rem',
+                }} /></CardActions></> :
+                  <CardActions className={classes.cardActionsI}>
+                    <Button size="small" className={classed.btn} type="button">Learn More
+                    </Button>
+                  </CardActions>}
               </Card>
             </Zoom>
           </Grid>
@@ -60,7 +70,7 @@ const Loading = () => {
       </Grid>
       <br />
       <br />
-      <center><Button variant="contained" style={{ backgroundColor: 'coral', padding: '10px 20px', letterSpacing: '2px', fontWeight: '600', borderRadius: '7px', color: 'white' }}>
+      <center><Button variant="contained" style={{ backgroundColor: '#4abdac', padding: '10px 20px', letterSpacing: '2px', fontWeight: '600', borderRadius: '7px', color: 'white' }}>
         View More
       </Button></center>
     </div>

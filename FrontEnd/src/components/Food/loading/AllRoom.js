@@ -18,35 +18,47 @@ const Loading = () => {
                         <Card className={classed.cards} raised elevation={4}>
                             {isLoading ? <LoadingPlaceHolder extraStyles={{
                                 height: 0,
-                                paddingTop: '88%', objectFit: 'cover',
+                                paddingTop: '78%', objectFit: 'cover',
                                 margin: 'auto', borderRadius: '8px',
                             }} /> :
                                 <div>
                                     <CardMedia className={classes.media} style={{ backgroundImage: `url(${room.selectedFile})` }} title={room.title} />
                                 </div>}
                             {isLoading ? <LoadingPlaceHolder extraStyles={{
-                                height: '20px', width: '60px',
-                                borderRadius: '12px', margin: '2px', padding: '0.01rem',
-                            }} /> :
-                                <div className={classes.details}>
-                                    <Typography variant="body2" color="textSecondary" component="h2"></Typography>
-                                </div>}
-                            {isLoading ? <LoadingPlaceHolder extraStyles={{
-                                height: '20px', width: '150px',
-                                borderRadius: '12px', margin: '3px 30px', padding: '0.1rem 0rem',
+                                height: '35px', margin: '10px auto 0px auto', padding: '0.1rem 0rem',
                             }} /> :
                                 <Typography className={classes.title} gutterBottom variant="h5" component="h2"></Typography>}
                             {isLoading ? <LoadingPlaceHolder extraStyles={{
-                                height: '40px',
-                                borderRadius: '1px', margin: '0px auto', padding: '0.1rem 0rem',
+                                height: '30px',
+                                margin: '11px auto 10px auto', padding: '0.1rem 0rem',
                             }} /> :
                                 <CardContent>
                                     <Typography variant="body2" color="textSecondary" component="p"></Typography>
                                 </CardContent>}
-                            <CardActions className={classed.cardActionsI}>
-                                <Button size="small" className={classed.btn} type="button">Learn More
-                                </Button>
-                            </CardActions>
+                            {isLoading ? <span style={{
+                                display: 'flex', margin: '10px 15px 13px 15px',
+                            }} > <LoadingPlaceHolder extraStyles={{
+                                height: '20px', width: '90px',
+                                borderRadius: '12px', margin: '2px 10px', padding: '0.1rem 0rem',
+                            }} /> <LoadingPlaceHolder extraStyles={{
+                                height: '20px', width: '90px',
+                                borderRadius: '12px', margin: '2px 10px', padding: '0.1rem 0rem',
+                            }} />
+                                <LoadingPlaceHolder extraStyles={{
+                                    height: '20px', width: '90px',
+                                    borderRadius: '12px', margin: '2px 0px', padding: '0.1rem 0rem',
+                                }} /></span> :
+                                <div className={classes.details}>
+                                    <Typography variant="body2" color="textSecondary" component="h2"></Typography>
+                                </div>}
+                            {isLoading ? <LoadingPlaceHolder extraStyles={{
+                                height: '48px',
+                                borderRadius: '1px', margin: '0px auto', padding: '0.1rem 0rem',
+                            }} /> :
+                                <CardActions className={classed.cardActionsI}>
+                                    <Button size="small" className={classed.btn} type="button">Learn More
+                                    </Button>
+                                </CardActions>}
                         </Card>
                     </Zoom>
                 </Grid>

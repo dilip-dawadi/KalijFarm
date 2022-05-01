@@ -26,33 +26,33 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     btn: {
-        backgroundColor: '#ED9F64',
+        backgroundColor: '#4abdac',
         border: '0px solid white',
         borderRadius: '12px',
         color: 'white',
         fontWeight: 'bold',
         '&:hover': {
-            background: "#FE540B",
+            background: "#008f95",
             color: 'white',
         },
     },
     btnG: {
         textTransform: 'capitalize',
         padding: '0px 0px',
-        backgroundColor: '#ED9F64',
+        backgroundColor: '#4abdac',
         border: '0px solid white',
         borderRadius: '12px',
         color: 'white',
         fontWeight: 'bold',
         '&:hover': {
-            background: "#FE540B",
+            background: "#008f95",
             color: 'white',
         },
     },
     mail: {
         textTransform: 'capitalize',
         padding: '20px',
-        backgroundColor: '#ED9F64',
+        backgroundColor: '#4abdac',
         border: '0px solid white',
         borderRadius: '12px',
         color: 'white',

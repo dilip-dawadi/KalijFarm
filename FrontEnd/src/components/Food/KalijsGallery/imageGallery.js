@@ -7,6 +7,7 @@ import { getKal, getKalBySearch } from '../../../redux/actions/kalijs';
 import All from './All'
 import { Paginate } from '../kalijFile/Component/pagination/pagination'
 import useStyles from './styles';
+import Loading from "../loading/AllKalijs";
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
@@ -18,6 +19,7 @@ const Image = () => {
   const query = useQuery();
   const page = query.get('page' || 1);
   const searchKals = query.get('searchKals');
+  const { Kal, isLoading } = useSelector((state) => state.Kalijs);
 
   const [search, setSearch] = useState('');
   const [tags, setTags] = useState([]);
@@ -54,11 +56,18 @@ const Image = () => {
         <Container maxWidth="xl">
           <Grid container justifyContent="space-between" alignItems="stretch" spacing={3} className={classes.gridContainer}>
 
-            <Grid item xs={12} sm={9} md={8}>
-              <All />
+            <Grid item xs={12} md={8}>
+              <Grid className={classes.Foodonlycontainer} container alignItems="stretch" spacing={3}>
+                {isLoading ? <Loading /> :
+                  Kal?.map((kalij) => (
+                    <Grid key={kalij._id} item xs={12} sm={6} md={6} lg={4}>
+                      <All kalij={kalij} />
+                    </Grid>
+                  ))}
+              </Grid>
             </Grid>
 
-            <Grid item xs={12} sm={3} md={4}>
+            <Grid item xs={12} md={4}>
               <div className={classes.mainSearch} >
                 <AppBar className={classes.appBarSearch} position="static" color="inherit">
                   <TextField onKeyDown={handleKeyPress} name="search" variant="outlined" label="Search Food" fullWidth value={search} onChange={(e) => setSearch(e.target.value)} />
@@ -71,7 +80,7 @@ const Image = () => {
                     variant="outlined"
                   />
                   <Button onClick={searchPost} style={{
-                    letterSpacing: '2.5px', backgroundColor: 'coral', color: '#fff', fontWeight: 'bold', fontSize: '14px',
+                    letterSpacing: '2.5px', backgroundColor: '#4abdac', color: '#fff', fontWeight: 'bold', fontSize: '14px',
                   }} variant="contained">Search</Button>
                   {(searchKals || tags.length > 0) ? <Button onClick={allPost} style={{
                     marginTop: '3px', letterSpacing: '3px',

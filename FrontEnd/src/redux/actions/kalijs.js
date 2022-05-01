@@ -88,13 +88,13 @@ export const deleteKalij = (id) => async (dispatch) => {
     }
 }
 
-export const likeKalij = (id) => async (dispatch) => {
-    const user = JSON.parse(localStorage.getItem('profile'))
+export const foodLike = (id) => async (dispatch) => {
+    const user = JSON.parse(localStorage.getItem('profile'));
     try {
-        const { data } = await api.likeKalijs(id, user?.token);
-        dispatch({ type: 'LIKEPOST', payload: data });
-
+        const { data: { foodLike, message } } = await api.foodLike(id, user?.token);
+        dispatch({ type: 'LIKE_FOOD', payload: { foodLike } });
+        dispatch({ type: 'LIKE_FOOD_MESSAGE', payload: { message } });
     } catch (error) {
         console.log(error);
     }
-}
+};

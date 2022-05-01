@@ -2,21 +2,23 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
   spanFood: {
-    backgroundColor: 'coral',
+    backgroundColor: '#4abdac',
     padding: '0.3rem 1rem',
     color: 'white',
     borderRadius: '8px',
     [theme.breakpoints.down('xs')]: {
-      padding: '0.2rem 0.6rem',
+      padding: '0.25rem 0.6rem',
     },
   },
   gallery: {
-    paddingTop: '120px',
+    paddingTop: '130px',
   },
   galleryH: {
     letterSpacing: '2px',
-    color: 'Gray',
+    color: 'gray',
     fontWeight: '600',
+    fontSize: '1.5rem',
+    margin: "0px",
     [theme.breakpoints.down('xs')]: {
       fontSize: '25px'
     },
@@ -25,23 +27,17 @@ export default makeStyles((theme) => ({
     borderRadius: 4,
     display: 'flex',
     marginTop: '1rem',
-    padding: '1rem 1rem',
-    ['@media (max-width:800px)']: {
-      padding: theme.spacing(1),
-    },
-    ['@media (max-width:656px)']: {
-      padding: theme.spacing(0.5),
-    },
-    [theme.breakpoints.down('xs')]: {
-      padding: theme.spacing(2.2),
-    },
+    padding: theme.spacing(2.2),
   },
   mainSearch: {
     padding: '0rem 1.4rem',
     [theme.breakpoints.down('sm')]: {
-      padding: '0rem',
+      maxWidth: '60%',
+      margin: '0 auto',
     },
     [theme.breakpoints.down('xs')]: {
+      maxWidth: '100%',
+      margin: '0 auto',
       padding: '0rem 4rem',
     },
     ['@media (max-width:500px)']: {
@@ -64,10 +60,6 @@ export default makeStyles((theme) => ({
   },
   gridContainer: {
     [theme.breakpoints.down('sm')]: {
-      padding: '0rem',
-      flexDirection: 'row-reverse',
-    },
-    [theme.breakpoints.down('xs')]: {
       flexDirection: 'column-reverse',
     },
   },

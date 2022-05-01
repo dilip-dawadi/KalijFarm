@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: `https://rhinospotnkalijfarm.herokuapp.com/` });
+// const API = axios.create({ baseURL: `https://rhinospotnkalijfarm.herokuapp.com/` });
 
-// const API = axios.create({ baseURL: 'http://localhost:5000/' });
+const API = axios.create({ baseURL: 'http://localhost:5000/' });
 // helping auth middleware
 // this function is happen before all of the fetch req
 API.interceptors.request.use((req) => {
@@ -18,9 +18,9 @@ export const fetchKal = (page) => API.get(`/kalijs/all?page=${page}`);
 export const fetchKalBySearch = (searchKals) => API.get(`/kalijs/all/search?searchKals=${searchKals.search || 'none'}&tags=${searchKals.tags}`);
 export const fetchKalij = (id) => API.get(`/kalijs/${id}`);
 export const deleteKalijs = (id) => API.delete(`/kalijs/${id}`)
-export const likeKalijs = (id) => API.patch(`/kalijs/${id}/likeKalij`);
 export const updateKalij = (id, updatedKalij) => API.patch(`/kalijs/${id}`, updatedKalij);
 export const createKalijs = (formData) => API.post(`/kalijs`, formData);
+export const foodLike = (id) => API.patch(`/kalijs/${id}/foodlike`);
 // export const createKalijs = (formData) => API.post(`/kalijs`, formData,
 // {headers: {
 //   'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
@@ -38,6 +38,7 @@ export const deleteaRoom = (id) => API.delete(`/room/${id}`)
 export const updateaRoom = (id, updateaRoom) => API.patch(`/room/${id}`, updateaRoom);
 export const createaRoom = (createaRoom) => API.post(`/room`, createaRoom);
 export const roomBook = (booked) => API.post(`/room/booked`, booked);
+export const roomLike = (id) => API.patch(`/room/${id}/roomlike`);
 // End Room
 
 // fetch About

@@ -10,14 +10,14 @@ function Alert(props) {
 
 const useStyles = makeStyles((theme) => ({
   btn: {
-    backgroundColor: '#ED9F64',
+    backgroundColor: '#4abdac',
     border: '0px solid white',
     borderRadius: '12px',
     color: 'white',
     fontWeight: 'bold',
     letterSpacing: '1px',
     '&:hover': {
-      background: "#FE540B",
+      background: "#008f95",
       color: 'white',
     },
   },

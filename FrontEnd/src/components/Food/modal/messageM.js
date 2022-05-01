@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   btn: {
-    backgroundColor: '#ED9F64',
+    backgroundColor: '#4abdac',
     padding: '8px 15px',
     marginTop: '10px',
     border: '0px solid white',
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     fontWeight: 'bold',
     '&:hover': {
-      background: "#FE540B",
+      background: "#008f95",
       color: 'white',
     },
   },
@@ -52,8 +52,8 @@ export default function ModalMessage({ openM, setOpenM }) {
       (!user?.result?.name) ? (
         navigate('/auth')
       ) : (
-      navigate('/cart')
-    )
+        navigate('/cart')
+      )
     }
   }
   const handleClose = () => {

@@ -131,7 +131,7 @@ const KalijDetail = () => {
                     {Room?.message} and price of the product is Price{" "}
                     <span
                       style={{
-                        backgroundColor: "#ED9F64",
+                        backgroundColor: "#4abdac",
                         padding: " 4.5px 15px",
                         borderRadius: "6px",
                         color: "white",

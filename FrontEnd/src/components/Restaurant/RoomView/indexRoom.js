@@ -13,7 +13,7 @@ import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
-import Welcome from './welcome'
+import Loading from "../../Food/loading/AllRoom";
 function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
@@ -30,6 +30,8 @@ const Image = () => {
   let [pe, setpe] = useState('');
   const [ps, setps] = useState('');
   const [price, setprice] = React.useState([500, 2000]);
+  const { Rooms, isLoading } = useSelector((state) => state.Room);
+
 
   const searchPost = () => {
     dispatch(getRoomBySearch({ book, pe, ps, tags: tags.join(',') }));
@@ -62,15 +64,21 @@ const Image = () => {
             {/* <Grid item>
               <Welcome />
             </Grid> */}
-            <Grid item xs={12} sm={9} md={8}>
-              <All />
+            <Grid item xs={12} md={8}>
+              <Grid className={classes.Roomonlycontainer} container alignItems="stretch" spacing={3}>
+                {isLoading ? <Loading /> :
+                  Rooms?.map((Room) => (
+                    <Grid key={Room._id} item xs={12} sm={6} md={6} lg={4}>
+                      <All Room={Room} />
+                    </Grid>
+                  ))}
+              </Grid>
             </Grid>
-
-            <Grid item xs={12} sm={3} md={4}>
+            <Grid item xs={12} md={4}>
               <div className={classes.mainSearch} >
                 <AppBar className={classes.appBarSearch} position="static" color="inherit">
                   <ChipInput
-                    style={{ margin: '10px 0' }}
+                    style={{ margin: '12px 0' }}
                     value={tags}
                     onAdd={(chip) => handleAddChip(chip)}
                     onDelete={(chip) => handleDeleteChip(chip)}
@@ -93,26 +101,20 @@ const Image = () => {
                       <MenuItem value={'true'}>Unavailabe</MenuItem>
                     </Select>
                   </FormControl>
-                  <Box sx={{ margin: '10px auto' }}>
-                    <div> <Typography id="non-linear-slider" gutterBottom style={{ backgroundColor: "coral", padding: '5px 10px', color: 'white', borderRadius: '3px' }} >
-                      Rs.{price.at(0)} to Rs.{price.at(1)}
-                    </Typography>
-                    </div>
-                    <div>
-                      <Slider
-                        value={price}
-                        onChange={handlePrice}
-                        style={{ color: "coral", padding: '5px 10px', borderRadius: '10px', margin: '10px 0' }}
-                        valueLabelDisplay="auto"
-                        min={500}
-                        step={100}
-                        max={2000}
-                        getAriaValueText={valuetext}
-                      />
-                    </div>
+                  <Box sx={{ margin: '0px 40px' }}>
+                    <Slider
+                      value={price}
+                      onChange={handlePrice}
+                      style={{ color: "gray", borderRadius: '10px', margin: '10px 0' }}
+                      valueLabelDisplay="auto"
+                      min={100}
+                      step={100}
+                      max={2000}
+                      getAriaValueText={valuetext}
+                    />
                   </Box>
                   <Button onClick={searchPost} style={{
-                    letterSpacing: '2.5px', backgroundColor: 'coral', color: 'white', fontWeight: 'bold', fontSize: '14px',
+                    letterSpacing: '2.5px', backgroundColor: '#4abdac', color: 'white', fontWeight: 'bold', fontSize: '14px',
                   }} variant="contained">Search</Button>
                   {(roomSearchD || tags.length > 0) ? <Button onClick={allPost} style={{
                     marginTop: '3px', letterSpacing: '3px',

@@ -26,7 +26,7 @@ const AboutSectionStyles = styled.div`
     margin: 0px 0px 20px 0px;
   }
   .about__heading span{
-    background-color: coral;
+    background-color: #4abdac;
     color: white;
     padding: 0.24rem 1rem;
     border-radius: 8px;
@@ -48,10 +48,10 @@ const AboutSectionStyles = styled.div`
   }
     .link {  
     text-decoration:none;
-    background-color: coral;
+    background-color: #4abdac;
     padding: 0.5rem 1rem;
     color: white;
-    border-radius:7px;
+    border-radius:4px;
   }
   @media only screen and (max-width: 1230px) {
     .aboutSection__left {

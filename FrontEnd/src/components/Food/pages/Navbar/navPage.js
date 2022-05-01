@@ -54,7 +54,7 @@ const NavStyles = styled.nav`
     }
   }
   .Signin{
-    background-color: coral;
+    background-color: #4abdac;
     opacity: 0.95;
     border-radius: 10px;
     color: white;
@@ -83,7 +83,7 @@ const NavStyles = styled.nav`
     color: #C0C0C0;
     outline: none;
     color: white;
-    background-color: coral;
+    background-color: #4abdac;
     border-radius: 12px;
     &:hover {
         color: white;

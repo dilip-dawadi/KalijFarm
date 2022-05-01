@@ -39,12 +39,12 @@ const useStyles = makeStyles(theme => ({
     margin: '5px 0px',
     fontWeight: 'bold',
     fontSize: '14px',
-    backgroundColor: '#ED9F64',
+    backgroundColor: '#4abdac',
     borderRadius: '14px',
-    border: '#ED9F64',
+    border: '#4abdac',
     color: 'white',
     '&:hover': {
-      backgroundColor: "#FE540B",
+      backgroundColor: "#008f95",
     },
   },
   btnG: {

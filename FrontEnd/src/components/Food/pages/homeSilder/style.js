@@ -54,7 +54,7 @@ export default makeStyles((theme) => ({
         fontWeight: '600',
         borderRadius: '5px',
         padding: '4px 10px',
-        backgroundColor: 'coral',
+        backgroundColor: '#4abdac',
         color: 'white',
     },
 }));

@@ -68,6 +68,17 @@ export const updateRooms = (id, updateaRoom) => async (dispatch) => {
         }
     }
 }
+export const roomLike = (id) => async (dispatch) => {
+    const user = JSON.parse(localStorage.getItem('profile'));
+    console.log(user, 'user');
+    try {
+        const { data: { roomLike, message } } = await api.roomLike(id, user?.token);
+        dispatch({ type: 'LIKE_ROOM', payload: { roomLike } });
+        dispatch({ type: 'LIKE_ROOM_MESSAGE', payload: { message } });
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 export const deleteaRoom = (id) => async (dispatch) => {
     try {

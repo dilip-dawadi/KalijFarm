@@ -34,7 +34,7 @@ const Admin = () => {
     <>
       <Container maxWidth="lg" style={{ paddingTop: '77px' }}>
         <Grid container spacing={3} >
-          {!activeFood ? <Button style={{ margin: ' 40px auto auto auto', textAlign: 'center', color: "white", backgroundColor: 'coral' }} onClick={() => { setactiveAbout(false); setactiveFood(true) }} variant="contained" size="large">Show Food</Button> : <Button style={{ margin: ' 40px auto 40px auto', textAlign: 'center' }} onClick={() => setactiveFood(false)} variant="contained" color="secondary" size="large">Hide Food</Button>}
+          {!activeFood ? <Button style={{ margin: ' 40px auto auto auto', textAlign: 'center', color: "white", backgroundColor: '#4abdac' }} onClick={() => { setactiveAbout(false); setactiveFood(true) }} variant="contained" size="large">Show Food</Button> : <Button style={{ margin: ' 40px auto 40px auto', textAlign: 'center' }} onClick={() => setactiveFood(false)} variant="contained" color="secondary" size="large">Hide Food</Button>}
         </Grid>
         <Grow in>
           <Container style={{
@@ -57,7 +57,7 @@ const Admin = () => {
         {/* end of food */}
         {/* start of room */}
         <Grid container spacing={3}>
-          {!activeRoom ? <Button style={{ margin: ' 20px auto', textAlign: 'center', color: "white", backgroundColor: 'coral' }} onClick={() => { setactiveAbout(false); setactiveRoom(true) }} variant="contained" size="large">Show Room</Button> : <Button style={{ margin: ' 20px auto', textAlign: 'center' }} onClick={() => setactiveRoom(false)} variant="contained" color="secondary" size="large">Hide Room</Button>}
+          {!activeRoom ? <Button style={{ margin: ' 20px auto', textAlign: 'center', color: "white", backgroundColor: '#4abdac' }} onClick={() => { setactiveAbout(false); setactiveRoom(true) }} variant="contained" size="large">Show Room</Button> : <Button style={{ margin: ' 20px auto', textAlign: 'center' }} onClick={() => setactiveRoom(false)} variant="contained" color="secondary" size="large">Hide Room</Button>}
         </Grid>
         <Grow in>
           <Container>
@@ -77,7 +77,7 @@ const Admin = () => {
         </Grow>
         {/* start of image page */}
         <Grid container spacing={3}>
-          {!activeGallery ? <Button style={{ margin: ' 20px auto', textAlign: 'center', color: "white", backgroundColor: 'coral' }} onClick={() => { setactiveGallery(true) }} variant="contained" size="large">Show Gallery</Button> : <Button style={{ margin: ' 20px auto', textAlign: 'center' }} onClick={() => setactiveGallery(false)} variant="contained" color="secondary" size="large">Hide Gallery</Button>}
+          {!activeGallery ? <Button style={{ margin: ' 20px auto', textAlign: 'center', color: "white", backgroundColor: '#4abdac' }} onClick={() => { setactiveGallery(true) }} variant="contained" size="large">Show Gallery</Button> : <Button style={{ margin: ' 20px auto', textAlign: 'center' }} onClick={() => setactiveGallery(false)} variant="contained" color="secondary" size="large">Hide Gallery</Button>}
         </Grid>
         <Grid item xs={12} sm={12} style={!activeGallery ? { display: 'none' } : { display: '' }}>
           <Gallery />
@@ -85,7 +85,7 @@ const Admin = () => {
 
         {/* start of about page */}
         <Grid container spacing={3}>
-          {!activeAbout ? <Button style={{ margin: ' 20px auto', textAlign: 'center', color: "white", backgroundColor: 'coral' }} onClick={() => { setactiveAbout(true) }} variant="contained" size="large">Show About</Button> : <Button style={{ margin: ' 20px auto', textAlign: 'center' }} onClick={() => setactiveAbout(false)} variant="contained" color="secondary" size="large">Hide About</Button>}
+          {!activeAbout ? <Button style={{ margin: ' 20px auto', textAlign: 'center', color: "white", backgroundColor: '#4abdac' }} onClick={() => { setactiveAbout(true) }} variant="contained" size="large">Show About</Button> : <Button style={{ margin: ' 20px auto', textAlign: 'center' }} onClick={() => setactiveAbout(false)} variant="contained" color="secondary" size="large">Hide About</Button>}
         </Grid>
 
         <Grid item xs={12} sm={12} style={!activeAbout ? { display: 'none' } : { display: '' }}>

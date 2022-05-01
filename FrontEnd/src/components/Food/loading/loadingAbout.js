@@ -1,34 +1,26 @@
 
-import React, { useEffect } from 'react';
-import { Paper } from '@material-ui/core'
-import { Fade } from 'react-reveal';
-import { useTheme } from '@mui/material/styles';
+import React from 'react';
 import LoadingPlaceHolder from './loading';
 
 export default function LoadingAbout() {
-    const theme = useTheme();
     return (
-        <div className="container" id="place-to-visit" style={{ margin: '50px' }} >
-            <Fade left>
-                <div className="aboutSection__left">
-                    <Paper elevation={1}
-                        style={{
-                            margin: '0 auto',
-                            maxwidth: '50%',
-                            borderRadius: '12px',
-                            [theme.breakpoints.down('sm')]: {
-                                padding: '10rem',
-                            }
-                        }}
-                    >
-                        <LoadingPlaceHolder extraStyles={{
-                            height: 0,
-                            paddingTop: '50%',
-                            margin: 'auto',
-                        }} />
-                    </Paper>
-                </div>
-            </Fade>
+        <div style={{
+            height: '100vh',
+            margin: 'auto',
+        }}>
+            <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            }}>
+                <LoadingPlaceHolder extraStyles={{
+                    height: '70vh', objectFit: 'cover', width: '90%',
+                    margin: '40px auto', borderRadius: '10px'
+                }} />
+                <LoadingPlaceHolder extraStyles={{
+                    height: '70vh', objectFit: 'cover', width: '90%',
+                    margin: '40px auto', borderRadius: '10px'
+                }} />
+            </div>
         </div>
     );
 }

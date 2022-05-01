@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
   spanFood: {
-    backgroundColor: 'coral',
+    backgroundColor: '#4abdac',
     padding: '0.3rem 1rem',
     color: 'white',
     borderRadius: '8px',
@@ -15,8 +15,10 @@ export default makeStyles((theme) => ({
   },
   galleryH: {
     letterSpacing: '2px',
-    color: 'Gray',
+    color: 'gray',
     fontWeight: '600',
+    fontSize: '1.5rem',
+    margin: "10px",
     [theme.breakpoints.down('xs')]: {
       fontSize: '25px'
     },
@@ -25,23 +27,17 @@ export default makeStyles((theme) => ({
     borderRadius: 4,
     display: 'flex',
     marginTop: '1rem',
-    padding: '1rem 1rem',
-    ['@media (max-width:800px)']: {
-      padding: theme.spacing(1),
-    },
-    ['@media (max-width:656px)']: {
-      padding: theme.spacing(0.5),
-    },
-    [theme.breakpoints.down('xs')]: {
-      padding: theme.spacing(2.2),
-    },
+    padding: theme.spacing(2.2),
   },
   mainSearch: {
     padding: '0rem 1.4rem',
     [theme.breakpoints.down('sm')]: {
-      padding: '0rem',
+      maxWidth: '60%',
+      margin: '0 auto',
     },
     [theme.breakpoints.down('xs')]: {
+      maxWidth: '100%',
+      margin: '0 auto',
       padding: '0rem 4rem',
     },
     ['@media (max-width:500px)']: {
@@ -64,10 +60,6 @@ export default makeStyles((theme) => ({
   },
   gridContainer: {
     [theme.breakpoints.down('sm')]: {
-      padding: '0rem',
-      flexDirection: 'row-reverse',
-    },
-    [theme.breakpoints.down('xs')]: {
       flexDirection: 'column-reverse',
     },
   },
@@ -79,24 +71,6 @@ export default makeStyles((theme) => ({
     },
     [theme.breakpoints.down('xs')]: {
       padding: '0.8rem',
-    },
-  },
-  media: {
-    width: '100%',
-    height: '320px',
-    ObjectFit: 'cover',
-    borderRadius: '10px',
-    ['@media (max-width:750px)']: {
-      height: '280px',
-    },
-    ['@media (max-width:600px)']: {
-      height: '320px',
-    },
-    ['@media (max-width:450px)']: {
-      height: '300px',
-    },
-    ['@media (max-width:380px)']: {
-      height: '240px',
     },
   },
   Gpagination: {

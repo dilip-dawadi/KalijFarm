@@ -33,7 +33,7 @@ padding: 5.5rem 1rem 0rem 1rem;
   letter-spacing: 2.5px;
 }
 .about__heading span{
-  background-color: coral;
+  background-color: #4abdac;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 12px;

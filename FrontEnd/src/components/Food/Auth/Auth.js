@@ -80,7 +80,7 @@ const SignUp = () => {
           <Avatar className={classes.avatar}>
             <LockOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5" style={{ letterSpacing: '2px', fontWeight: "300", textTransform: 'uppercase' }}>{isSignup ? 'Sign up' : 'Sign in'}</Typography>
+          <Typography component="h1" variant="h5" style={{ letterSpacing: '2px', fontWeight: "500", textTransform: 'uppercase' }}>{isSignup ? 'Sign up' : 'Sign in'}</Typography>
           <GoogleAuth />
           <form className={classes.formData} onSubmit={handleSubmit}>
             <Grid container spacing={2}>
@@ -95,7 +95,7 @@ const SignUp = () => {
               {isSignup && <Input name="confirmPassword" label="Repeat Password" type={showCPassword ? 'text' : 'password'} handleShowCPassword={handleShowCPassword} handleChange={handleChange} />}
             </Grid>
             {(ErrorSignIn || Error || success) && <Typography className={(success ? classes.success : classes.Error)} fullWidth>{(ErrorSignIn?.slice(0, -2) || Error?.slice(0, -2) || success?.slice(0, -2))}</Typography>}
-            <Button type="submit" fullWidth variant="contained" disabled={wait} color="primary" className={classes.submit}>
+            <Button type="submit" fullWidth variant="contained" disabled={wait} className={classes.submit}>
               {isSignup ? 'Sign Up' : 'Sign In'}
             </Button>
 

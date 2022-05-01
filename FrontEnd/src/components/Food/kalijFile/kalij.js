@@ -36,39 +36,58 @@ const Kalij = ({ handleAddProduct }) => {
         <Grid className={classes.container} container alignItems="stretch" spacing={2}>
           {Kalijs.slice(0, 4).map((kalij) => (
             <Grid key={kalij._id} checked={checked} item xs={12} sm={6} md={4} lg={3}>
-              <Zoom out duration={2000}>
-                <Card className={classed.cards} raised elevation={3}>
-                  <ButtonBase component="span"
-                    name="test"
-                    className={classes.cardAction} onClick={() => { (user?.result?.name) && navigate(`/food/${kalij._id}`) }} >
-                    <CardMedia className={classes.media} style={{ backgroundImage: `url(${kalij.selectedFile})` }} title={kalij.title} />
-                    <div className={classes.details}>
-                      <Typography variant="body2" color="textSecondary" component="h2">{kalij?.tags?.splice(0, 4).map((tag) => `#${tag} `)}</Typography>
-                    </div>
-                    <Typography className={classes.title} gutterBottom variant="h5" component="h2">{kalij.title.split(' ').splice(0, 2).join(' ')}</Typography>
-                    <CardContent className={classes.cartTitle} >
-                      <Typography variant="body2" color="textSecondary" component="p">{kalij.message.split(' ').splice(0, 4).join(' ')}...</Typography>
-                    </CardContent>
-                  </ButtonBase>
-                  <CardActions className={classes.cardActions}>
-                    <Button size="small" onClick={() => user?.result?.name ? handleAddProduct(kalij) : null}>
-                      {(user?.result?.name) ? <Notify /> : <Notification />}
-                    </Button>
+              <Card className={classed.cards} raised elevation={3}>
+                <ButtonBase component="span"
+                  name="test"
+                  className={classes.cardAction} onClick={() => { (user?.result?.name) && navigate(`/food/${kalij._id}`) }} >
+                  <CardMedia className={classes.media} style={{ backgroundImage: `url(${kalij.selectedFile})` }} title={kalij.title} />
+                  <Typography
+                    className={classes.title}
+                    gutterBottom
+                    variant="h5"
+                    component="h2"
+                  >
+                    {kalij.title.split(" ").splice(0, 2).join(" ")}
+                  </Typography>
+                  <CardContent className={classes.cartTitle} >
+                    <Typography variant="body2" color="textSecondary" component="p">{kalij.message.split(' ').splice(0, 4).join(' ')}...</Typography>
+                  </CardContent>
+                  <div className={classes.details}>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="h2"
+                    >
+                      {kalij.tags.map((tag) =>
+                      (
+                        <Button style={{
+                          backgroundColor: '#4abdac',
+                          borderRadius: '6px',
+                          color: 'white',
+                          padding: '1px 7px',
+                          margin: '2px 3px',
+                          fontSize: '13px',
+                        }} >
+                          {tag}
+                        </Button>)
+                      ).splice(-3)}
+                    </Typography>
+                  </div>
+                </ButtonBase>
+                <CardActions className={classes.cardActionsI}>
+                  <><Button size="small" className={classed.btn} onClick={!user?.result?.name ? handleOpenM : () => navigate(`/food/${kalij._id}`)} type="button">
+                    Learn More
+                  </Button>
+                    {!user?.result?.name ? <Model openM={openM} setOpenM={setOpenM} /> : null}
+                  </>
 
-                    <><Button size="small" className={classed.btn} onClick={!user?.result?.name ? handleOpenM : () => navigate(`/food/${kalij._id}`)} type="button">
-                      Learn More
-                    </Button>
-                      {!user?.result?.name ? <Model openM={openM} setOpenM={setOpenM} /> : null}
-                    </>
-
-                  </CardActions>
-                </Card>
-              </Zoom>
+                </CardActions>
+              </Card>
             </Grid>
           ))}
         </Grid>
         <br />
-        <center><Button variant="contained" style={{ backgroundColor: 'coral', padding: '10px 20px', letterSpacing: '2px', fontWeight: '600', borderRadius: '7px', color: 'white' }}><Link
+        <center><Button variant="contained" style={{ backgroundColor: '#4abdac', padding: '7px 20px', letterSpacing: '2px', fontWeight: '600', color: 'white' }}><Link
           to='/food?page=1'
           className={classes.link}>
           View More

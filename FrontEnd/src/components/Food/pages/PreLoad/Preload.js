@@ -41,7 +41,7 @@ export default function CircularUnderLoad() {
           <Flip>
             <span
               style={{
-                backgroundColor: "coral",
+                backgroundColor: "#4abdac",
                 color: "white",
                 padding: "12px 30px",
                 margin: "15px 20px",

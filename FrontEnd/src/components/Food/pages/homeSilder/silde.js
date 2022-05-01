@@ -28,31 +28,31 @@ function Slider() {
     <Grid container className={classes.container} >
       <Grid item xs={12} sm={12} md={12}>
         {isLoading ? <Zoom duration={2000}> <LoadingPlaceHolder extraStyles={{
-          height: '85vh', objectFit: 'cover', width: '90%',
+          height: '85vh', objectFit: 'cover', width: '95%',
           margin: '10px auto', borderRadius: '10px'
         }} /> </Zoom> :
-          <Zoom duration={3000}>
-            <AutoPlaySwipeableViews
-              axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-              interval={5000}
-              index={activeStep}
-              onChangeIndex={handleStepChange}
-              enableMouseEvents
-            >
-              {gallery?.map((step, index) => (
-                <div key={step.title}>
-                  {Math.abs(activeStep - index) <= 2 ? (
-                    <CardMedia
-                      style={{
-                        backgroundImage: `url('./backimage.png'), url(${step.selectedFile})`,
-                      }}
-                      className={classes.media}
-                      title={step.title} />
-                  ) : null}
-                </div>
-              ))}
-            </AutoPlaySwipeableViews>
-          </Zoom>
+          // <Zoom duration={3000}>
+          <AutoPlaySwipeableViews
+            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+            interval={5000}
+            index={activeStep}
+            onChangeIndex={handleStepChange}
+            enableMouseEvents
+          >
+            {gallery?.map((step, index) => (
+              <div key={step.title}>
+                {Math.abs(activeStep - index) <= 2 ? (
+                  <CardMedia
+                    style={{
+                      backgroundImage: `url('./backimage.png'), url(${step.selectedFile})`,
+                    }}
+                    className={classes.media}
+                    title={step.title} />
+                ) : null}
+              </div>
+            ))}
+          </AutoPlaySwipeableViews>
+          // </Zoom>
         }
       </Grid>
       <Grid item xs={12} sm={12} md={12} className={classes.text} >

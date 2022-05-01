@@ -30,7 +30,6 @@ const GoogleAuth = () => {
         render={(renderProps) => (
           <Button
             className={classes.googleButton}
-            color="secondary"
             onClick={renderProps.onClick}
             disabled={renderProps.disabled}
             startIcon={<Icon />}

@@ -92,7 +92,7 @@ const Contact = () => {
             borderRadius: '1%',
             margin: '20px auto',
           }} >
-            <h3 style={{ color: "black", textAlign: 'center', letterSpacing: '3px', color: 'gray', fontSize: '22px' }}>CONTACT <span style={{ color: 'white', backgroundColor: 'coral', padding: '5px 10px', borderRadius: '10px' }} >US</span></h3>
+            <h3 style={{ color: "black", textAlign: 'center', letterSpacing: '3px', color: 'gray', fontSize: '22px' }}>CONTACT <span style={{ color: 'white', backgroundColor: '#4abdac', padding: '5px 10px', borderRadius: '10px' }} >US</span></h3>
             <form autoComplete="off" ref={form} className="form" onSubmit={handleSubmit} >
               <label style={{ margin: '20px 0px 1px 10px' }}>Email</label>
               <input
@@ -116,7 +116,7 @@ const Contact = () => {
                 onChange={(e) => setCont({ ...cont, message: e.target.value })}
               ></textarea>
               {error && <label style={{ margin: '10px', color: 'red', textAlign: 'center' }}>{error}</label>}
-              {!btnDisable ? <button type="submit" style={{ background: "coral" }}>
+              {!btnDisable ? <button type="submit" style={{ background: "#4abdac" }}>
                 Submit
               </button> : <button disabled style={{ background: "#28a745" }}>
                 Thank You

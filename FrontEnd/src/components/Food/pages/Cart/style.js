@@ -3,12 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   button: {
     padding: '5px 10px',
-    backgroundColor: '#ED9F64',
+    backgroundColor: '#4abdac',
     borderRadius: '15px',
     color: 'white',
     fontWeight: 'bold',
     '&:hover': {
-      background: "#FE540B",
+      background: "#008f95",
       color: 'white',
     },
   },
@@ -47,13 +47,13 @@ export default makeStyles((theme) => ({
 
   total: {
     padding: '7px 10px',
-    backgroundColor: '#ED9F64',
+    backgroundColor: '#4abdac',
     borderRadius: '15px',
     margin: '10px 0px',
     fontWeight: '600',
     color: 'white',
     '&:hover': {
-      background: "#FE540B",
+      background: "#008f95",
       color: 'white',
     }
   },
@@ -82,7 +82,7 @@ export default makeStyles((theme) => ({
     textAlign: 'center'
   },
   spanFood: {
-    backgroundColor: 'coral',
+    backgroundColor: '#4abdac',
     padding: '0.2rem 1rem',
     color: 'white',
     borderRadius: '8px'

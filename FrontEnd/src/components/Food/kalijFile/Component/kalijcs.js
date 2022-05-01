@@ -21,7 +21,7 @@ export default makeStyles((theme) => ({
   },
   spanFood: {
     letterSpacing: '2px',
-    backgroundColor: 'coral',
+    backgroundColor: '#4abdac',
     padding: '0.2rem 1rem',
     color: 'white',
     borderRadius: '8px'
@@ -74,17 +74,17 @@ export default makeStyles((theme) => ({
   },
   details: {
     display: 'flex',
-    justifyContent: 'space-between',
-    margin: '5px 15px',
+    padding: '3px 17px 10px 17px',
   },
   title: {
-    padding: '0px 16px',
+    color: 'gray',
+    fontSize: '18px',
+    fontWeight: 'bold',
+    padding: '12px 15px 0px 15px',
   },
   cartTitle: {
-    margin: '0x 20px',
-    fontWeight: '780',
+    padding: '5px 17px 15px 17px',
     fontSize: '15px',
-    backgroundColor: '#f5f5f5',
     color: '#A2816C'
   },
   cardActions: {
@@ -95,6 +95,7 @@ export default makeStyles((theme) => ({
   },
   cardActionsI: {
     display: 'grid',
+    backgroundColor: '#f0f0f0',
   },
   cardAction: {
     display: 'block',
