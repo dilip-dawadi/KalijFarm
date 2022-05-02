@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
   container: {
-    padding: '1rem 1.25rem',
+    padding: '0.5rem 1rem',
   },
   // pagenotfound
   PageNotFound: {
@@ -28,17 +28,11 @@ export default makeStyles((theme) => ({
   },
   media: {
     width: '100%',
-    height: '220px',
-    ObjectFit: 'fill',
+    height: '250px',
+    ObjectFit: 'contain',
     ObjectPosition: 'center',
     borderRadius: '0px 0px 4px 4px',
-    ['@media (max-width:650px)']: {
-      height: '180px',
-    },
-    [theme.breakpoints.down('xs')]: {
-      height: '270px',
-    },
-    ['@media (max-width:420px)']: {
+    ['@media (max-width:350px)']: {
       height: '220px',
     },
   },
@@ -74,13 +68,13 @@ export default makeStyles((theme) => ({
   },
   details: {
     display: 'flex',
-    padding: '3px 17px 10px 17px',
+    padding: '5px 17px 15px 17px',
   },
   title: {
     color: 'gray',
     fontSize: '18px',
     fontWeight: 'bold',
-    padding: '12px 15px 0px 15px',
+    padding: '16px 15px 4px 15px',
   },
   cartTitle: {
     padding: '5px 17px 15px 17px',

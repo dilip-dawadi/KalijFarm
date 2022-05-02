@@ -5,7 +5,6 @@ import LoadingPlaceHolder from './loading';
 export default function LoadingAbout() {
     return (
         <div style={{
-            height: '100vh',
             margin: 'auto',
         }}>
             <div style={{

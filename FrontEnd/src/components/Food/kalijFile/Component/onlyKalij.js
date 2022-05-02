@@ -34,12 +34,10 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    height: '100%',
     borderRadius: '8px',
     position: 'relative',
-    '&:hover': {
-      padding: '0.5x 0.5px'
-    },
+    width: '100%',
+    height: '100%',
     // media queries
     ['@media (max-width:600px)']: {
       width: '80%',

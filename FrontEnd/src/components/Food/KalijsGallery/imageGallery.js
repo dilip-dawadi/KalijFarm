@@ -55,7 +55,6 @@ const Image = () => {
       <Grow in>
         <Container maxWidth="xl">
           <Grid container justifyContent="space-between" alignItems="stretch" spacing={3} className={classes.gridContainer}>
-
             <Grid item xs={12} md={8}>
               <Grid className={classes.Foodonlycontainer} container alignItems="stretch" spacing={3}>
                 {isLoading ? <Loading /> :

@@ -18,7 +18,7 @@ export default makeStyles((theme) => ({
     color: 'gray',
     fontWeight: '600',
     fontSize: '1.5rem',
-    margin: "10px",
+    margin: "0px auto 23px auto",
     [theme.breakpoints.down('xs')]: {
       fontSize: '25px'
     },

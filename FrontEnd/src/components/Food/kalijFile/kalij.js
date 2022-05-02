@@ -70,7 +70,7 @@ const Kalij = ({ handleAddProduct }) => {
                         }} >
                           {tag}
                         </Button>)
-                      ).splice(-3)}
+                      ).splice(-2)}
                     </Typography>
                   </div>
                 </ButtonBase>

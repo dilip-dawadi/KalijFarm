@@ -21,19 +21,19 @@ const Loading = () => {
               <Card className={classed.cards} raised elevation={4}>
                 {isLoading ? <LoadingPlaceHolder extraStyles={{
                   height: 0,
-                  paddingTop: '70%', objectFit: 'cover',
+                  paddingTop: '80%', objectFit: 'cover',
                   margin: 'auto', borderRadius: '10px 5px 10px 5px',
                 }} /> :
                   <div>
                     <CardMedia className={classes.media} style={{ backgroundImage: `url(${kalij.selectedFile})` }} title={kalij.title} />
                   </div>}
                 {isLoading ? <LoadingPlaceHolder extraStyles={{
-                  height: '30px', margin: '10px auto 0px auto', padding: '0.1rem 0rem',
+                  height: '35px', margin: '10px auto 0px auto', padding: '0.1rem 0rem',
                 }} /> :
                   <Typography className={classes.title} gutterBottom variant="h5" component="h2"></Typography>}
                 {isLoading ? <LoadingPlaceHolder extraStyles={{
-                  height: '25px',
-                  margin: '4px auto', padding: '0.1rem 0rem',
+                  height: '30px',
+                  margin: '10px auto 4px auto', padding: '0.1rem 0rem',
                 }} /> :
                   <CardContent>
                     <Typography variant="body2" color="textSecondary" component="p"></Typography>

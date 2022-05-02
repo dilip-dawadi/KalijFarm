@@ -11,7 +11,7 @@ export default makeStyles((theme) => ({
     },
   },
   gallery: {
-    paddingTop: '130px',
+    paddingTop: '120px',
   },
   galleryH: {
     letterSpacing: '2px',
@@ -30,7 +30,10 @@ export default makeStyles((theme) => ({
     padding: theme.spacing(2.2),
   },
   mainSearch: {
-    padding: '0rem 1.4rem',
+    padding: '0rem 4rem',
+    [theme.breakpoints.down('lg')]: {
+      padding: '0rem 1.5rem',
+    },
     [theme.breakpoints.down('sm')]: {
       maxWidth: '60%',
       margin: '0 auto',

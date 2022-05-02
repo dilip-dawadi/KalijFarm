@@ -14,7 +14,7 @@ import { useSelector } from "react-redux";
 import Model from "../../Food/modal/messageM";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import useStyles from "../../Food/kalijFile/Component/kalijcss";
+import useStyles from "./styleRoom";
 import useStyle from "../../Food/kalijFile/Component/onlyKalij";
 import { roomLike } from "../../../redux/actions/roomaction";
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';

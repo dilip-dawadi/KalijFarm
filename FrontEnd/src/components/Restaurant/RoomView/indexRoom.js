@@ -29,7 +29,7 @@ const Image = () => {
   const [book, setBook] = useState('');
   let [pe, setpe] = useState('');
   const [ps, setps] = useState('');
-  const [price, setprice] = React.useState([500, 2000]);
+  const [price, setprice] = React.useState([100, 2000]);
   const { Rooms, isLoading } = useSelector((state) => state.Room);
 
 
