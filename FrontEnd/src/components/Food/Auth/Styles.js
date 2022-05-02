@@ -2,10 +2,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
   container: {
-    padding: '5rem 1rem',
+    padding: '5.6rem 1rem',
   },
   container1: {
-    padding: '6rem 2rem',
+    padding: '7.2rem 1.7rem',
   },
   paper: {
     marginTop: theme.spacing(2),
@@ -26,19 +26,16 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     padding: theme.spacing(2),
   },
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-    },
-  },
   Error: {
     color: 'white',
     fontSize: '12px',
     fontStyle: 'bold',
     letterSpacing: '1px',
     textAlign: 'center',
+    marginTop: '5px',
     padding: '12px 5px 12px 5px',
     backgroundColor: '#f21818',
+    borderRadius: '5px',
   },
   success: {
     color: 'white',
@@ -46,6 +43,8 @@ export default makeStyles((theme) => ({
     fontStyle: 'bold',
     letterSpacing: '1px',
     textAlign: 'center',
+    marginTop: '5px',
+    borderRadius: '5px',
     padding: '12px 5px 12px 5px',
     backgroundColor: '#17a2b8',
   },

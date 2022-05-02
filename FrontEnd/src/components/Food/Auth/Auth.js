@@ -81,12 +81,12 @@ const SignUp = () => {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5" style={{ letterSpacing: '2px', fontWeight: "500", textTransform: 'uppercase' }}>{isSignup ? 'Sign up' : 'Sign in'}</Typography>
-          <GoogleAuth />
+          {isSignup ? null : <GoogleAuth />}
           <form className={classes.formData} onSubmit={handleSubmit}>
             <Grid container spacing={2}>
               {isSignup && (
                 <>
-                  <Input name="firstName" label="First Name" handleChange={handleChange} autoFocus half />
+                  <Input name="firstName" label="First Name" handleChange={handleChange} half />
                   <Input name="lastName" label="Last Name" handleChange={handleChange} half />
                 </>
               )}

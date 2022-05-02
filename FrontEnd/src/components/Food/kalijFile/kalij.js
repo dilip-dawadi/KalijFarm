@@ -39,8 +39,8 @@ const Kalij = ({ handleAddProduct }) => {
               <Card className={classed.cards} raised elevation={3}>
                 <ButtonBase component="span"
                   name="test"
-                  className={classes.cardAction} onClick={() => { (user?.result?.name) && navigate(`/food/${kalij._id}`) }} >
-                  <CardMedia className={classes.media} style={{ backgroundImage: `url(${kalij.selectedFile})` }} title={kalij.title} />
+                  className={classes.cardAction} onClick={() => { (user?.result?.name) ? navigate(`/food/${kalij._id}`) : handleOpenM(); }} >
+                  <CardMedia className={classes.media} style={{ backgroundImage: `url(${kalij.selectedFile})` }} title={kalij.title.split(" ").splice(0, 1)} />
                   <Typography
                     className={classes.title}
                     gutterBottom

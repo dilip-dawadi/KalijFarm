@@ -85,19 +85,20 @@ const All = ({ Room }) => {
               user?.result?.name ? navigate(`/room/${Room._id}`) : handleOpenM();
             }}
           >
-            <CardMedia className={classes.media} style={{ backgroundImage: `url(${Room.selectedFile})` || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png' }} title={Room.title} />
+            <CardMedia className={classes.media} style={{ backgroundImage: `url(${Room.selectedFile})` || 'https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png' }} title={Room.title.split(" ").splice(0, 1)} />
+
+            <Typography
+              className={classes.title}
+              gutterBottom
+              variant="h5"
+              component="h2"
+            >
+              {Room.title.split(" ").splice(0, 2).join(" ")}
+            </Typography>
+            <CardContent className={classes.cartTitle} >
+              <Typography variant="body2" color="textSecondary" component="p">{Room.message.split(' ').splice(0, 4).join(' ')}...</Typography>
+            </CardContent>
           </ButtonBase>
-          <Typography
-            className={classes.title}
-            gutterBottom
-            variant="h5"
-            component="h2"
-          >
-            {Room.title.split(" ").splice(0, 2).join(" ")}
-          </Typography>
-          <CardContent className={classes.cartTitle} >
-            <Typography variant="body2" color="textSecondary" component="p">{Room.message.split(' ').splice(0, 4).join(' ')}...</Typography>
-          </CardContent>
           <div className={classes.details}>
             <Typography
               variant="body2"

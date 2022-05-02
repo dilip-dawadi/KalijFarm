@@ -9,18 +9,15 @@ export default makeStyles((theme) => ({
         },
     },
     media: {
-        height: '90vh',
+        height: '89vh',
         objectFit: 'cover',
-        width: '95.5%',
-        borderRadius: '1rem',
+        width: '100%',
         margin: 'auto',
-        ['@media (max-width:768px)']: {
-            width: '99.9%',
+        ['@media (max-width:1200px)']: {
             height: '90vh',
         },
         [theme.breakpoints.down('xs')]: {
             height: '55vh',
-            borderRadius: '0px',
         },
     },
     text: {

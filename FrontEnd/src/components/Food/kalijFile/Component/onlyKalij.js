@@ -49,6 +49,9 @@ export default makeStyles((theme) => ({
       height: 'auto',
       margin: '0 auto',
     },
+    '&:hover': {
+      boxShadow: '0px 3px 7px #4abdac',
+    },
   },
   cardsearch: {
     display: 'flex',

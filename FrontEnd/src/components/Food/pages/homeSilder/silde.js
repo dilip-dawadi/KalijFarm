@@ -20,6 +20,20 @@ function Slider() {
   }, [dispatch]);
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
+  // find width of device screen
+  const width = window.innerWidth;
+  console.log(width, 'width');
+  const height = window.innerHeight;
+  console.log(height, 'height');
+  const [mQ, setMQ] = React.useState(
+    width > height ? width : height
+  );
+  console.log(mQ, 'mQ');
+  // find user device
+  const [device, setDevice] = React.useState(
+    width > height ? 'desktop' : 'mobile'
+  );
+  console.log(device, 'device');
   const handleStepChange = (step) => {
     setActiveStep(step);
   };
@@ -27,10 +41,9 @@ function Slider() {
   return (
     <Grid container className={classes.container} >
       <Grid item xs={12} sm={12} md={12}>
-        {isLoading ? <Zoom duration={2000}> <LoadingPlaceHolder extraStyles={{
-          height: '85vh', objectFit: 'cover', width: '95%',
-          margin: '10px auto', borderRadius: '10px'
-        }} /> </Zoom> :
+        {isLoading ? <LoadingPlaceHolder extraStyles={{
+          height: '89vh', objectFit: 'cover', width: '100%',
+        }} /> :
           // <Zoom duration={3000}>
           <AutoPlaySwipeableViews
             axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -42,12 +55,17 @@ function Slider() {
             {gallery?.map((step, index) => (
               <div key={step.title}>
                 {Math.abs(activeStep - index) <= 2 ? (
-                  <CardMedia
+                  (device === 'mobile') ? (<CardMedia
                     style={{
                       backgroundImage: `url('./backimage.png'), url(${step.selectedFile})`,
                     }}
                     className={classes.media}
-                    title={step.title} />
+                    title={step.title} />) : (<CardMedia
+                      style={{
+                        backgroundImage: `url(${step.selectedFile})`,
+                      }}
+                      className={classes.media}
+                      title={step.title} />)
                 ) : null}
               </div>
             ))}

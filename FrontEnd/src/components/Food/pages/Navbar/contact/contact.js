@@ -1,41 +1,33 @@
 import React, { useRef, useState } from "react";
 import Paper from "@material-ui/core/Paper";
+import Avatar from "@material-ui/core/Avatar";
 import styled from "styled-components";
 import emailjs from "emailjs-com";
-import { Zoom, Fade, Flip, Rotate, Bounce, Roll } from 'react-reveal';
+import ContactMailIcon from '@mui/icons-material/ContactMail';
+import { Zoom } from 'react-reveal';
 const AboutPageStyles = styled.div`
-  padding: 90px 10px 0px 10px;
+  padding: 95px 10px 40px 10px;
   .form {
-    display: grid;
-  } 
-  .form > input,
-  textarea {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+  } 
+  .form > input {
+    width: 100%;
     padding: 12px;
     border-radius: 3px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.137);
-    margin-bottom: 20px;
-    border: 1px solid #f5f5f5;
+    margin: 7px 10px 20px 10px;
+    border: 0.5px solid gray;
     font-size: 16px;
   }
-
-  .form > input:focus,
-  textarea:focus {
-    border: 1px solid rgb(0, 0, 196);
-  }
-
-  .form > textarea {
+  .form > input:nth-child(3) {
     min-height: 80px;
   }
 
-  .form > label {
-    padding-bottom: 10px;
-    color: black;
-    font-size: 17px;
-  }
-
   .form > button {
-    padding: 16px;
+    width: 100%;
+    padding: 14px;
     letter-spacing: 2px;
     border: none;
     font-weight: 500;
@@ -44,7 +36,7 @@ const AboutPageStyles = styled.div`
     color: #fff;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-    margin-top: 10px;
+    margin-top: 5px;
   }
 
   .form > button:hover {
@@ -86,35 +78,40 @@ const Contact = () => {
     <Zoom>
       <AboutPageStyles>
         <div className="contact" >
-          <Paper elevation={4} style={{
+          <Paper elevation={3} style={{
             maxWidth: '350px',
             padding: '25px',
             borderRadius: '1%',
             margin: '20px auto',
           }} >
-            <h3 style={{ color: "black", textAlign: 'center', letterSpacing: '3px', color: 'gray', fontSize: '22px' }}>CONTACT <span style={{ color: 'white', backgroundColor: '#4abdac', padding: '5px 10px', borderRadius: '10px' }} >US</span></h3>
+            <Avatar style={{
+              margin: '1rem auto',
+              backgroundColor: '#4abdac',
+              margin: '10px auto',
+            }}>
+              <ContactMailIcon />
+            </Avatar>
+            <h3 style={{ color: "black", textAlign: 'center', letterSpacing: '3px', color: 'black', fontWeight: '300', fontSize: '22px', margin: '25px 0px 25px 0px' }}>CONTACT US</h3>
+
             <form autoComplete="off" ref={form} className="form" onSubmit={handleSubmit} >
-              <label style={{ margin: '20px 0px 1px 10px' }}>Email</label>
               <input
                 placeholder="Email"
                 name="email"
                 value={cont.email}
                 onChange={(e) => setCont({ ...cont, email: e.target.value })}
               />
-              <label style={{ margin: '0px 10px' }}>Subject</label>
               <input
                 placeholder="Subject"
                 name="subject"
                 value={cont.subject}
                 onChange={(e) => setCont({ ...cont, subject: e.target.value })}
               />
-              <label style={{ margin: '0px 10px' }}>Message</label>
-              <textarea
+              <input
                 placeholder="Message"
                 name="message"
                 value={cont.message}
                 onChange={(e) => setCont({ ...cont, message: e.target.value })}
-              ></textarea>
+              ></input>
               {error && <label style={{ margin: '10px', color: 'red', textAlign: 'center' }}>{error}</label>}
               {!btnDisable ? <button type="submit" style={{ background: "#4abdac" }}>
                 Submit

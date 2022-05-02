@@ -13,10 +13,9 @@ const NavStyles = styled.nav`
   top: 1;
   left: 0;
   right: 0;
-  width: 98%;
+  width: 100%;
   background-color: #fcfcfc;
   margin: 0px auto;
-  border-radius: 0px 0px 10px 10px;
   opacity: 1;
 }
 
