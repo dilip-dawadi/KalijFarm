@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { MdClose, MdMenu } from 'react-icons/md';
 import { FaShoppingCart } from 'react-icons/fa';
 import Login from './user'
+import { Paper } from '@material-ui/core';
 const NavStyles = styled.nav`
 .nav{
   position: fixed;
@@ -211,88 +212,90 @@ export default function NavMenu({ cartItems }) {
   }
   window.addEventListener('scroll', changeBackground);
   return (
-    <NavStyles>
-      <div className={'nav'}>
-        <div
-          className={'mobile-menu-icon'}
-          onClick={() => setShowNav(!showNav)}
-          role="button"
-          onKeyDown={() => setShowNav(!showNav)}
-          tabIndex={0}
-        >
-          <MdMenu />
-        </div>
-
-        <ul className={!showNav ? 'navItems hide-item' : 'navItems'}>
+    <Paper>
+      <NavStyles>
+        <div className={'nav'}>
           <div
-            className="closeNavIcon"
+            className={'mobile-menu-icon'}
             onClick={() => setShowNav(!showNav)}
             role="button"
             onKeyDown={() => setShowNav(!showNav)}
             tabIndex={0}
           >
-            <MdClose />
+            <MdMenu />
           </div>
-          <li>
-            <NavLink
-              to="/home?up=1"
-              onClick={() => setShowNav(!showNav)}
-              role="button"
-              onKeyDown={() => setShowNav(!showNav)}
-              tabIndex={0}
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/food"
-              onClick={() => setShowNav(!showNav)}
-              role="button"
-              onKeyDown={() => setShowNav(!showNav)}
-              tabIndex={0}
-            >
-              Food
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/room"
-              onClick={() => setShowNav(!showNav)}
-              role="button"
-              onKeyDown={() => setShowNav(!showNav)}
-              tabIndex={0}
-            >
-              Room
-            </NavLink>
-          </li>
-          <li>
 
-            <NavLink
-              to="/contact"
+          <ul className={!showNav ? 'navItems hide-item' : 'navItems'}>
+            <div
+              className="closeNavIcon"
               onClick={() => setShowNav(!showNav)}
               role="button"
               onKeyDown={() => setShowNav(!showNav)}
               tabIndex={0}
             >
-              Contact
-            </NavLink>
-          </li>
-          <li>
-            {user?.result ? (
-              <Login />
-            ) : (
-              <Link className='Signin' to="/auth" onClick={() => setShowNav(!showNav)}
+              <MdClose />
+            </div>
+            <li>
+              <NavLink
+                to="/home?up=1"
+                onClick={() => setShowNav(!showNav)}
                 role="button"
                 onKeyDown={() => setShowNav(!showNav)}
-                tabIndex={0}>Sign in</Link>
-            )}
-          </li>
+                tabIndex={0}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/food"
+                onClick={() => setShowNav(!showNav)}
+                role="button"
+                onKeyDown={() => setShowNav(!showNav)}
+                tabIndex={0}
+              >
+                Food
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/room"
+                onClick={() => setShowNav(!showNav)}
+                role="button"
+                onKeyDown={() => setShowNav(!showNav)}
+                tabIndex={0}
+              >
+                Room
+              </NavLink>
+            </li>
+            <li>
 
-        </ul>
+              <NavLink
+                to="/contact"
+                onClick={() => setShowNav(!showNav)}
+                role="button"
+                onKeyDown={() => setShowNav(!showNav)}
+                tabIndex={0}
+              >
+                Contact
+              </NavLink>
+            </li>
+            <li>
+              {user?.result ? (
+                <Login />
+              ) : (
+                <Link className='Signin' to="/auth" onClick={() => setShowNav(!showNav)}
+                  role="button"
+                  onKeyDown={() => setShowNav(!showNav)}
+                  tabIndex={0}>Sign in</Link>
+              )}
+            </li>
 
-        <NavLink to="/cart" className='cart'><FaShoppingCart /> <span> {cartItems.length === 0 || !user?.result?.email ? 0 : cartItems.length}</span></NavLink>
-      </div>
-    </NavStyles>
+          </ul>
+
+          <NavLink to="/cart" className='cart'><FaShoppingCart /> <span> {cartItems.length === 0 || !user?.result?.email ? 0 : cartItems.length}</span></NavLink>
+        </div>
+      </NavStyles>
+    </Paper>
   );
 }

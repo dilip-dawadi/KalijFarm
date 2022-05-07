@@ -22,18 +22,14 @@ function Slider() {
   const [activeStep, setActiveStep] = React.useState(0);
   // find width of device screen
   const width = window.innerWidth;
-  console.log(width, 'width');
   const height = window.innerHeight;
-  console.log(height, 'height');
   const [mQ, setMQ] = React.useState(
     width > height ? width : height
   );
-  console.log(mQ, 'mQ');
   // find user device
   const [device, setDevice] = React.useState(
     width > height ? 'desktop' : 'mobile'
   );
-  console.log(device, 'device');
   const handleStepChange = (step) => {
     setActiveStep(step);
   };

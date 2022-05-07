@@ -37,6 +37,7 @@ const KalijDetail = () => {
       getRoomBySearch({ book: "", ps: "", pe: "", tags: Room?.tags.join(",") })
     );
   }, [Room]);
+  if (user === null) return navigate("/auth");
   if (!Room) {
     return (
       <div style={{ padding: "80px 10px 0px 10px" }}>

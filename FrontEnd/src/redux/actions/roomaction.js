@@ -15,9 +15,7 @@ export const getRooms = (rp) => async (dispatch) => {
 export const getRoomBySearch = (roomSearchD) => async (dispatch) => {
     try {
         dispatch({ type: 'START_ROOM' })
-        console.log(roomSearchD, 'RoomSearch');
         const { data: { roomData: data, message } } = await api.fetchRoomBySearch(roomSearchD);
-        console.log(data, 'data of search');
         dispatch({ type: 'FETCH_ROOM_BY_SEARCH', payload: { data } });
         dispatch({ type: 'END_ROOM' })
 

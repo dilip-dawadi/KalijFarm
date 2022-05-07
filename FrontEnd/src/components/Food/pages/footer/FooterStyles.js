@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Box = styled.div`
   padding: 20px 60px;
   margin: 10px 10px;
-  background: #077872;
+  background: linear-gradient(to top, #00cc99 0%, #006666 100%);
   margin-Top: 5%;
    border-radius: 20px;
    
@@ -40,7 +40,7 @@ export const Row = styled.div`
 `;
 
 export const FooterLink = styled.a`
-  color: #bafffb;
+  color: #fff;
   margin-bottom: 20px;
   font-size: 18px;
   text-decoration: none;

@@ -18,7 +18,7 @@ const Loading = () => {
                         <Card className={classed.cards} raised elevation={4}>
                             {isLoading ? <LoadingPlaceHolder extraStyles={{
                                 height: 0,
-                                paddingTop: '78%', objectFit: 'cover',
+                                paddingTop: '80%', objectFit: 'cover',
                                 margin: 'auto', borderRadius: '8px',
                             }} /> :
                                 <div>

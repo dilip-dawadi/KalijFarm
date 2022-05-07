@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { Container } from '@material-ui/core'
+import { Container, Paper } from '@material-ui/core'
 import Home from './components/Food/kalijFile/UserIndex'
 import { Zoom } from 'react-reveal';
 import Foo from './components/Food/pages/footer/Footer';
@@ -9,7 +9,6 @@ import Room from './components/Restaurant/RoomView/indexRoom';
 import Gallery from './components/Food/KalijsGallery/reakGalery';
 import Nav from './components/Food/pages/Navbar/navPage';
 import Auth from './components/Food/Auth/Auth'
-import Admin from './components/Food/Admins/Admin';
 import About from './components/Food/pages/About'
 import PostDetail from './components/Food/kalijFile/Component/PostDetail'
 import Cart from './components/Food/pages/Cart/Cart'
@@ -19,9 +18,21 @@ import Preload from './components/Food/pages/PreLoad/Preload'
 import Verify from './components/Food/Auth/getVerify';
 import ScrollToTop from './components/Food/pages/ScroolToTop';
 import PostDetailOfRoom from './components/Restaurant/RoomView/postDetail/PostDetail';
+// import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]');
 const App = () => {
+  // const theme = createTheme({
+  //   palette: {
+  //     type: 'dark',
+  //     primary: {
+  //       main: '#fff',
+  //     },
+  //     secondary: {
+  //       main: '#fff',
+  //     },
+  //   },
+  // });
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
@@ -67,35 +78,39 @@ const App = () => {
     loading ? <Preload /> :
       (
         <BrowserRouter>
-          <Container maxWidth='xl' style={{
-            margin: '0 auto',
-            padding: '0px',
-            overflow: 'hidden',
-          }} >
-            <ScrollToTop />
-            <Nav cartItems={cartItems} />
-            <Zoom>
-              <Routes>
-                <Route path="/contact" exact element={<Contact />} />
-                <Route path="/home" exact element={<Home handleAddProduct={handleAddProduct} />} />
-                <Route path="/" exact element={<Navigate to="/home?up=1" />} />
-                {/* <Route path="/admin" exact element={<Admin />} /> */}
-                {/* {user?.result.role === 1 ? <Route path="/" exact element={<Navigate to="/admin" />} /> : <Route path="/" exact element={<Navigate to="/" />} />} */}
-                <Route path="/cart" exact element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemove={handleRemove} handleClearAll={handleClearAll} />} />
-                <Route path="/food/:id" exact element={<PostDetail handleAddProduct={handleAddProduct} />} />
-                <Route path="/room/:id" exact element={<PostDetailOfRoom />} />
-                <Route path="/about" exact element={<About />} />
-                <Route path="/auth" exact element={<Auth />} />
-                <Route path="/users/:id/verify/:token" exact element={<Verify />} />
-                <Route path="/food" exact element={<Image />} />
-                <Route path="/food/search" exact element={<Image />} />
-                <Route path="/room" exact element={<Room />} />
-                <Route path="/gallery" exact element={<Gallery />} />
-                <Route path="*" element={<PageNotFound />} />
-              </Routes>
-              <Foo />
-            </Zoom>
-          </Container>
+          {/* <ThemeProvider theme={theme}> */}
+          <Paper>
+            <Container maxWidth='xl' style={{
+              margin: '0 auto',
+              padding: '0px',
+              overflow: 'hidden',
+            }} >
+              <ScrollToTop />
+              <Nav cartItems={cartItems} />
+              <Zoom>
+                <Routes>
+                  <Route path="/contact" exact element={<Contact />} />
+                  <Route path="/home" exact element={<Home handleAddProduct={handleAddProduct} />} />
+                  <Route path="/" exact element={<Navigate to="/home?up=1" />} />
+                  {/* <Route path="/admin" exact element={<Admin />} /> */}
+                  {/* {user?.result.role === 1 ? <Route path="/" exact element={<Navigate to="/admin" />} /> : <Route path="/" exact element={<Navigate to="/" />} />} */}
+                  <Route path="/cart" exact element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemove={handleRemove} handleClearAll={handleClearAll} />} />
+                  <Route path="/food/:id" exact element={<PostDetail handleAddProduct={handleAddProduct} />} />
+                  <Route path="/room/:id" exact element={<PostDetailOfRoom />} />
+                  <Route path="/about" exact element={<About />} />
+                  <Route path="/auth" exact element={<Auth />} />
+                  <Route path="/users/:id/verify/:token" exact element={<Verify />} />
+                  <Route path="/food" exact element={<Image />} />
+                  <Route path="/food/search" exact element={<Image />} />
+                  <Route path="/room" exact element={<Room />} />
+                  <Route path="/gallery" exact element={<Gallery />} />
+                  <Route path="*" element={<PageNotFound />} />
+                </Routes>
+                <Foo />
+              </Zoom>
+            </Container>
+          </Paper>
+          {/* </ThemeProvider> */}
         </BrowserRouter>
       ))
 };

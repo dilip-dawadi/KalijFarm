@@ -28,6 +28,7 @@ const KalijDetail = ({ handleAddProduct }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const { kalij, Kal, isLoading } = useSelector((state) => state.Kalijs);
+  const user = JSON.parse(localStorage.getItem("profile"));
   const { id } = useParams();
   useEffect(() => {
     dispatch(getKalij(id));
@@ -35,6 +36,7 @@ const KalijDetail = ({ handleAddProduct }) => {
   useEffect(() => {
     dispatch(getKalBySearch({ search: "none", tags: kalij?.tags.join(",") }));
   }, [kalij]);
+  if (user === null) return navigate("/auth");
   if (!kalij) {
     return (
       <div style={{ padding: "80px 10px 0px 10px" }}>
