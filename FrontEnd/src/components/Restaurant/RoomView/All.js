@@ -29,7 +29,6 @@ const All = ({ Room }) => {
   const navigate = useNavigate();
   const { Rooms, likeRoomMessage } = useSelector((state) => state.Room);
   const classes = useStyles();
-  console.log(Room, 'Rooms');
   const dispatch = useDispatch();
   const classed = useStyle();
   const [likes, setLikes] = React.useState(Room?.likes);

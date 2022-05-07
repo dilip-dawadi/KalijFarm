@@ -16,7 +16,7 @@ const Loading = () => {
       <br />
       <Grid className={classes.container} container alignItems="stretch" spacing={2}>
         {Array.from(Array(Math.ceil(4)).keys()).map((kalij) => (
-          <Grid key={kalij._id} item xs={12} sm={6} md={4} lg={3}>
+          <Grid item xs={12} sm={6} md={4} lg={3}>
             <Zoom in duration={3000}>
               <Card className={classed.cards} raised elevation={4}>
                 {isLoading ? <LoadingPlaceHolder extraStyles={{

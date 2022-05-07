@@ -59,8 +59,8 @@ const Image = () => {
               <Grid className={classes.Foodonlycontainer} container alignItems="stretch" spacing={3}>
                 {isLoading ? <Loading /> :
                   Kal?.map((kalij) => (
-                    <Grid key={kalij._id} item xs={12} sm={6} md={6} lg={4}>
-                      <All kalij={kalij} />
+                    <Grid item xs={12} sm={6} md={6} lg={4}>
+                      <All key={kalij._id} kalij={kalij} />
                     </Grid>
                   ))}
               </Grid>

@@ -38,6 +38,7 @@ const GoogleAuth = () => {
             Google Sign In
           </Button>
         )}
+        buttonText="Login"
         onSuccess={googleSuccess}
         onFailure={googleError}
         cookiePolicy="single_host_origin"
