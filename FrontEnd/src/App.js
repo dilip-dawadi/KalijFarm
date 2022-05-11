@@ -44,7 +44,7 @@ const App = () => {
   }
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    // getVisitor();
+    getVisitor();
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
