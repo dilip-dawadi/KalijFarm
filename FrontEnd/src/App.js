@@ -36,7 +36,6 @@ const App = () => {
   // });
   const getVisitor = () => {
     axios.get('https://api.countapi.xyz/update/rhinospotnkalij.com/rskf/?amount=1').then(res => {
-      // console.log(res.data.value);
     }
     ).catch(err => {
       console.log(err);
@@ -45,7 +44,7 @@ const App = () => {
   }
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    getVisitor();
+    // getVisitor();
     setLoading(true);
     setTimeout(() => {
       setLoading(false);

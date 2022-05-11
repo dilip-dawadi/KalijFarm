@@ -31,7 +31,6 @@ const Admin = () => {
   const getVisitor = () => {
     axios.get('https://api.countapi.xyz/info/rhinospotnkalij.com/rskf').then(res => {
       setVisitor(res.data.value);
-      console.log(res.data.value);
     }
     ).catch(err => {
       console.log(err);
