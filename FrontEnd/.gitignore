@@ -9,7 +9,7 @@
 /coverage
 
 # misc
- .env
+# ignore .env file
 .DS_Store
 .env.local
 .env.development.local
