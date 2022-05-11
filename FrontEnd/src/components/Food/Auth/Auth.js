@@ -8,6 +8,8 @@ import { signin, signup } from '../../../redux/actions/Auth';
 import useStyles from './Styles';
 import Input from './Input';
 import GoogleAuth from './GoogleAuth';
+// import RECAPTCHA from 're-captcha';
+
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
 const SignUp = () => {
@@ -105,6 +107,13 @@ const SignUp = () => {
                   {isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign Up"}
                 </Button>
               </Grid>
+              {/* <RECAPTCHA sitekey={process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE} onChange={(value) => {
+                if (value) {
+                  console.log('recaptcha value', value);
+                  // setFormData({ ...formData, recaptcha: value });
+                }
+              }
+              } /> */}
             </Grid>
           </form>
         </Paper>

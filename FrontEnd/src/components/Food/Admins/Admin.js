@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Grow, Grid, Paper, Button } from '@material-ui/core';
 import Posts from './Posts/Posts';
 import Form from './Form/Form';
@@ -10,6 +10,7 @@ import Adminpagination from './pagination/pagination';
 import RoomForm from '../../Restaurant/Admin/roomForm/Form'
 import RoomPost from '../../Restaurant/Admin/roomPosts/Posts'
 import RoomPagination from '../../Restaurant/Admin/roomPagination/pagination'
+import axios from 'axios';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -22,9 +23,24 @@ const Admin = () => {
   const [activeRoom, setactiveRoom] = useState(false);
   const [activeAbout, setactiveAbout] = useState(false);
   const [activeGallery, setactiveGallery] = useState(false);
+  const [activeVisitorCount, setActiveVisitorCount] = useState(false);
 
   const adminQuery = useQuery();
   const up = adminQuery.get('up' || 1);
+  const [visitor, setVisitor] = useState();
+  const getVisitor = () => {
+    axios.get('https://api.countapi.xyz/info/rhinospotnkalij.com/rskf').then(res => {
+      setVisitor(res.data.value);
+      console.log(res.data.value);
+    }
+    ).catch(err => {
+      console.log(err);
+    }
+    )
+  }
+  useEffect(() => {
+    getVisitor();
+  }, [])
   if (!user?.result.role) {
     return (
       <HomePage />
@@ -33,6 +49,14 @@ const Admin = () => {
   return (
     <>
       <Container maxWidth="lg" style={{ paddingTop: '77px' }}>
+        <Grid container spacing={3} >
+          {!activeVisitorCount ? <Button style={{ margin: ' 40px auto auto auto', textAlign: 'center', color: "white", backgroundColor: '#4abdac' }} onClick={() => { setActiveVisitorCount(true) }} variant="contained" size="large">Show Visitor</Button> : <Button style={{ margin: ' 40px auto 40px auto', textAlign: 'center' }} onClick={() => setActiveVisitorCount(false)} variant="contained" color="secondary" size="large">Hide Visitor</Button>}
+        </Grid>
+        <div style={!activeVisitorCount ? { display: 'none' } : { display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '20px', color: 'black' }}>
+          <Paper style={{ padding: '20px', backgroundColor: '#f5f5f5' }}>
+            <h5>Visitor Count: {visitor}</h5>
+          </Paper>
+        </div>
         <Grid container spacing={3} >
           {!activeFood ? <Button style={{ margin: ' 40px auto auto auto', textAlign: 'center', color: "white", backgroundColor: '#4abdac' }} onClick={() => { setactiveAbout(false); setactiveFood(true) }} variant="contained" size="large">Show Food</Button> : <Button style={{ margin: ' 40px auto 40px auto', textAlign: 'center' }} onClick={() => setactiveFood(false)} variant="contained" color="secondary" size="large">Hide Food</Button>}
         </Grid>

@@ -18,6 +18,7 @@ import Preload from './components/Food/pages/PreLoad/Preload'
 import Verify from './components/Food/Auth/getVerify';
 import ScrollToTop from './components/Food/pages/ScroolToTop';
 import PostDetailOfRoom from './components/Restaurant/RoomView/postDetail/PostDetail';
+import axios from 'axios';
 // import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -33,8 +34,18 @@ const App = () => {
   //     },
   //   },
   // });
+  const getVisitor = () => {
+    axios.get('https://api.countapi.xyz/update/rhinospotnkalij.com/rskf/?amount=1').then(res => {
+      // console.log(res.data.value);
+    }
+    ).catch(err => {
+      console.log(err);
+    }
+    )
+  }
   const [loading, setLoading] = useState(false);
   useEffect(() => {
+    getVisitor();
     setLoading(true);
     setTimeout(() => {
       setLoading(false);

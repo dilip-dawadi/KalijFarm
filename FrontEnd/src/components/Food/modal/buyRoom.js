@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import { useSelector } from "react-redux";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import MuiAlert from '@material-ui/lab/Alert';
 import Notify from '../../modal/gmailM';
 function Alert(props) {

@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import Paper from "@material-ui/core/Paper";
 import Avatar from "@material-ui/core/Avatar";
 import styled from "styled-components";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import { Zoom } from 'react-reveal';
 const AboutPageStyles = styled.div`
