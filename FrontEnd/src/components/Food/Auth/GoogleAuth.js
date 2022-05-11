@@ -10,6 +10,7 @@ const GoogleAuth = () => {
   const dispatch = useDispatch();
   const classes = useStyles();
   const navigate = useNavigate();
+  const clientId = process.env.REACT_APP_GOOGLE_CLIENT_ID;
   const googleSuccess = async (res) => {
     const result = res?.profileObj;
     const token = res?.tokenId;
@@ -26,7 +27,7 @@ const GoogleAuth = () => {
   return (
     <>
       <GoogleLogin
-        clientId='1038516887835-02nml0p5a4eu6taluogc791fuascn8i4.apps.googleusercontent.com'
+        clientId={clientId}
         render={(renderProps) => (
           <Button
             className={classes.googleButton}
