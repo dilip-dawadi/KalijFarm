@@ -103,5 +103,27 @@ export default makeStyles((theme) => ({
     objectFit: 'contain',
     margin: 'auto',
     borderRadius: "5px"
-  }
+  },
+  commentsOuterContainer: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+    },
+  },
+  commentsInnerContainer: {
+    height: '150px',
+    width: '60%',
+    margin: '5px',
+    padding: '10px',
+    overflowY: 'auto',
+    marginRight: '20px',
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+      height: '200px',
+      margin: '0px',
+      padding: '0px',
+      textAlign: 'center',
+    },
+  },
 }));

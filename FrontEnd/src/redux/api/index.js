@@ -21,6 +21,7 @@ export const deleteKalijs = (id) => API.delete(`/kalijs/${id}`)
 export const updateKalij = (id, updatedKalij) => API.patch(`/kalijs/${id}`, updatedKalij);
 export const createKalijs = (formData) => API.post(`/kalijs`, formData);
 export const foodLike = (id) => API.patch(`/kalijs/${id}/foodlike`);
+export const comment = (value, id) => API.post(`/kalijs/${id}/foodcomment`, { value });
 // export const createKalijs = (formData) => API.post(`/kalijs`, formData,
 // {headers: {
 //   'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,

@@ -15,6 +15,7 @@ import useStyles from "./Pdetail";
 import moment from "moment";
 import Notify from "../../modal/notify";
 import Mail from "../../modal/buyNow";
+import CommentSection from "./commentSection";
 
 const KalijDetail = ({ handleAddProduct }) => {
   const [openM, setOpenM] = React.useState(false);
@@ -161,6 +162,7 @@ const KalijDetail = ({ handleAddProduct }) => {
                     <Mail openM={openM} setOpenM={setOpenM} />
                   </CardActions>
                   <Divider style={{ margin: "20px 0" }} />
+                  <CommentSection food={kalij} />
                 </div>
               </div>
             </div>

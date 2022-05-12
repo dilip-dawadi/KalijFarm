@@ -11,7 +11,7 @@ import { storage } from "../../../Food/Admins/Form/firebase";
 
 const Form = ({ currentRoomId, setcurrentRoomId }) => {
   const user = JSON.parse(localStorage.getItem('profile'))
-  const [postData, setPostData] = useState({ title: '', message: '', tags: [], price: '', booked: '' });
+  const [postData, setPostData] = useState({ title: '', message: '', tags: [], price: '', booked: '', comments: [], likes: [] });
   const [image, setimage] = useState({ selectedFile: '' });
   const [imageUrl, setimageUrl] = useState(null);
   const [progress, setProgress] = useState(0);

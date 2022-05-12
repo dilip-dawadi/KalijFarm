@@ -98,3 +98,15 @@ export const foodLike = (id) => async (dispatch) => {
         console.log(error);
     }
 };
+
+export const commentFood = (value, id) => async (dispatch) => {
+    try {
+        const { data: { updatedCommentFood, message } } = await api.comment(value, id);
+
+        dispatch({ type: 'COMMENT_FOOD', payload: { updatedCommentFood } });
+
+        return updatedCommentFood.comments;
+    } catch (error) {
+        console.log(error.message);
+    }
+};

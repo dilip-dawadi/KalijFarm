@@ -19,21 +19,9 @@ import Verify from './components/Food/Auth/getVerify';
 import ScrollToTop from './components/Food/pages/ScroolToTop';
 import PostDetailOfRoom from './components/Restaurant/RoomView/postDetail/PostDetail';
 import axios from 'axios';
-// import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]');
 const App = () => {
-  // const theme = createTheme({
-  //   palette: {
-  //     type: 'dark',
-  //     primary: {
-  //       main: '#fff',
-  //     },
-  //     secondary: {
-  //       main: '#fff',
-  //     },
-  //   },
-  // });
   const getVisitor = () => {
     axios.get('https://api.countapi.xyz/update/rhinospotnkalij.com/rskf/?amount=1').then(res => {
     }
@@ -83,12 +71,10 @@ const App = () => {
     setCartItems([]);
     localStorage.removeItem('cart')
   }
-  // const user = JSON.parse(localStorage.getItem('profile'))
   return (
     loading ? <Preload /> :
       (
         <BrowserRouter>
-          {/* <ThemeProvider theme={theme}> */}
           <React.StrictMode>
             <Paper>
               <Container maxWidth='xl' style={{
@@ -122,7 +108,6 @@ const App = () => {
               </Container>
             </Paper>
           </React.StrictMode>
-          {/* </ThemeProvider> */}
         </BrowserRouter>
       ))
 };

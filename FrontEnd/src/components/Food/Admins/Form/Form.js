@@ -10,7 +10,7 @@ import { storage } from "./firebase";
 
 const Form = ({ currentId, setCurrentId }) => {
   const user = JSON.parse(localStorage.getItem('profile'))
-  const [postData, setPostData] = useState({ title: '', message: '', tags: [], price: '' });
+  const [postData, setPostData] = useState({ title: '', message: '', tags: [], price: '', comments: [], likes: [] });
   const [image, setimage] = useState({ selectedFile: '' });
   const [imageUrl, setimageUrl] = useState(null);
   const [progress, setProgress] = useState(0);

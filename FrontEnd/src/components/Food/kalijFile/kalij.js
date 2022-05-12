@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { Grid, Card, CardActions, CardContent, CardMedia, Button, Typography, ButtonBase, Paper } from '@material-ui/core/';
-import { Fade, Zoom } from 'react-reveal';
 import useWindowPosition from '../../../hook/useWindowPosition';
 import useStyles from './Component/kalijcs'
 import useStyle from './Component/onlyKalij'
@@ -8,9 +7,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { getKalijs } from '../../../redux/actions/kalijs';
-import Notification from '../modal/noticeM'
 import Model from '../modal/messageM'
-import Notify from '../modal/notify'
 import Loading from '../loading/indexkalij'
 
 const Kalij = ({ handleAddProduct }) => {

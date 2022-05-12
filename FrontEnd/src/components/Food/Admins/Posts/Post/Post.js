@@ -14,7 +14,6 @@ const Post = ({ kalij, setCurrentId }) => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const user = JSON.parse(localStorage.getItem('profile'))
-  const [billPay, setbillPay] = useState(false);
 
   const openPost = () => {
     navigate(`/food/${kalij._id}`)
