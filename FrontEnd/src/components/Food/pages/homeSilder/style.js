@@ -2,19 +2,20 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
     container: {
-        paddingTop: '72px',
+        paddingTop: '70px',
         margin: 'auto',
         ['@media (max-width:550px)']: {
             paddingTop: '50px',
         },
+
     },
     media: {
-        height: '89vh',
+        height: '90vh',
         objectFit: 'cover',
         width: '100%',
         margin: 'auto',
         ['@media (max-width:1200px)']: {
-            height: '90vh',
+            height: '92vh',
         },
         [theme.breakpoints.down('xs')]: {
             height: '55vh',

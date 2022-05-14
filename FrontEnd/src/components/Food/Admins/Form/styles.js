@@ -88,27 +88,32 @@ export default makeStyles((theme) => ({
   // About message photo
   madia: {
     height: 0,
-    paddingTop: '90%',
-    width: '80%',
+    paddingTop: '70%',
+    width: '70%',
     margin: '0 auto',
     objectFit: 'cover',
     backgroundPosition: 'center',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      paddingTop: '100%',
+    },
   },
 
   // About Amedia in display to user
   Amadia: {
-    paddingTop: '70.25%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    borderRadius: '20px',
-    marginTop: '80px',
-
+    height: 0,
+    paddingTop: '90%',
+    width: '80%',
+    margin: 'auto',
+    objectFit: 'cover',
+    backgroundPosition: 'center',
+    [theme.breakpoints.down('sm')]: {
+      width: '50%',
+      paddingTop: '50%',
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+      paddingTop: '100%',
+    },
   },
-  [theme.breakpoints.down('sm')]: {
-    Amadia: {
-      marginTop: '0px',
-      maxWidth: '500px',
-      // height: '20px',
-      margin: 'auto'
-    }
-  }
 }));

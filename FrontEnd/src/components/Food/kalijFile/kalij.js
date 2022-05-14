@@ -84,7 +84,7 @@ const Kalij = ({ handleAddProduct }) => {
           ))}
         </Grid>
         <br />
-        <center><Button variant="contained" style={{ backgroundColor: '#4abdac', padding: '7px 20px', letterSpacing: '2px', fontWeight: '600', color: 'white' }}><Link
+        <center><Button variant="contained" style={{ backgroundColor: '#4abdac', padding: '10px 25px', letterSpacing: '2px', fontWeight: '600', color: 'white' }}><Link
           to='/food?page=1'
           className={classes.link}>
           View More

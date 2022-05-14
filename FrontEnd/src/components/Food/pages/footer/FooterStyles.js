@@ -5,7 +5,7 @@ export const Box = styled.div`
   margin: 10px 10px;
   background: linear-gradient(to top, #00cc99 0%, #006666 100%);
   margin-Top: 5%;
-   border-radius: 20px;
+  border-radius: 20px;
    
   @media (max-width: 1000px) {
     padding: 70px 30px;

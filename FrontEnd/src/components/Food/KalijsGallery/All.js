@@ -24,12 +24,11 @@ const All = ({ kalij }) => {
   };
   const user = JSON.parse(localStorage.getItem("profile"));
   const navigate = useNavigate();
-  const { Kal, likeFoodMessage } = useSelector((state) => state.Kalijs);
+  const { Kal } = useSelector((state) => state.Kalijs);
   const classes = useStyles();
   const classed = useStyle();
   const dispatch = useDispatch();
   const [likes, setLikes] = React.useState(kalij?.likes);
-  const [likeMessage, setLikeMessage] = React.useState('');
   const userId = user?.result.googleId || user?.result?._id;
   const hasLikedFood = kalij?.likes.find((like) => like === userId);
 

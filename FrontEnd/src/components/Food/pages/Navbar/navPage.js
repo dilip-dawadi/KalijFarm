@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { MdClose, MdMenu } from 'react-icons/md';
 import { FaShoppingCart } from 'react-icons/fa';
 import Login from './user'
-import { Paper } from '@material-ui/core';
+import { Paper, Typography } from '@material-ui/core';
 const NavStyles = styled.nav`
 .nav{
   position: fixed;
@@ -47,7 +47,6 @@ const NavStyles = styled.nav`
     }
     .active {
       transition: 1s ease;
-      // background-color: #ebebeb;
       font-weight: 600;
       color: black;
       opacity: 1;
@@ -55,7 +54,8 @@ const NavStyles = styled.nav`
   }
   .Signin{
     background-color: #4abdac;
-    opacity: 0.95;
+    letter-spacing: 2px;
+    opacity: 1;
     border-radius: 10px;
     color: white;
   }
@@ -80,10 +80,9 @@ const NavStyles = styled.nav`
     top: 1rem;
     padding: 4px 12px;
     cursor: pointer;
-    color: #C0C0C0;
     outline: none;
     color: white;
-    background-color: #4abdac;
+    background-color: #00C0B0;
     border-radius: 12px;
     &:hover {
         color: white;
@@ -104,7 +103,7 @@ const NavStyles = styled.nav`
       width: 3rem;
     }
   }
-  @media only screen and (max-width: 890px) {
+  @media only screen and (max-width: 970px) {
     ul li{
       margin: 0px 8px;
     }
@@ -140,14 +139,14 @@ const NavStyles = styled.nav`
       max-width: 350px;
       border-radius: 12px;
       position: absolute;
-      right:  0rem;
+      right:  1rem;
       top: var(--top);
       .closeNavIcon {
         display: block;
         width: 3rem;
         margin: 0 0 0 auto;
         cursor: pointer;
-        color: grey;
+        color: gray;
         * {
           pointer-events: none;
         }

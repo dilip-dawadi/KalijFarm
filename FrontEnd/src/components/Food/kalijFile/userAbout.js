@@ -14,7 +14,8 @@ const AboutSectionStyles = styled.div`
     margin: 6rem 1.1rem;
     display: flex;
     text-align: center;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
   }
   .about__heading {
@@ -26,7 +27,7 @@ const AboutSectionStyles = styled.div`
     margin: 0px 0px 20px 0px;
   }
   .about__heading span{
-    background-color: #4abdac;
+    background-image: linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e);
     color: white;
     padding: 0.24rem 1rem;
     border-radius: 8px;
@@ -48,10 +49,11 @@ const AboutSectionStyles = styled.div`
   }
     .link {  
     text-decoration:none;
-    background-color: #4abdac;
-    padding: 0.5rem 1rem;
+    background-image: linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e);
+    padding: 0.6rem 1rem;
     color: white;
-    border-radius:4px;
+    font-weight: bold;
+    border-radius:6px;
   }
   @media only screen and (max-width: 1230px) {
     .aboutSection__left {
@@ -63,8 +65,6 @@ const AboutSectionStyles = styled.div`
     .container {
       margin: 4rem 1.25rem;
       display: flex;
-      text-align: center;
-      justify-content: flex-start;
       gap: 1rem;
     }
   } 

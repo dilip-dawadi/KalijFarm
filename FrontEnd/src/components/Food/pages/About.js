@@ -12,12 +12,12 @@ const AboutPageStyles = styled.div`
 padding: 5.5rem 1rem 0rem 1rem;
 .top-section {
   display: flex;
-  text-align: justify;
-  justify-content: flex-start;
   gap: 1rem;
-  
+  justify-content: center;
+  align-items: center;
 }
 .left {
+  text-align: justify;
   flex: 3.5;
 }
 .right {
@@ -42,18 +42,18 @@ padding: 5.5rem 1rem 0rem 1rem;
   max-width: 600px;
   margin: 0 auto;
 }
-  @media only screen and (max-width: 400) {
-  .about__heading {
-    font-size: 1.2rem;
-    
-  }
-}
 
 @media only screen and (max-width: 960px) {
   padding: 3.2rem 0;
+  .about__info {
+    max-width: 95%;
+    margin: 0 auto;
+  }
   .top-section {
+    justify-content: flex-start;
     flex-direction: column;
-    gap: 3rem;
+    align-items: normal;
+    gap: 1rem;
   }
   .about__heading {
     font-size: 1.2rem;
@@ -61,8 +61,17 @@ padding: 5.5rem 1rem 0rem 1rem;
   }
   .about__info__heading {
     font-size: 3rem;
-  }
-  
+  } 
+}
+@media only screen and (max-width: 400px) {
+  padding: 3.2rem 0;
+.about__heading {
+  font-size: 1.2rem;
+}
+.about__info {
+  max-width: 100%;
+  margin: 0 auto;
+}
 }
 `;
 
@@ -81,8 +90,8 @@ export default function About() {
         <AboutPageStyles >
           {abouts.map((A) => (
             <div className="container" key={A._id}>
-              <Paper elevation={3} style={{
-                padding: '1rem 0rem', margin: '2rem 1rem',
+              <Paper elevation={2} style={{
+                padding: '1rem 0rem', margin: '2rem 0.7rem', backgroundColor: '#fff',
               }} >
                 <div className="top-section">
                   <Fade left>
