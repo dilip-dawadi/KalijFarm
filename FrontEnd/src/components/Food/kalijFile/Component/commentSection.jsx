@@ -64,7 +64,8 @@ const CommentSection = ({ food }) => {
           <Button
             style={{
               marginTop: "10px",
-              backgroundColor: "#4abdac",
+              backgroundImage:
+                "linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e)",
               color: "#fff",
             }}
             fullWidth

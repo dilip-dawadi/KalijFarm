@@ -107,7 +107,7 @@ const All = ({ Room }) => {
               {Room.tags.map((tag) =>
               (
                 <Button style={{
-                  backgroundColor: '#4abdac',
+                  backgroundImage: 'linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e)',
                   borderRadius: '6px',
                   color: 'white',
                   padding: '1px 7px',
@@ -119,7 +119,7 @@ const All = ({ Room }) => {
               ).splice(-3)}
             </Typography>
           </div>
-          <CardActions className={classed.cardActionsI}>
+          <CardActions className={user?.result?.name ? (classed.cardActionsIuser) : (classed.cardActionsI)}>
             {!user?.result?.name ? (
               <>
                 <Button

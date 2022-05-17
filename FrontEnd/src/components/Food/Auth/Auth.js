@@ -81,11 +81,9 @@ const SignUp = () => {
     if (isSignup) {
       dispatch(signup(formData));
     } else {
-      // dispatching meaning giving different thinks
       dispatch(signin(formData, navigate));
     }
   };
-  // <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (

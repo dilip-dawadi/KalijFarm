@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
   spanFood: {
-    backgroundColor: '#4abdac',
+    backgroundImage: 'linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e)',
     padding: '0.3rem 1rem',
     color: 'white',
     borderRadius: '8px',

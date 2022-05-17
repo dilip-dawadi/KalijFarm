@@ -111,36 +111,32 @@ export default function AboutSection() {
       <AboutSectionStyles>
         {abouts.map((A) => (
           <div className="container" id="place-to-visit" key={A._id}>
-            <Fade left>
-              <div className="aboutSection__left">
-                <Paper elevation={3}
-                  style={{
-                    padding: '2rem 0.3rem',
-                    margin: '0 auto',
-                    maxwidth: '50%',
-                    borderRadius: '12px',
-                    [theme.breakpoints.down('sm')]: {
-                      padding: '10rem',
-                    }
-                  }}
-                >
-                  <h2 className="about__heading">About <span>{A.Atitle}</span></h2>
-                  <PText>
-                    {A.Amessage.split(' ').splice(0, 60).join(' ')}...
-                  </PText>
-                  <div className="aboutSection__buttons">
-                    <NavLink className="link" to="/about">Read More</NavLink>
-                  </div>
-                </Paper>
-              </div>
-            </Fade>
-            <Fade right>
-              <div className="aboutSection__right">
-                <CardMedia className={classes.madia} style={{
-                  backgroundImage: `url(${A.AselectedFile})`,
-                }} title={A.Atitle} />
-              </div>
-            </Fade>
+            <div className="aboutSection__left">
+              <Paper elevation={3}
+                style={{
+                  padding: '2rem 0.3rem',
+                  margin: '0 auto',
+                  maxwidth: '50%',
+                  borderRadius: '12px',
+                  [theme.breakpoints.down('sm')]: {
+                    padding: '10rem',
+                  }
+                }}
+              >
+                <h2 className="about__heading">About <span>{A.Atitle}</span></h2>
+                <PText>
+                  {A.Amessage.split(' ').splice(0, 60).join(' ')}...
+                </PText>
+                <div className="aboutSection__buttons">
+                  <NavLink className="link" to="/about">Read More</NavLink>
+                </div>
+              </Paper>
+            </div>
+            <div className="aboutSection__right">
+              <CardMedia className={classes.madia} style={{
+                backgroundImage: `url(${A.AselectedFile})`,
+              }} title={A.Atitle} />
+            </div>
           </div>
 
         ))}

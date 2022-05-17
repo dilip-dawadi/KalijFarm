@@ -50,7 +50,7 @@ export default makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: '#4abdac',
+    backgroundImage: 'linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e)',
   },
   formData: {
     width: '100%', // Fix IE 11 issue.
@@ -61,22 +61,21 @@ export default makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(1, 0, 2),
-    backgroundColor: '#4abdac',
+    backgroundImage: 'linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e)',
     color: 'white',
     letterSpacing: '2px',
-    '&:hover': {
-      backgroundColor: '#008f95',
-    },
+    padding: '0.4rem 0.7rem',
+    letterSpacing: '2px',
+    fontSize: '15px',
+    marginTop: theme.spacing(1),
   },
   googleButton: {
     marginBottom: theme.spacing(2),
     marginTop: theme.spacing(2),
-    backgroundColor: '#4abdac',
+    backgroundImage: 'linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e)',
     color: 'white',
-    fontSize: '14px',
+    fontSize: '15px',
+    padding: '0.4rem 1rem',
     letterSpacing: '1px',
-    '&:hover': {
-      backgroundColor: '#008f95',
-    },
   },
 }));

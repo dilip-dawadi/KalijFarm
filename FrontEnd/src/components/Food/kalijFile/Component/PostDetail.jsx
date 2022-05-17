@@ -132,7 +132,8 @@ const KalijDetail = ({ handleAddProduct }) => {
                     {kalij?.message} and price of the product is Price{" "}
                     <span
                       style={{
-                        backgroundColor: "#4abdac",
+                        backgroundImage:
+                          "linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e)",
                         padding: " 4.5px 15px",
                         borderRadius: "6px",
                         color: "white",

@@ -53,7 +53,7 @@ const NavStyles = styled.nav`
     }
   }
   .Signin{
-    background-color: #4abdac;
+    background-image: linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e);
     letter-spacing: 2px;
     opacity: 1;
     border-radius: 10px;
@@ -82,7 +82,7 @@ const NavStyles = styled.nav`
     cursor: pointer;
     outline: none;
     color: white;
-    background-color: #00C0B0;
+    background-image: linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e);
     border-radius: 12px;
     &:hover {
         color: white;

@@ -4,15 +4,12 @@ export default makeStyles((theme) => ({
   btn: {
     textTransform: 'capitalize',
     padding: '0.4rem 0.7rem',
-    backgroundColor: '#4abdac',
+    backgroundImage: 'linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e)',
     letterSpacing: '1px',
     fontSize: '14px',
     color: 'white',
     fontWeight: 'bold',
     display: 'flex',
-    '&:hover': {
-      background: '#008f95',
-    },
   },
   like: {
     display: 'flex',
@@ -27,6 +24,10 @@ export default makeStyles((theme) => ({
     cursor: 'pointer',
   },
   cardActionsI: {
+    display: 'grid',
+    margin: '10px',
+  },
+  cardActionsIuser: {
     display: 'grid',
     backgroundColor: '#f0f0f0',
   },

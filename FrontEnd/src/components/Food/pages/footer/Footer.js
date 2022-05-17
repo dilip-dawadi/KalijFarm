@@ -7,9 +7,8 @@ import {
   FooterLink,
   Heading,
 } from "./FooterStyles";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 const Footer = () => {
-  const navigation = useNavigate();
   return (
     <Box>
       <h1 style={{
@@ -25,10 +24,10 @@ const Footer = () => {
       <Container style={{ marginTop: "20px" }} >
         <Row>
           <Column>
-            <Heading style={{ cursor: 'pointer', letterSpacing: '2px' }} >About Us</Heading>
-            <FooterLink href="#">Aim</FooterLink>
-            <FooterLink href="#">Vision</FooterLink>
-            <FooterLink href="#">Testimonials</FooterLink>
+            <Heading style={{ cursor: 'pointer', letterSpacing: '2px' }} >Pages</Heading>
+            <FooterLink href="http://localhost:3000/food">Food</FooterLink>
+            <FooterLink href="http://localhost:3000/room">Room</FooterLink>
+            <FooterLink href="http://localhost:3000/auth">Auth</FooterLink>
           </Column>
           <Column>
             <Heading style={{ cursor: 'pointer', letterSpacing: '2px' }}>Contact Us</Heading>
@@ -43,7 +42,7 @@ const Footer = () => {
                 Facebook
               </span>
             </FooterLink>
-            <FooterLink href="https://api.whatsapp.com/send?phone=9779845716181" target="_blank">
+            <FooterLink href="https://api.whatsapp.com/send?phone=+9779845716181" target="_blank">
               <span>
                 WhatsApp
               </span>

@@ -58,10 +58,10 @@ const Kalij = ({ handleAddProduct }) => {
                       {kalij.tags.map((tag) =>
                       (
                         <Button style={{
-                          backgroundColor: '#4abdac',
+                          backgroundImage: 'linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e)',
                           borderRadius: '6px',
                           color: 'white',
-                          padding: '1px 7px',
+                          padding: '3px 7px',
                           margin: '2px 3px',
                           fontSize: '13px',
                         }} >
@@ -84,11 +84,14 @@ const Kalij = ({ handleAddProduct }) => {
           ))}
         </Grid>
         <br />
-        <center><Button variant="contained" style={{ backgroundColor: '#4abdac', padding: '10px 25px', letterSpacing: '2px', fontWeight: '600', color: 'white' }}><Link
+        <center><Button variant="contained" style={{
+          backgroundImage: 'linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e)',
+          padding: '10px 25px', letterSpacing: '2px', fontWeight: '600', color: 'white'
+        }}><Link
           to='/food?page=1'
           className={classes.link}>
-          View More
-        </Link></Button></center>
+            View More
+          </Link></Button></center>
 
       </>
     ))

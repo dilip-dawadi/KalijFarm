@@ -41,7 +41,7 @@ export default makeStyles((theme) => ({
     display: 'inline-block',
     borderRadius: '7px',
     padding: ' 5px 12px',
-    backgroundColor: '#4abdac',
+    backgroundImage: 'linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e)',
     letterSpacing: '1.3px',
     color: 'white',
     marginTop: '10px',

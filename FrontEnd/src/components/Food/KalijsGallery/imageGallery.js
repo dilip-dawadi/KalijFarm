@@ -79,7 +79,7 @@ const Image = () => {
                     variant="outlined"
                   />
                   <Button onClick={searchPost} style={{
-                    letterSpacing: '2.5px', backgroundColor: '#4abdac', color: '#fff', fontWeight: 'bold', fontSize: '14px',
+                    letterSpacing: '2.5px', backgroundImage: 'linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e)', color: '#fff', fontWeight: 'bold', fontSize: '14px', padding: '8px', borderRadius: '5px',
                   }} variant="contained">Search</Button>
                   {(searchKals || tags.length > 0) ? <Button onClick={allPost} style={{
                     marginTop: '3px', letterSpacing: '3px',

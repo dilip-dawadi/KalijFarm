@@ -22,7 +22,7 @@ const AboutPageStyles = styled.div`
     font-size: 16px;
   }
   .form > input:nth-child(3) {
-    min-height: 80px;
+    min-height: 70px;
   }
 
   .form > button {
@@ -78,7 +78,7 @@ const Contact = () => {
     <Zoom>
       <AboutPageStyles>
         <div className="contact" >
-          <Paper elevation={3} style={{
+          <Paper elevation={2} style={{
             maxWidth: '350px',
             padding: '25px',
             borderRadius: '1%',
@@ -86,7 +86,7 @@ const Contact = () => {
           }} >
             <Avatar style={{
               margin: '1rem auto',
-              backgroundColor: '#4abdac',
+              backgroundImage: 'linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e)',
               margin: '10px auto',
             }}>
               <ContactMailIcon />
@@ -112,8 +112,10 @@ const Contact = () => {
                 value={cont.message}
                 onChange={(e) => setCont({ ...cont, message: e.target.value })}
               ></input>
-              {error && <label style={{ margin: '10px', color: 'red', textAlign: 'center' }}>{error}</label>}
-              {!btnDisable ? <button type="submit" style={{ background: "#4abdac" }}>
+              {error && <label style={{ margin: '8px', color: 'red', textAlign: 'center' }}>{error}</label>}
+              {!btnDisable ? <button type="submit" style={{
+                backgroundImage: 'linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e)',
+              }}>
                 Submit
               </button> : <button disabled style={{ background: "#28a745" }}>
                 Thank You

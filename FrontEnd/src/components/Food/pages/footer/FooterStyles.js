@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Box = styled.div`
-  padding: 20px 60px;
+  padding: 40px 60px;
   margin: 10px 10px;
   background: linear-gradient(to top, #00cc99 0%, #006666 100%);
   margin-Top: 5%;
@@ -38,7 +38,6 @@ export const Row = styled.div`
                            minmax(200px, 1fr));
   }
 `;
-
 export const FooterLink = styled.a`
   color: #fff;
   margin-bottom: 20px;

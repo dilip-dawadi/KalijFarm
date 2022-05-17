@@ -70,7 +70,10 @@ const Loading = () => {
       </Grid>
       <br />
       <br />
-      <center><Button variant="contained" style={{ backgroundColor: '#4abdac', padding: '10px 20px', letterSpacing: '2px', fontWeight: '600', borderRadius: '7px', color: 'white' }}>
+      <center><Button variant="contained" style={{
+        backgroundImage: 'linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e)',
+        padding: '10px 20px', letterSpacing: '2px', fontWeight: '600', borderRadius: '7px', color: 'white'
+      }}>
         View More
       </Button></center>
     </div>
