@@ -32,7 +32,9 @@ const App = () => {
   }
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    getVisitor();
+    return () => {
+      getVisitor();
+    }
     setLoading(true);
     setTimeout(() => {
       setLoading(false);

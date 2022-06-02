@@ -99,7 +99,7 @@ const KalijDetail = ({ handleAddProduct }) => {
                     {kalij?.title}
                   </Typography>
                   <Typography className={classes.time}>
-                    {moment(kalij?.createdAt).fromNow()}
+                    {moment(kalij?.createdAt).format("MMMM")}
                   </Typography>
                   <div className={classes.details}>
                     <Typography
