@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "web-api-backend-repository-dilip-zan\r https://kalijfarm.herokuapp.com/kalijs?userPage=1\r {Dilip Dawadi - Softwarica College}",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Dilip Dawadi",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "dotenv": "^11.0.0",
+    "express": "^4.17.2",
+    "express-validator": "^6.14.0",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.1",
+    "multer": "^1.4.4",
+    "node-schedule": "^2.1.0",
+    "nodemailer": "^6.7.3",
+    "nodemon": "^2.0.15"
+  }
+}

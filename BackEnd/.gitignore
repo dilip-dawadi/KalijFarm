@@ -1,0 +1,4 @@
+node_modules
+.env
+# git rm .env --cached
+# git commit -m "Stopped tracking .env File"
