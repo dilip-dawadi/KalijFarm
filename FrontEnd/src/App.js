@@ -88,12 +88,12 @@ const App = () => {
                 <Nav cartItems={cartItems} />
                 <Zoom>
                   <Routes>
-                    <Route path="/contact" exact element={<Contact />} />
+                    {/* <Route path="/contact" exact element={<Contact />} />
                     <Route path="/home" exact element={<Home handleAddProduct={handleAddProduct} />} />
-                    <Route path="/" exact element={<Navigate to="/home?up=1" />} />
+                    <Route path="/" exact element={<Navigate to="/home?up=1" />} /> */}
                     {/* <Route path="/admin" exact element={<Admin />} /> */}
                     {/* {user?.result.role === 1 ? <Route path="/" exact element={<Navigate to="/admin" />} /> : <Route path="/" exact element={<Navigate to="/" />} />} */}
-                    <Route path="/cart" exact element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemove={handleRemove} handleClearAll={handleClearAll} />} />
+                    {/* <Route path="/cart" exact element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemove={handleRemove} handleClearAll={handleClearAll} />} />
                     <Route path="/food/:id" exact element={<PostDetail handleAddProduct={handleAddProduct} />} />
                     <Route path="/room/:id" exact element={<PostDetailOfRoom />} />
                     <Route path="/about" exact element={<About />} />
@@ -103,7 +103,7 @@ const App = () => {
                     <Route path="/food/search" exact element={<Image />} />
                     <Route path="/room" exact element={<Room />} />
                     <Route path="/gallery" exact element={<Gallery />} />
-                    <Route path="*" element={<PageNotFound />} />
+                    <Route path="*" element={<PageNotFound />} /> */}
                   </Routes>
                   <Foo />
                 </Zoom>
