@@ -7,7 +7,6 @@ import {
   FooterLink,
   Heading,
 } from "./FooterStyles";
-import { useNavigate } from "react-router-dom";
 const Footer = () => {
   return (
     <Box>

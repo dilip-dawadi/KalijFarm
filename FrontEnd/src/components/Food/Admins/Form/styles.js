@@ -10,7 +10,7 @@ export default makeStyles((theme) => ({
     width: '100%',
     height: '220px',
     ObjectFit: 'cover',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'transparent',
     backgroundBlendMode: 'darken',
   },
   paper: {
