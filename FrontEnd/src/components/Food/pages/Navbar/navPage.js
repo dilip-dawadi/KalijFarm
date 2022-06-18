@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { MdClose, MdMenu } from 'react-icons/md';
 import { FaShoppingCart } from 'react-icons/fa';
 import Login from './user'
-import { Paper, Typography } from '@material-ui/core';
+import { Paper } from '@material-ui/core';
 const NavStyles = styled.nav`
 .nav{
   position: fixed;
