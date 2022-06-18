@@ -85,7 +85,7 @@ const App = () => {
                 overflow: 'hidden',
               }} >
                 <ScrollToTop />
-                <Nav cartItems={cartItems} />
+                {/* <Nav cartItems={cartItems} /> */}
                 <Zoom>
                   <Routes>
                     {/* <Route path="/contact" exact element={<Contact />} />
@@ -102,10 +102,10 @@ const App = () => {
                     <Route path="/food" exact element={<Image />} />
                     <Route path="/food/search" exact element={<Image />} />
                     <Route path="/room" exact element={<Room />} />
-                    <Route path="/gallery" exact element={<Gallery />} />
-                    <Route path="*" element={<PageNotFound />} /> */}
+                    <Route path="/gallery" exact element={<Gallery />} />*/}
+                    <Route path="*" element={<PageNotFound />} />
                   </Routes>
-                  <Foo />
+                  {/* <Foo /> */}
                 </Zoom>
               </Container>
             </Paper>
