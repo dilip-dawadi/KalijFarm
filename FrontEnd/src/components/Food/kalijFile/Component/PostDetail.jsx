@@ -80,7 +80,7 @@ const KalijDetail = ({ handleAddProduct }) => {
         </div>
       );
     }
-    const recommented = Kal?.filter(({ _id }) => _id !== kalij._id);
+    const recommented = Kal?.filter(({ _id }) => _id !== kalij?._id);
     return (
       <div style={{ borderRadius: "15px", padding: "80px 15px 20px 15px" }}>
         <Paper elevation={3} style={{ borderRadius: "12px" }}>

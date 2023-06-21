@@ -74,6 +74,7 @@ export default makeStyles((theme) => ({
     marginTop: theme.spacing(2),
     backgroundImage: 'linear-gradient(to top, #51d6cb, #43ccc0, #34c2b4, #22b8a9, #03ae9e)',
     color: 'white',
+    textAlign: 'center',
     fontSize: '15px',
     padding: '0.4rem 1rem',
     letterSpacing: '1px',

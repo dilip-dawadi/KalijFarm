@@ -41,17 +41,19 @@ const CommentSection = ({ food }) => {
             Your Comments
           </Typography>
           {comments?.map((c, i) => (
-            <Typography key={i} gutterBottom variant="subtitle1">
-              <strong>{c.split(": ")[0]}</strong>
-              {c.split(":")[1]}
-            </Typography>
+            <>
+              <Typography key={i} gutterBottom variant="subtitle1">
+                <strong>{c.split(": ")[0]}</strong>
+                {c.split(":")[1]}
+              </Typography>
+            </>
           ))}
           <div ref={commentsRef} />
         </div>
         <div style={{ width: "100%" }}>
           <TextField
             fullWidth
-            rows={4}
+            ows={4}
             multiline
             variant="outlined"
             inputProps={{ maxLength: 25 }}

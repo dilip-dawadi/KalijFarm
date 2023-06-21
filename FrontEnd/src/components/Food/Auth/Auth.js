@@ -84,7 +84,8 @@ const SignUp = () => {
       dispatch(signin(formData, navigate));
     }
   };
-  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handlechange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  console.log(formData);
 
   return (
     <Zoom>
@@ -99,13 +100,13 @@ const SignUp = () => {
             <Grid container spacing={2}>
               {isSignup && (
                 <>
-                  <Input name="firstName" label="First Name" handleChange={handleChange} half />
-                  <Input name="lastName" label="Last Name" handleChange={handleChange} half />
+                  <Input name="firstName" label="First Name" handlechange={handlechange} half />
+                  <Input name="lastName" label="Last Name" handlechange={handlechange} half />
                 </>
               )}
-              <Input name="email" label="Email Address" handleChange={handleChange} type="email" />
-              <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
-              {isSignup && <Input name="confirmPassword" label="Repeat Password" type={showCPassword ? 'text' : 'password'} handleShowCPassword={handleShowCPassword} handleChange={handleChange} />}
+              <Input name="email" label="Email Address" handlechange={handlechange} type="email" />
+              <Input name="password" label="Password" handlechange={handlechange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
+              {isSignup && <Input name="confirmPassword" label="Repeat Password" type={showCPassword ? 'text' : 'password'} handleShowCPassword={handleShowCPassword} handlechange={handlechange} />}
             </Grid>
             {(ErrorSignIn || Error || success) && <Typography className={(success ? classes.success : classes.Error)}>{(ErrorSignIn?.slice(0, -2) || Error?.slice(0, -2) || success?.slice(0, -2))}</Typography>}
             <Button type="submit" fullWidth variant="contained" disabled={wait} className={classes.submit}>

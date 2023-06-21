@@ -82,7 +82,7 @@ export const signin = async (req, res) => {
 
 export const signup = async (req, res) => {
     // adding user to the database
-    const { email, password, firstName, number, lastName, role, selectedFile, confirmPassword } = req.body;
+    const { email, password, firstName, number, lastName, role, selectedFile, confirmPassword, } = req.body;
     try {
         let existingUser = await User.findOne({ email });
         // if user is already exist
